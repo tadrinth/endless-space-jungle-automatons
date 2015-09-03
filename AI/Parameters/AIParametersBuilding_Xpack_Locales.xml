@@ -215,7 +215,7 @@
     <AIParameter Name="Science" Value="0.1" />
     <AIParameter Name="Approval" Value="0.5" />
   </AIParametersDatatableElement>
-  <AIParametersDatatableElement ConstructibleElement="TerraformationToTerranAutomaton">
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToJungleAutomaton">
     <AIParameter Name="Food" Value="1" />
     <AIParameter Name="Industry" Value="0.1" />
     <AIParameter Name="Money" Value="0.1" />

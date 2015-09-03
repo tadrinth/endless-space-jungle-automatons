@@ -1,29 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Mod Name="Endless Space" Guid="C1C0725E-5015-4D87-BC56-49FFD509C6BD" Standalone="true">
+<?xml version="1.0" encoding="utf-8" ?>
+<Mod Name="Jungle Automatons" Guid="03efc01d-776e-44ea-a944-1f44189789f4" Standalone="false">
 
-  <Version Major="1" Minor="1" Revision="58" Serial="3" />
+  <Version Major="1" Minor="1" Revision="0" Serial="0" />
   <MinimumRequiredGameVersion Major="1" Minor="0" Revision="0" Serial="0" />
-  <RequestedDLCName>Disharmony</RequestedDLCName>
-  <Authors>AMPLITUDE Studios</Authors>
+  <RequestedDLCName>JungleAutomatons</RequestedDLCName>
+  <Authors>Tadrinth</Authors>
   <Homepage>http://endless-space.amplitude-studios.com</Homepage>
   <ReleaseDate>2015-03-03</ReleaseDate>
 
   <ReleaseNotes>
-    All the version notes since the alpha version can be found at:
-    http://forums.amplitude-studios.com/showthread.php?446-Release-Notes
+    Replaces the Automatons various affinities for Terran planets with affinities for Jungle planets.
   </ReleaseNotes>
 
   <Description>
-    This galaxy is ancient, and its first intelligent life was the civilization we call the Endless. Long before our eyes gazed upon the stars they flew between them, though all that remains of this people is what we call Dust. A substance found scattered or in forgotten temples, it once gave powers to admirals and galactic governors. 
+    Replaces the Automatons various affinities for Terran planets with affinities for Jungle planets.
   </Description>
 
   <Tag>General</Tag>
-
-  <Thumbnail>Gui/Thumbnail-01.jpg</Thumbnail>
-  <Thumbnail>Gui/Thumbnail-02.jpg</Thumbnail>
-  <Thumbnail>Gui/Thumbnail-03.jpg</Thumbnail>
-  <Thumbnail>Gui/Thumbnail-04.jpg</Thumbnail>
-  <Thumbnail>Gui/Thumbnail-05.jpg</Thumbnail>
 
   <Gui>
     <Title>%ModName</Title>

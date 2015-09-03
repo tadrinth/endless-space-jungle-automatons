@@ -82,16 +82,17 @@
       <Icon Small="Gui/AtlasedBitmaps/Improvements/Planets/TerraformationToTerranSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/TerraformationToTerranLarge"/>
     </Gui>
   </TerraFormation>
-  <!-- terran terraformation for Automaton!!! -->
-  <TerraFormation Name="TerraformationToTerranAutomaton" Cost="1440" IsUnique="true"
-                  ColonizeDependance="ColonizeTerran">
-    <Descriptors>PlanetTypeTerran</Descriptors>
-    <PathsPrerequisites>($(PlanetTypeOcean) or $(PlanetTypeJungle) or $(PlanetTypeArid) or $(PlanetTypeTundra)) and $(PlanetStatusColonized)</PathsPrerequisites>
+
+  <!-- jungle terraformation for Automaton!!! -->
+  <TerraFormation Name="TerraformationToJungleAutomaton" Cost="1440" IsUnique="true"
+                  ColonizeDependance="ColonizeJungle">
+    <Descriptors>PlanetTypeJungle</Descriptors>
+    <PathsPrerequisites>($(PlanetTypeOcean) or $(PlanetTypeTerran) or $(PlanetTypeArid) or $(PlanetTypeTundra)) and $(PlanetStatusColonized)</PathsPrerequisites>
     <ResourcesPrerequisites>PlanetStrategicResourceQuadrinite</ResourcesPrerequisites> <!-- Strategic Resource Prerequisite -->
     <Gui>
-      <Title>%TerraformationToTerranTitle</Title>
-      <Description>%TerraformationToTerranDescription</Description>
-      <Icon Small="Gui/AtlasedBitmaps/Improvements/Planets/TerraformationToTerranSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/TerraformationToTerranLarge"/>
+      <Title>%TerraformationToJungleTitle</Title>
+      <Description>%TerraformationToJungleDescription</Description>
+      <Icon Small="Gui/AtlasedBitmaps/Improvements/Planets/TerraformationToJungleSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/TerraformationToJungleLarge"/>
     </Gui>
   </TerraFormation>
 

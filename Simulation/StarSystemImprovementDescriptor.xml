@@ -960,11 +960,11 @@
       <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet"/>
       <SimulationObjectPropertyModifierDescriptor TargetProperty="MoneyToConvert"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet" TooltipVisibility="false"/>
       <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet"/>
-	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeTerran"/>
-      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeTerran"/>
-      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeTerran" />
-      <SimulationObjectPropertyModifierDescriptor TargetProperty="MoneyToConvert"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeTerran" TooltipVisibility="false"/>
-      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeTerran"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeJungle"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeJungle"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeJungle" />
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MoneyToConvert"    Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeJungle" TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="1"       OperationType="Addition" Path="../ClassStarSystem/ClassPlanet,PlanetTypeJungle"/>
       <SimulationObjectPropertyModifierDescriptor TargetProperty="Upkeep"   Value="3" 		OperationType="Soustraction" Path="ClassStarSystemImprovement"/>
     </SimulationObjectPropertyModifierDescriptors>
     <SimulationObjectPropertyDescriptors/>

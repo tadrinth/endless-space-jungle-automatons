@@ -1010,7 +1010,7 @@
     <TechnologiesPrerequisites></TechnologiesPrerequisites>
     <TechnologiesDependencies>TechE11;TechE11WithColonizeTraitScience03</TechnologiesDependencies>
     <Unlockable Name="MovementFreeMove3" Access="Standard" />
-    <Unlockable Name="TerraformationToTerranAutomaton" Access="Standard" />
+    <Unlockable Name="TerraformationToJungleAutomaton" Access="Standard" />
     <Gui>
       <Title>%TechE22AutomatonTitle</Title>
       <Description>%TechE22AutomatonDescription</Description>
@@ -1670,7 +1670,7 @@
   <!-- Large-scale Hydration -->
   <Technology Name="TechE24" Cost="36000" IsUnique="true" X=".5" Y="10.5" Category="ExplorationExpansion">
     <Descriptors />
-    <PathsPrerequisites></PathsPrerequisites>
+    <PathsPrerequisites>!$(AffinityAutomaton)</PathsPrerequisites>
     <TechnologiesPrerequisites></TechnologiesPrerequisites>
     <TechnologiesDependencies>TechE22;TechE23;TechE23Sower</TechnologiesDependencies>
     <Unlockable Name="TerraformationToJungle" Access="Standard" />
@@ -1681,7 +1681,19 @@
       <Icon Small="Gui/DynamicBitmaps/Technologies/TechnologyE24Small"/>
     </Gui>
   </Technology>
-
+  <Technology Name="TechE24Automaton" Cost="36000" IsUnique="true" X=".5" Y="10.5" Category="ExplorationExpansion">
+    <Descriptors />
+    <PathsPrerequisites>$(AffinityAutomaton)</PathsPrerequisites>
+    <TechnologiesPrerequisites></TechnologiesPrerequisites>
+    <TechnologiesDependencies>TechE22;TechE23;TechE23Sower</TechnologiesDependencies>
+    <Unlockable Name="TerraformationToTerran" Access="Standard" />
+    <Unlockable Name="TerraformationToOcean" Access="Standard" />
+    <Gui>
+      <Title>%TechE24Title</Title>
+      <Description>%TechE24Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Technologies/TechnologyE24Small"/>
+    </Gui>
+  </Technology>
 
   <!-- 11th circle -->
   <!-- Sustainable Supercities -->
@@ -1689,7 +1701,7 @@
     <Descriptors />
     <PathsPrerequisites></PathsPrerequisites>
     <TechnologiesPrerequisites></TechnologiesPrerequisites>
-    <TechnologiesDependencies>TechE24;TechE26;TechE26Harmony</TechnologiesDependencies>
+    <TechnologiesDependencies>TechE24;TechE24Automaton;TechE26;TechE26Harmony</TechnologiesDependencies>
     <Unlockable Name="StarSystemImprovementHabitat4" Access="Standard" />
     <Unlockable Name="ScienceVictoryUnlock1" Access="Standard" />
     <Gui>
@@ -1706,7 +1718,7 @@
     <Descriptors />
     <PathsPrerequisites></PathsPrerequisites>
     <TechnologiesPrerequisites></TechnologiesPrerequisites>
-    <TechnologiesDependencies>TechE24;TechE26;TechE26Harmony</TechnologiesDependencies>
+    <TechnologiesDependencies>TechE24;TechE24Automaton;TechE26;TechE26Harmony</TechnologiesDependencies>
     <Unlockable Name="StarSystemImprovementBuildingVictory" Access="Standard" />
     <Gui>
       <Title>%TechE30Title</Title>
