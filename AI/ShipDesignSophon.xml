@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- SOPHON TEMPLATES -->
+  <ShipDesignTemplate Name="ScoutSophonTemplate" Hull="ShipClassSmall1Sophon" FleetWeight="0">
+    <Repartition Name="SophonScout">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="0.6"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="ColonizerSophonTemplate" Hull="ShipClassColonizationSophon" FleetWeight="0">
+    <Repartition Name="SophonColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+    <Repartition Name="SophonColonizerBis">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- cannot use scout module or it will be consider as an explorer -->
+  <ShipDesignTemplate Name="Small1SophonTemplates" Hull="ShipClassSmall1Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonSmall1Title">
+    <Repartition Name="SophonDefender">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonGuardian">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.5"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonRanger">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small2SophonTemplates" Hull="ShipClassSmall2Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonSmall2Title">
+
+    <Repartition Name="SophonDefender2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonGuardian2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonRanger2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.7"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium1SophonTemplates" Hull="ShipClassMedium1Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonMedium1Title">
+    <Repartition Name="SophonFletcher">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonNimitz">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium2SophonTemplates" Hull="ShipClassMedium2Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonMedium2Title">
+    <Repartition Name="SophonNimitz2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonFletcher2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+
+  <ShipDesignTemplate Name="Large1SophonTemplates" Hull="ShipClassLarge1Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonLarge1Title">
+    <Repartition Name="SophonDominator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonImperator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Large1BisSophonTemplates" Hull="ShipClassLarge1Sophon" FleetWeight="0.3" ShipDesignName="%ShipClassSophonLarge2Title">
+    <Repartition Name="SophonDominatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+      
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SophonImperatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- INVASION SHIP -->
+
+  <ShipDesignTemplate Name="InvasionSmall1SophonTemplates" Hull="ShipClassSmall1Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonSmall1Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionSmall2SophonTemplates" Hull="ShipClassSmall2Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonSmall2Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium1SophonTemplates" Hull="ShipClassMedium1Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonMedium1Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium2SophonTemplates" Hull="ShipClassMedium2Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonMedium2Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1SophonTemplates" Hull="ShipClassLarge1Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-4" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+
+  <ShipDesignTemplate Name="InvasionLarge1BisSophonTemplates" Hull="ShipClassLarge1Sophon" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSophonLarge2Title" Tags="Invasion">
+    <Repartition Name="InvasionSophonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-4" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSophonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+</Datatable>

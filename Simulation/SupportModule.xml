@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <SupportModule Name="ModuleSupportBomb1" Cost="160" WeightFlat="40" MilitaryPower="0" SupportCategory="BombPopulation" Level="1" IsUnique="true"> <!-- population bomb -->
+    <Descriptors>ModuleSupportBomb1</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportBomb1Title</Title>
+      <Description>%ModuleSupportBomb1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportBomb1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportBomb1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportBomb2" Cost="160" WeightFlat="40" MilitaryPower="0" SupportCategory="BombImprovement" Level="1" IsUnique="true"> <!-- improvement bomb -->
+    <Descriptors>ModuleSupportBomb2</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportBomb2Title</Title>
+      <Description>%ModuleSupportBomb2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportBomb2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportBomb2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <!-- NOT IMPLEMENTED-->
+  <!-- <SupportModule Name="ModuleSupportBombUnique" Cost="135" WeightPercent="0.3" MilitaryPower="0" SupportCategory="Bomb"> 
+    <Descriptors>ModuleSupportBombUnique</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportBombUniqueTitle</Title>
+      <Description>%ModuleSupportBombUniqueDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportBombUniqueSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportBombUniqueLarge"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule> -->
+
+  <SupportModule Name="ModuleSupportArmor1" Cost="16" WeightPercent="0.15" Level="1"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor1</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor1Title</Title>
+      <Description>%ModuleSupportArmor1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor2" Cost="24" WeightPercent="0.15" Level="2"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor2</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites> <!-- Strategic Resource Prerequisite -->
+    <Gui>
+      <Title>%ModuleSupportArmor2Title</Title>
+      <Description>%ModuleSupportArmor2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportArmor3" Cost="36" WeightPercent="0.15" Level="3"
+                 SupportCategory="Armor" >
+    <Descriptors>ModuleSupportArmor3</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor3Title</Title>
+      <Description>%ModuleSupportArmor3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor3Terran" Cost="34" WeightPercent="0.15" Level="3"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor3Terran</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportArmor3TerranTitle</Title>
+      <Description>%ModuleSupportArmor3TerranDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor3TerranSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor3TerranLarge"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor4" Cost="60" WeightPercent="0.15" Level="4"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor4</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor4Title</Title>
+      <Description>%ModuleSupportArmor4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor5" Cost="80" WeightPercent="0.15" Level="5"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor5</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor5Title</Title>
+      <Description>%ModuleSupportArmor5Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor5Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor5Large"/>
+      <CharCode>5</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor6" Cost="110" WeightPercent="0.15" Level="6"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor6</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor6Title</Title>
+      <Description>%ModuleSupportArmor6Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor6Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor6Large"/>
+      <CharCode>6</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportArmor6Terran" Cost="110" WeightPercent="0.15" Level="6"
+                 SupportCategory="Armor">
+    <Descriptors>ModuleSupportArmor6Terran</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportArmor6TerranTitle</Title>
+      <Description>%ModuleSupportArmor6TerranDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportArmor6TerranSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportArmor6TerranLarge"/>
+      <CharCode>6</CharCode>
+    </Gui>
+  </SupportModule>
+  
+
+  <SupportModule Name="ModuleSupportPower1" Cost="16" WeightPercent="0.20" Level="1"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower1</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower1Title</Title>
+      <Description>%ModuleSupportPower1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower2" Cost="42" WeightPercent="0.20" Level="2"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower2</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites> <!-- Strategic Resource Prerequisite -->
+    <Gui>
+      <Title>%ModuleSupportPower2Title</Title>
+      <Description>%ModuleSupportPower2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower3" Cost="120" WeightPercent="0.20" Level="3"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower3</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower3Title</Title>
+      <Description>%ModuleSupportPower3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower4" Cost="340" WeightPercent="0.20" Level="4"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower4</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower4Title</Title>
+      <Description>%ModuleSupportPower4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower5" Cost="540" WeightPercent="0.20" Level="5"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower5</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower5Title</Title>
+      <Description>%ModuleSupportPower5Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower5Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower5Large"/>
+      <CharCode>5</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower6" Cost="1300" WeightPercent="0.20" Level="6"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower6</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower6Title</Title>
+      <Description>%ModuleSupportPower6Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower6Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower6Large"/>
+      <CharCode>6</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportPower6Swarm" Cost="1300" WeightPercent="0.20" Level="6"
+                 SupportCategory="Power" IsUnique="true">
+    <Descriptors>ModuleSupportPower6Swarm</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportPower6SwarmTitle</Title>
+      <Description>%ModuleSupportPower6SwarmDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportPower6SwarmSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportPower6SwarmLarge"/>
+      <CharCode>6</CharCode>
+    </Gui>
+  </SupportModule>
+
+
+  <SupportModule Name="ModuleSupportInvasion1" Cost="20" WeightFlat="25" Level="1" MilitaryPowerInvasion="180"
+                 SupportCategory="Invasion">
+    <Gui>
+      <Title>%ModuleSupportInvasion1Title</Title>
+      <Description>%ModuleSupportInvasion1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion2" Cost="28" WeightFlat="25" Level="2" MilitaryPowerInvasion="180"
+                 SupportCategory="Invasion">
+    <Descriptors>ModuleSupportInvasion2</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportInvasion2Title</Title>
+      <Description>%ModuleSupportInvasion2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion3" Cost="34" WeightFlat="25" Level="3" MilitaryPowerInvasion="375"
+                 SupportCategory="Invasion">
+    <Gui>
+      <Title>%ModuleSupportInvasion3Title</Title>
+      <Description>%ModuleSupportInvasion3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion3Hissho" Cost="34" WeightFlat="25" Level="3" MilitaryPowerInvasion="560"
+                 SupportCategory="Invasion">
+    <Gui>
+      <Title>%ModuleSupportInvasion3HisshoTitle</Title>
+      <Description>%ModuleSupportInvasion3HisshoDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion3HisshoSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion3HisshoLarge"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion4" Cost="46" WeightFlat="25" Level="4" MilitaryPowerInvasion="375"
+                 SupportCategory="Invasion">
+    <Descriptors>ModuleSupportInvasion4</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportInvasion4Title</Title>
+      <Description>%ModuleSupportInvasion4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion5" Cost="60" WeightFlat="25" Level="5" MilitaryPowerInvasion="800"
+                 SupportCategory="Invasion">
+    <Descriptors>ModuleSupportInvasion5</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportInvasion5Title</Title>
+      <Description>%ModuleSupportInvasion5Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion5Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion5Large"/>
+      <CharCode>5</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion5Terran" Cost="60" WeightFlat="28" Level="5" MilitaryPowerInvasion="800"
+                 SupportCategory="Invasion">
+    <Descriptors>ModuleSupportInvasion5Terran</Descriptors>
+    <!-- Strategic Resource Prerequisite -->
+    <Gui>
+      <Title>%ModuleSupportInvasion5TerranTitle</Title>
+      <Description>%ModuleSupportInvasion5TerranDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion5TerranSmall" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion5TerranLarge"/>
+      <CharCode>5</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportInvasion6" Cost="110" WeightFlat="25" Level="6" MilitaryPowerInvasion="800"
+                 SupportCategory="Invasion">
+    <Descriptors>ModuleSupportInvasion6</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceQuadrinite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportInvasion6Title</Title>
+      <Description>%ModuleSupportInvasion6Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion6Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportInvasion6Large"/>
+      <CharCode>6</CharCode>
+    </Gui>
+  </SupportModule>
+
+  <SupportModule Name="ModuleSupportEngine1" Cost="40" WeightPercent="0.2" Level="1"
+                 SupportCategory="Engine" IsUnique="true">
+    <Descriptors>ModuleSupportEngine1</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportEngine1Title</Title>
+      <Description>%ModuleSupportEngine1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportEngine1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportEngine1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportEngine2" Cost="80" WeightPercent="0.2" Level="2"
+                 SupportCategory="Engine" IsUnique="true">
+    <Descriptors>ModuleSupportEngine2</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportEngine2Title</Title>
+      <Description>%ModuleSupportEngine2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportEngine2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportEngine2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportEngine3" Cost="120" WeightPercent="0.2" Level="3"
+                 SupportCategory="Engine" IsUnique="true">
+    <Descriptors>ModuleSupportEngine3</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportEngine3Title</Title>
+      <Description>%ModuleSupportEngine3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportEngine3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportEngine3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportEngine4" Cost="270" WeightPercent="0.2" Level="4"
+                 SupportCategory="Engine" IsUnique="true">
+    <Descriptors>ModuleSupportEngine4</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportEngine4Title</Title>
+      <Description>%ModuleSupportEngine4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportEngine4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportEngine4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SupportModule>
+
+
+  
+  
+
+  <SupportModule Name="ModuleSupportScout1" Cost="16" WeightFlat="30" Level="1"
+                 SupportCategory="Scout" IsUnique="true">
+    <Descriptors>ModuleSupportScout1</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportScout1Title</Title>
+      <Description>%ModuleSupportScout1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportScout1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportScout1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportScout2" Cost="40" WeightFlat="30" Level="2"
+                 SupportCategory="Scout" IsUnique="true">
+    <Descriptors>ModuleSupportScout2</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportScout2Title</Title>
+      <Description>%ModuleSupportScout2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportScout2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportScout2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportScout3" Cost="110" WeightFlat="30" Level="3"
+                 SupportCategory="Scout" IsUnique="true">
+    <Descriptors>ModuleSupportScout3</Descriptors>
+    <Gui>
+      <Title>%ModuleSupportScout3Title</Title>
+      <Description>%ModuleSupportScout3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportScout3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportScout3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+
+
+  
+  
+
+  <SupportModule Name="ModuleSupportRepair1" Cost="60" WeightPercent="0.20" Level="1"
+                 SupportCategory="Repair" IsUnique="true">
+    <Descriptors>ModuleSupportRepair1</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportRepair1Title</Title>
+      <Description>%ModuleSupportRepair1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportRepair1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportRepair1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportRepair2" Cost="120" WeightPercent="0.20" Level="2"
+                 SupportCategory="Repair" IsUnique="true">
+    <Descriptors>ModuleSupportRepair2</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportRepair2Title</Title>
+      <Description>%ModuleSupportRepair2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportRepair2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportRepair2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportRepair3" Cost="200" WeightPercent="0.20" Level="3"
+                 SupportCategory="Repair" IsUnique="true">
+    <Descriptors>ModuleSupportRepair3</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportRepair3Title</Title>
+      <Description>%ModuleSupportRepair3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportRepair3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportRepair3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportRepair4" Cost="400" WeightPercent="0.20" Level="4"
+                 SupportCategory="Repair" IsUnique="true">
+    <Descriptors>ModuleSupportRepair4</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSupportRepair4Title</Title>
+      <Description>%ModuleSupportRepair4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportRepair4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportRepair4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SupportModule>
+
+
+  
+  
+
+  <SupportModule Name="ModuleSupportTonnage1" Cost="340" WeightFlat="0" Level="1"
+                 SupportCategory="Tonnage" IsUnique="true">
+    <Descriptors>ModuleSupportTonnage1</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHexaferrum</ResourcesPrerequisites> <!-- Strategic Resource Prerequisite -->
+    <Gui>
+      <Title>%ModuleSupportTonnage1Title</Title>
+      <Description>%ModuleSupportTonnage1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportTonnage1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportTonnage1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SupportModule>
+  
+  <SupportModule Name="ModuleSupportTonnage2" Cost="1000" WeightFlat="0" Level="2"
+                 SupportCategory="Tonnage" IsUnique="true">
+    <Descriptors>ModuleSupportTonnage2</Descriptors>
+    <ResourcesPrerequisites>PlanetStrategicResourceHexaferrum</ResourcesPrerequisites> <!-- Strategic Resource Prerequisite -->
+    <Gui>
+      <Title>%ModuleSupportTonnage2Title</Title>
+      <Description>%ModuleSupportTonnage2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSupportTonnage2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSupportTonnage2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SupportModule>
+
+
+
+</Datatable>

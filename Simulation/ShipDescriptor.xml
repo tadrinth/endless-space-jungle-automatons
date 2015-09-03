@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- CLASS -->  
+  <SimulationObjectDescriptor Name="ClassShip" Type="Class">
+    <SimulationObjectPropertyDescriptors>
+
+      <SimulationObjectPropertyDescriptor Name="AttackPoint" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="MaxMovement" Value="1.0"/>
+      <SimulationObjectPropertyDescriptor Name="Movement" Value="0.0"/>
+      
+      <SimulationObjectPropertyDescriptor Name="Accuracy" Value="0.0" IsCompoundMinimum ="true"/>
+      <SimulationObjectPropertyDescriptor Name="EvadeBonus" Value="1.0" />
+      <SimulationObjectPropertyDescriptor Name="AccuracyBonus" Value="1.0" MaxValue="1" />
+      <SimulationObjectPropertyDescriptor Name="HullWeakness" Value="100.0" IsBase="true"/>
+      <SimulationObjectPropertyDescriptor Name="HullWeaknessBonus" Value="1.0" />
+
+      <SimulationObjectPropertyDescriptor Name="CurrentXP" Value="0.0"/>
+      <SimulationObjectPropertyDescriptor Name="Level" Value="-1" MinValue="Negative"/>
+      <SimulationObjectPropertyDescriptor Name="Upkeep" Value="0" MinValue="Negative"/>
+
+      <SimulationObjectPropertyDescriptor Name="DetectionRadius" Value="2"/>
+      <SimulationObjectPropertyDescriptor Name="MilitaryPowerInvasion" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="Cloaking" Value="0"/>
+
+      <SimulationObjectPropertyDescriptor Name="CanHeal" Value="0" MaxValue="1"/>
+      <SimulationObjectPropertyDescriptor Name="CanHealAutomaton" Value="0" MaxValue="1" MinValue="0"/>
+      <SimulationObjectPropertyDescriptor Name="AutomatonHealingThreshold" Value="0.33"/>
+      <SimulationObjectPropertyDescriptor Name="AutomatonHealingThresholdHealth" Value="0"/>
+
+      <SimulationObjectPropertyDescriptor Name="CostReduction" Value="0"/>
+      <SimulationObjectPropertyDescriptor Name="HasRepairModule" Value="0"/>
+      
+      
+
+      <!-- Healing capacity of this ship in other than allied orbit -->
+      <SimulationObjectPropertyDescriptor Name="HealingPercent" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="Healing" Value="0"/>
+
+      <!-- Healing capacity of this ship in allied orbit -->
+      <SimulationObjectPropertyDescriptor Name="HealingPercentAllied" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="HealingAllied" Value="0"/>
+
+      <!-- Healing capacity of this ship each battle phase -->
+      <SimulationObjectPropertyDescriptor Name="BattleHealingPercent" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="BattleHealing" Value="0"/>
+
+      <SimulationObjectPropertyDescriptor Name="FleetHealingPercent" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="FleetHealing" Value="0"/>
+      
+      <SimulationObjectPropertyDescriptor Name="FleetHealingPercentAllied" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="FleetHealingAllied" Value="0"/>
+
+      <SimulationObjectPropertyDescriptor Name="FleetBattleHealingPercent" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="FleetBattleHealing" Value="0"/>
+
+      <SimulationObjectPropertyDescriptor Name="ModuleRepairRate" Value="0"/>
+      <SimulationObjectPropertyDescriptor Name="ModuleRepairRateAllied" Value="0"/>
+
+      <!-- Module Weight Bonus -->
+      <SimulationObjectPropertyDescriptor Name="SupportModuleEngineWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleScoutWeightBonus"  Value="1"  />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleRepairWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleCivilianWeightBonus" Value="1"/>
+      <SimulationObjectPropertyDescriptor Name="SupportModuleArmorWeightBonus"    Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleInvasionWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModulePowerWeightBonus"    Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleLaserWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleMissileWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleKineticWeightBonus" Value="1" />
+      <SimulationObjectPropertyDescriptor Name="WeaponModuleWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleBombPopulationWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleBombImprovementWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleFighterWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleTroopsWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleBomberWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModulePointDefenseWeightBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleWeightBonus"  Value="1" />
+      
+      <!-- Module Industry Cost Bonus -->
+	    <SimulationObjectPropertyDescriptor Name="SupportModuleWeightBonus"    			Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleEngineCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleScoutCostBonus"            Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleRepairCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleCivilianCostBonus"         Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleArmorCostBonus"            Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleInvasionCostBonus"         Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModulePowerCostBonus"            Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleCostBonus"                 Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleShieldCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleFlakCostBonus"             Value="1" />
+      <SimulationObjectPropertyDescriptor Name="DefenseModuleDeflectorCostBonus"        Value="1" />
+      <SimulationObjectPropertyDescriptor Name="WeaponModuleCostBonus"                  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="WeaponModuleLaserCostBonus"             Value="1" />
+      <SimulationObjectPropertyDescriptor Name="WeaponModuleKineticCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="WeaponModuleMissileCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleBombPopulationCostBonus"   Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SupportModuleBombImprovementCostBonus"  Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleTroopsCostBonus"           Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModulePointDefenseCostBonus"     Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleCostBonus"                 Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleFighterCostBonus"          Value="1" />
+      <SimulationObjectPropertyDescriptor Name="SpecialModuleBomberCostBonus"           Value="1" />
+
+      <SimulationObjectPropertyDescriptor Name="TroopsEfficiency"  Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="CollateralDamageAgainstPopulation" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="CollateralDamageAgainstImprovements" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="LandInvasionStrength" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="HasBombKillPopulation" Value="0" IsCompound="false" />
+      <SimulationObjectPropertyDescriptor Name="HasBombDestroyImprovements" Value="0" IsCompound="false" />
+      <SimulationObjectPropertyDescriptor Name="Defense" Value="0" IsCompound="true" />
+      
+    </SimulationObjectPropertyDescriptors>
+
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Upkeep" Value="$(CommandPoint)" OperationType="Soustraction" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Upkeep" Value="0.4" OperationType="Multiplication" Path="ClassShip"/>
+      
+      <!-- Initial Heal percent -->
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip"/>
+
+      <!-- Harmony Initial Heal percent-->
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassColonizationHarmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassColonizationHarmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassColonizationHarmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassColonizationHarmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassSmall1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassSmall1Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassSmall1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassSmall1Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassSmall2Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassSmall2Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassSmall2Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassSmall2Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassMedium1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassMedium1Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassMedium1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassMedium1Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassMedium2Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassMedium2Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassMedium2Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassMedium2Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="0.05" OperationType="Percent" Path="ClassShip,ShipClassLarge1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="0.01" OperationType="Percent" Path="ClassShip,ShipClassLarge1Harmony"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRateAllied" Value="0.2" OperationType="Addition" Path="ClassShip,ShipClassLarge1Harmony"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ModuleRepairRate" Value="0.1" OperationType="Addition" Path="ClassShip,ShipClassLarge1Harmony"/>
+
+      <!-- Assure that the ship has not move to be healed.-->
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercent" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Healing"        Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingPercentAllied" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingAllied"        Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+
+      
+
+
+      <!-- Assure that the ship has not move to be able to heal other ships.-->
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FleetHealingPercent" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FleetHealing" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FleetHealingPercentAllied" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FleetHealingAllied" Value="$(CanHeal)" OperationType="Multiplication" Path="ClassShip"/>
+      
+      <!-- Forward to the other ships (include himself), the ability to be healed based on this ship modules.-->
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Healing" Value="$(FleetHealing)" OperationType="Addition" Path="./ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HealingAllied" Value="$(FleetHealingAllied)" OperationType="Addition" Path="./ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BattleHealing" Value="$(FleetBattleHealing)" OperationType="Addition" Path="./ClassFleet/ClassShip"/>
+
+      <!-- For GUI purpose, we have set the Percent values to 1 and made only "Percent" operation on it. To sum them all, we have to remove the "1" part to retrieve only the bonus. -->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HealingPercent" OperationType="Percent" BinaryOperationType="Addition" Left="$(FleetHealingPercent)" Right="-1" Path="./ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HealingPercentAllied" OperationType="Percent" BinaryOperationType="Addition" Left="$(FleetHealingPercentAllied)" Right="-1" Path="./ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealingPercent" OperationType="Percent" BinaryOperationType="Addition" Left="$(FleetBattleHealingPercent)" Right="-1" Path="./ClassFleet/ClassShip"/>
+
+      <!--<SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPowerInvasion" Value="$(MilitaryPower)" OperationType="Addition" Path="ClassShip"/>-->
+      
+      <!-- Apply Module weight bonus -->
+	    <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleCivilianWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleCivilian"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleEngineWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleEngine"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleScoutWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleScout"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleRepairWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleRepair"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleArmorWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleArmor"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleInvasionWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleInvasion"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModulePowerWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModulePower"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(DefenseModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(DefenseModuleLaserWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Laser"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(DefenseModuleMissileWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Missile"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(DefenseModuleKineticWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Kinetic"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(WeaponModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleBombPopulationWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombPopulation"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SupportModuleBombImprovementWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombImprovement"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModuleFighterWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Fighter"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModuleBomberWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Bomber"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModuleTroopsWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModulePointDefenseWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,PointDefense"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule"/>  
+	    <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent" Value="$(SpecialModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule"/>
+
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleCivilianWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleCivilian"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleEngineWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleEngine"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleScoutWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleScout"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleRepairWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleRepair"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleArmorWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleArmor"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleInvasionWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleInvasion"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModulePowerWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModulePower"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(DefenseModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(DefenseModuleLaserWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Laser"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(DefenseModuleMissileWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Missile"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(DefenseModuleKineticWeightBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Kinetic"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(WeaponModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleBombPopulationWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombPopulation"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SupportModuleBombImprovementWeightBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombImprovement"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModuleFighterWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Fighter"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModuleBomberWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Bomber"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModuleTroopsWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModulePointDefenseWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,PointDefense"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat" Value="$(SpecialModuleWeightBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule"/>
+      
+      <!-- apply cost bonus -->
+      <!-- working only in ship design view: deleted-->
+      <!--<SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleCivilianCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleCivilian"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleEngineCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleEngine"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleScoutCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleScout"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleRepairCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleRepair"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleArmorCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleArmor"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleInvasionCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleInvasion"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModulePowerCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModulePower"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(DefenseModuleCostBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(DefenseModuleShieldCostBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Laser"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(DefenseModuleFlakCostBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Missile"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(DefenseModuleDeflectorCostBonus)" OperationType="Multiplication" Path="ClassShip/DefenseModule,Kinetic"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(WeaponModuleCostBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(WeaponModuleLaserCostBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule,Laser"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(WeaponModuleMissileCostBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule,Missile"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(WeaponModuleKineticCostBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule,Kinetic"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleBombPopulationCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombPopulation"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SupportModuleBombImprovementCostBonus)" OperationType="Multiplication" Path="ClassShip/SupportModuleBombImprovement"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModuleBomberCostBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Bomber"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModuleTroopsCostBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModulePointDefenseCostBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule,PointDefense"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModuleCostBonus)" OperationType="Multiplication" Path="ClassShip/SpecialModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModuleCostBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Cost" Value="$(SpecialModuleFighterCostBonus)" OperationType="Multiplication" Path="ClassShip/SubShipModule,Fighter"/>-->
+      
+
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Weight" Value="$(WeightFlat)" OperationType="Addition" Path="ClassShip" Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Weight" OperationType="Addition" BinaryOperationType="Multiplication" Left="$(MaxWeight)" Right="$(WeightPercent)" Path="ClassShip" Priority="1"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Evade" Value="$(EvadeBonus)" OperationType="Multiplication" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="$(AccuracyBonus)" OperationType="Multiplication" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness" Value="$(HullWeaknessBonus)" OperationType="Multiplication" Path="ClassShip"/>
+
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ClassFleet" Type="Class">
+    <SimulationObjectPropertyDescriptors>
+      <SimulationObjectPropertyDescriptor Name="Health" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="MaxHealth" Value="0" IsCompound="true"/>
+      
+      <SimulationObjectPropertyDescriptor Name="AttackPoint" Value="0" IsCompoundMinimum="true"/>
+      <SimulationObjectPropertyDescriptor Name="CommandPoint" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="DetectionRadius" Value="1" IsCompoundMaximum="true"/>
+      <SimulationObjectPropertyDescriptor Name="FlightRange" Value="33"/>
+      <SimulationObjectPropertyDescriptor Name="MaxMovement" Value="1.0" IsCompoundMinimum="true"/>
+      <SimulationObjectPropertyDescriptor Name="Movement" Value="0.0" IsCompoundMaximum="true"/>
+      <SimulationObjectPropertyDescriptor Name="Speed" Value="0" IsCompoundMinimum="true" MinValue="1"/>
+      <SimulationObjectPropertyDescriptor Name="FreeSpeed" Value="0" IsCompoundMinimum="true"/>
+      <SimulationObjectPropertyDescriptor Name="Weight" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="SpecialSlotWeight" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="HullWeakness" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="Upkeep" Value="0" IsCompound="true" MinValue="Negative"/>
+      <SimulationObjectPropertyDescriptor Name="MilitaryPower" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="MilitaryPowerInvasion" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="Cloaking" Value="0" IsCompoundMinimum="true"/>
+
+      <SimulationObjectPropertyDescriptor Name="TroopsEfficiency" Value="0" IsCompound="true"/>
+      <SimulationObjectPropertyDescriptor Name="CollateralDamageAgainstPopulation" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="CollateralDamageAgainstImprovements" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="LandInvasionStrength" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="HasBombKillPopulation" Value="0" IsCompound="true" />
+      <SimulationObjectPropertyDescriptor Name="HasBombDestroyImprovements" Value="0" IsCompound="true" />
+
+      <SimulationObjectPropertyDescriptor Name="TeamSpiritBonusActivated" Value="0" MaxValue="1" />
+      <SimulationObjectPropertyDescriptor Name="TeamSpiritBonus" Value="0.02" />
+	
+      <!-- Battle bonus (Defense/Attack) [0,1]-->
+      <!-- When fleet is in an allied territory or not. -->
+      <SimulationObjectPropertyDescriptor Name="AlliedTerritoryDefenseBonus" Value="1" MinValue="Negative"/>
+      <SimulationObjectPropertyDescriptor Name="HostileTerritoryDefenseBonus" Value="1" MinValue="Negative"/>
+      
+      <SimulationObjectPropertyDescriptor Name="AlliedTerritoryAttackBonus" Value="1" MinValue="Negative"/>
+      <SimulationObjectPropertyDescriptor Name="HostileTerritoryAttackBonus" Value="1" MinValue="Negative"/>
+    </SimulationObjectPropertyDescriptors>
+    <SimulationObjectPropertyModifierDescriptors>
+
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="TeamSpiritBonus" Value="$(TeamSpiritBonusActivated)" OperationType="Multiplication" Path="ClassFleet"/>
+
+
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassColonizationHarmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassColonizationHarmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassColonizationHarmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassSmall1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassSmall1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassSmall1Harmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassSmall2Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassSmall2Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassSmall2Harmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassMedium1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassMedium1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassMedium1Harmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassMedium2Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassMedium2Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassMedium2Harmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassLarge1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)" Path="ClassFleet/ClassShip,ShipClassLarge1Harmony/WeaponModule"   Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication" Left="0.02" Right="$(CommandPoint)"   Path="ClassFleet/ClassShip,ShipClassLarge1Harmony/DefenseModule"  Priority="1"/>
+
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" OperationType="Percent" BinaryOperationType="Multiplication" Left="$(TeamSpiritBonus)" Right="$(CommandPoint)" Path="ClassFleet/ClassShip/WeaponModule" Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" OperationType="Percent" BinaryOperationType="Multiplication" Left="$(TeamSpiritBonus)" Right="$(CommandPoint)" Path="ClassFleet/ClassShip/WeaponModule" Priority="1"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" OperationType="Percent" BinaryOperationType="Multiplication"   Left="$(TeamSpiritBonus)" Right="$(CommandPoint)" Path="ClassFleet/ClassShip/DefenseModule" Priority="1"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="FleetGuiDescriptor" Type="GuiDescriptor">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Upkeep" Value="0"     OperationType="Multiplication" Path="ClassFleet" Priority="1"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- SHIPCLASSIFICATION -->
+  <SimulationObjectDescriptor Name="ShipClassificationCivilian" Type="ShipClassification"/>
+  <SimulationObjectDescriptor Name="ShipClassificationEvacuation" Type="ShipClassificationEvacuation"/>
+
+  <!-- Example of "Hull Descriptors"
+  you can add them in a <Descriptors> balise under the Hull description in Hulls.xml
+  -->
+ 
+  <!-- Defensive bonus to emphase their Master of Illusion: really useful to create unarmed invading fleets -->
+  <SimulationObjectDescriptor Name="ShipClassColonization" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall1" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall2" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+  <SimulationObjectDescriptor Name="ShipClassColonizationAmoeba" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall1Amoeba" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleLaserWeightBonus" Value="-0.3"     OperationType="Percent" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall2Amoeba" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleMissileWeightBonus" Value="-0.3"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Amoeba" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleKineticWeightBonus" Value="-0.3"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Amoeba" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModulePointDefenseWeightBonus" Value="-0.3"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Amoeba" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleWeightBonus" Value="-0.3"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Support Module Orientation: they can combine their hull more efficiently -->
+
+  <SimulationObjectDescriptor Name="ShipClassColonizationAutomaton" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Automaton" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleEngineWeightBonus" Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Automaton" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleRepairWeightBonus" Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Automaton" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModulePowerWeightBonus" Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Automaton" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleArmorWeightBonus" Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Automaton" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="AutomatonHealingThresholdHealth"   Left="$(MaxHealth)"     Right="$(AutomatonHealingThreshold)" BinaryOperationType="Multiplication"   OperationType="Addition" Path="ClassShip" TooltipVisibility="false"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CanHealAutomaton"   Left="$(AutomatonHealingThresholdHealth)"     Right="$(Health)" BinaryOperationType="Soustraction"   OperationType="Addition" Path="ClassShip" TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor       TargetProperty="CanHeal" Value="${CanHealAutomaton}"     OperationType="Addition" Path="ClassShip" TooltipVisibility="false"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetHealing"   Left="0.1"     Right="${CanHealAutomaton}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="ClassShip" TooltipVisibility="false"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HealingPercentAllied"   Left="0.1"     Right="${CanHealAutomaton}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Offensive Orientation-->
+  
+  <SimulationObjectDescriptor Name="ShipClassColonizationEmperor" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Emperor" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus" Value="-0.20"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Emperor" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleFighterWeightBonus" Value="-0.20"      OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleBomberWeightBonus" Value="-0.20"       OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Emperor" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleBombPopulationWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Emperor" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleBombImprovementWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Emperor" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModulePowerWeightBonus" Value="-0.5"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+
+
+  <SimulationObjectDescriptor Name="ShipClassColonizationHarmony" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.65"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Harmony" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleEngineWeightBonus"   Value="-0.75"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Harmony" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleFighterWeightBonus"      Value="-0.75"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleBomberWeightBonus"       Value="-0.75"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Harmony" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleWeightBonus"    Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Harmony" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModulePowerWeightBonus"    Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Harmony" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <!-- Aerial Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationHissho" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Hissho" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleFighterWeightBonus" Value="-0.20"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Hissho" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleBomberWeightBonus" Value="-0.20"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Hissho" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleRepairWeightBonus" Value="-0.20"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Hissho" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleBombImprovementWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Hissho" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleFighterWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleBomberWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Population Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationHoratio" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.65"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Horatio" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleBombPopulationWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Horatio" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleTroopsWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+  </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Horatio" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.60"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Horatio" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleTroopsWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Horatio" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="PositiveGrowthFactor"  Value="0.20" OperationType="Percent" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Movement & Scouting Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationResistance" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Resistance" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleEngineWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Resistance" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleScoutWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Resistance" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleEngineWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Resistance" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleScoutWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Resistance" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleEngineWeightBonus" Value="-0.8"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleScoutWeightBonus" Value="-0.8"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Life & Regeneration Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationSophon" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.5"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="+0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Sophon" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleScoutWeightBonus"    Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="+0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Sophon" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="+0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Sophon" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleWeightBonus"         Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleWeightBonus"         Value="+0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Sophon" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefenseModuleWeightBonus"         Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="+0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Sophon" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleWeightBonus"         Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassLarge1SophonConstruction" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="-0.20" OperationType="Percent" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <!-- Life & Regeneration Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationSower" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Sower" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleArmorWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Sower" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleRepairWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Sower" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleArmorWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Sower" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleRepairWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Sower" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="$(Weight)"     OperationType="Addition" Path="ClassShip" TooltipVisibility="false"/>
+      <!-- <SimulationObjectPropertyModifierDescriptor TargetProperty="Health" Value="$(Weight)"     OperationType="Addition" Path="ClassShip" TooltipVisibility="false"/>-->
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Invasion Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationSwarm" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Swarm" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleInvasionWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Swarm" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleFighterWeightBonus" Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Swarm" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleTroopsWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Swarm" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialModuleBomberWeightBonus" Value="-0.30"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Swarm" Type="ShipClass" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval"  Value="15" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ///// Orientation -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationTerran" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Terran" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleWeightBonus"         Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Terran" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.05"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Terran" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Terran" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.15"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Terran" Type="ShipClass" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.30"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ///// Orientation ///// TO MODIFY -->
+  <SimulationObjectDescriptor Name="ShipClassColonizationVaulter" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleCivilianWeightBonus" Value="-0.50"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall1Vaulter" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SupportModuleWeightBonus"         Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassSmall2Vaulter" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.05"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium1Vaulter" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeaponModuleWeightBonus"          Value="-0.25"     OperationType="Percent" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassMedium2Vaulter" Type="ShipClass">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.15"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ShipClassLarge1Vaulter" Type="ShipClass" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="-0.30"     OperationType="Percent" Path="../ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+
+  <SimulationObjectDescriptor Name="ShipClassColonization" Type="ShipClassColonization">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="3"     OperationType="Multiplication" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall1" Type="ShipClassSmall1">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="3"     OperationType="Multiplication" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassSmall2" Type="ShipClassSmall2">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="3"     OperationType="Multiplication" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassMedium1" Type="ShipClassMedium1">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="2"     OperationType="Multiplication" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassMedium2" Type="ShipClassMedium2">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="2"     OperationType="Multiplication" Path="ClassShip" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipClassLarge1" Type="ShipClassLarge1">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HullWeakness"          Value="1"     OperationType="Multiplication" Path="ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  
+
+  
+  
+  
+
+  <SimulationObjectDescriptor Name="ModuleModifierDefault" Type="ModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower"    Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPowerInvasion"    Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Weight"           Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightFlat"       Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="WeightPercent"    Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="SpecialSlotWeight" Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="PopulationCost"   Value="$(EffectiveCount)" OperationType="Multiplication" Path="ClassModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="TroopsEfficiency" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="CollateralDamageAgainstPopulation" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="CollateralDamageAgainstImprovements" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SpecialModule,Troops"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="CollateralDamageAgainstPopulation" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SubShipModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="CollateralDamageAgainstImprovements" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SubShipModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="LandInvasionStrength" Value="$(EffectiveCount)" OperationType="Multiplication" Path="SubShipModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="$(EffectiveCount)" OperationType="Multiplication" Path="DefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+
+  <!-- DEFENSE MODULE SIDE EFFECT -->
+
+  <SimulationObjectDescriptor Name="ModuleDefenseDeflector1" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"       Left="0.01"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="AccuracyBonus"    Left="-0.03"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip/WeaponModule" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseDeflector2" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"       Left="0.02"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="AccuracyBonus"    Left="-0.06"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip/WeaponModule" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseDeflector3" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"       Left="0.03"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="AccuracyBonus"    Left="-0.09"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip/WeaponModule" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleDefenseShield1" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="0.05"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealingPercent"        Left="0.01"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealing"        Left="0.01"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseShield2" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="0.10"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealingPercent"   Left="0.02"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealing"   Left="0.02"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseShield3" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="0.15"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealingPercent"   Left="0.03"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealing"   Left="0.03"     Right="$(HasRepairModule)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleDefenseAntimissile1" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"   Left="-0.03"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="-0.01"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseAntimissile2" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"   Left="-0.06"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="-0.02"     Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  <SimulationObjectDescriptor Name="ModuleDefenseAntimissile3" Type="DefenseModuleModifier">
+    <SimulationObjectPropertyModifierDescriptors> 
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="EvadeBonus"          Left="-0.09"         Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeaknessBonus"   Left="-0.04"             Right="$(EffectiveCount)" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip" TooltipVisibility="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+ 
+  
+  
+
+  <SimulationObjectDescriptor Name="ShipLevel0" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel1" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="0.05" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.05" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.05" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.05"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.05" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.05" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel2" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="0.10" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.10" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.10" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.10"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.1" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.1" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel3" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="0.20" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.20" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.20" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.20"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.20" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.20" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel4" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="0.40" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.30" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.30" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.30"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.30" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.30" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel5" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="0.80" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.40" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.40" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.40"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.40" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.40" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel6" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="1.60" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.50" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.50" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.50"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.50" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.50" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel7" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="2.40" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.60" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.60" OperationType="Percent" Path="ClassShip/WeaponModule"/>>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.60"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.60" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.60" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel8" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="3.20" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.75" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.75" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="0.75"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.75" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="0.75" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ShipLevel9" Type="ShipLevel" Serializable="true">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHealth" Value="5" OperationType="Percent" Path="ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="1" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="1" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" Value="1"     OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="1.00" OperationType="Percent" Path="ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPower" Value="1.00" OperationType="Percent" Path="ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- These descriptors are added to the fleets at the battle start depending on the battle orbit. -->
+  <SimulationObjectDescriptor Name="BattleTerritoryAllied" Type="BattleTerritory">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense"              OperationType="Multiplication" Value="$(AlliedTerritoryDefenseBonus)" Path="ClassFleet/ClassShip/DefenseModule"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin"            OperationType="Multiplication" Value="$(AlliedTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax"            OperationType="Multiplication" Value="$(AlliedTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="BattleTerritoryNeutral" Type="BattleTerritory">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" OperationType="Multiplication" Value="$(HostileTerritoryDefenseBonus)" Path="ClassFleet/ClassShip/DefenseModule"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin"            OperationType="Multiplication" Value="$(HostileTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax"            OperationType="Multiplication" Value="$(HostileTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="BattleTerritoryHostile" Type="BattleTerritory">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Defense" OperationType="Multiplication" Value="$(HostileTerritoryDefenseBonus)" Path="ClassFleet/ClassShip/DefenseModule"/>
+
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin"            OperationType="Multiplication" Value="$(HostileTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax"            OperationType="Multiplication" Value="$(HostileTerritoryAttackBonus)" Path="ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- Applied if the opponent has AffinitySheredyn (battle net) -->
+  <SimulationObjectDescriptor Name="AffectedByBattleNet" Type="AffectedByBattleNet"/>
+  
+</Datatable>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<FleetTargeting Name="DefaultFleetTargeting" FleetRatioPerEnemyShip="0">
+    <Gui>
+      <Title>%SpreadFireFleetTargetingTitle</Title>
+      <Description>%SpreadFireFleetTargetingDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Fleets/FleetsTargeting3Small" Large="Gui/DynamicBitmaps/Fleets/FleetsTargeting3Large"/>
+    </Gui>
+	</FleetTargeting>
+
+	<FleetTargeting Name="FocusFireFleetTargeting" FleetRatioPerEnemyShip="1">
+		<Gui>
+			<Title>%FocusFireFleetTargetingTitle</Title>
+     		<Description>%FocusFireFleetTargetingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsTargeting1Small" Large="Gui/DynamicBitmaps/Fleets/FleetsTargeting1Large"/>
+		</Gui>
+	</FleetTargeting>
+
+	<FleetTargeting Name="StrongFireFleetTargeting" FleetRatioPerEnemyShip=".33">
+		<Gui>
+			<Title>%StrongFireFleetTargetingTitle</Title>
+     		<Description>%StrongFireFleetTargetingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsTargeting2Small" Large="Gui/DynamicBitmaps/Fleets/FleetsTargeting2Large"/>
+		</Gui>
+	</FleetTargeting>
+
+  
+  <!--
+	<FleetTargeting Name="SpreadFireFleetTargeting" FleetRatioPerEnemyShip="0">
+		<Gui>
+			<Title>%SpreadFireFleetTargetingTitle</Title>
+     		<Description>%SpreadFireFleetTargetingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsTargeting3Small" Large="Gui/DynamicBitmaps/Fleets/FleetsTargeting3Large"/>
+		</Gui>
+	</FleetTargeting> 
+  
+  -->
+
+  <!--
+  Could be use to paralyze opponents with battle card?
+	<FleetTargeting Name="HoldFireFleetTargeting" FleetRatioPerEnemyShip="-1">
+		<Gui>
+			<Title>%HoldFireFleetTargetingTitle</Title>
+     		<Description>%HoldFireFleetTargetingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsTargeting4Small" Large="Gui/DynamicBitmaps/Fleets/FleetsTargeting4Large"/>
+		</Gui>
+	</FleetTargeting>-->
+
+</Datatable>

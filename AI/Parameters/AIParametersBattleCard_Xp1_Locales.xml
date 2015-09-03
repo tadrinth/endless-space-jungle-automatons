@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction1">
+    <AIParameter Name="myWeaponMissile" Value="1" />
+    <AIParameter Name="myWeaponKinetic" Value="1" />
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction2">
+    <AIParameter Name="myWeaponLaser" Value="2.5" />
+    <AIParameter Name="opponentDefenseLaser" Value="-5" />
+    <AIParameter Name="MediumRange" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction3">
+    <AIParameter Name="opponentWeaponMissile" Value="0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="0.5" />
+    <AIParameter Name="myDefenseMissile" Value="0.5" />
+    <AIParameter Name="myDefenseLaser" Value="0.5" />
+    <AIParameter Name="myDefenseKinetic" Value="0.5" />
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction4">
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction5">
+    <AIParameter Name="opponentWeaponMissile" Value="0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="0.5" />
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="1.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction6">
+    <AIParameter Name="myWeaponMissile" Value="0.5" />
+    <AIParameter Name="myWeaponLaser" Value="0.5" />
+    <AIParameter Name="myWeaponKinetic" Value="0.5" />
+    <AIParameter Name="opponentWeaponMissile" Value="0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="0.5" />
+    <AIParameter Name="myDefenseMissile" Value="0.5" />
+    <AIParameter Name="myDefenseLaser" Value="0.5" />
+    <AIParameter Name="myDefenseKinetic" Value="0.5" />
+    <AIParameter Name="opponentDefenseMissile" Value="0.5" />
+    <AIParameter Name="opponentDefenseLaser" Value="0.5" />
+    <AIParameter Name="opponentDefenseKinetic" Value="0.5" />
+    <AIParameter Name="ShortRange" Value="-2" />
+    <AIParameter Name="MediumRange" Value="-2" />
+    <AIParameter Name="LongRange" Value="0.3" />
+    <AIParameter Name="myHealth" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="0.5" />
+    <AIParameter Name="BiggerFleet" Value="0.5" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction7">
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="0.2" />
+    <AIParameter Name="LowerMilitaryPower" Value="1" />
+    <AIParameter Name="BiggerFleet" Value="0.5" />
+    <AIParameter Name="TinierFleet" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction8">
+    <AIParameter Name="myWeaponMissile" Value="1" />
+    <AIParameter Name="myWeaponLaser" Value="1" />
+    <AIParameter Name="myWeaponKinetic" Value="1" />
+    <AIParameter Name="opponentWeaponMissile" Value="1" />
+    <AIParameter Name="opponentWeaponLaser" Value="1" />
+    <AIParameter Name="opponentWeaponKinetic" Value="1" />
+    <AIParameter Name="ShortRange" Value="0.1" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="1" />
+    <AIParameter Name="opponentHealth" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleHeroAction9">
+    <AIParameter Name="opponentDefenseMissile" Value="1" />
+    <AIParameter Name="opponentDefenseLaser" Value="1" />
+    <AIParameter Name="opponentDefenseKinetic" Value="1" />
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="1" />
+    <AIParameter Name="HigherMilitaryPower" Value="0.5" />
+    <AIParameter Name="BiggerFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction0">
+    <AIParameter Name="myHealth" Value="0.75" />
+    <AIParameter Name="opponentHealth" Value="-5" />
+    <AIParameter Name="HigherMilitaryPower" Value="-3" />
+    <AIParameter Name="LowerMilitaryPower" Value="0.25" />
+    <AIParameter Name="ProtectingMySystem" Value="-7.5" />
+    <AIParameter Name="DeathBeforeDishonor" Value="-3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction1">
+    <AIParameter Name="myWeaponMissile" Value="-0.5" />
+    <AIParameter Name="myWeaponLaser" Value="-0.5" />
+    <AIParameter Name="myWeaponKinetic" Value="1.1000000000000001" />
+    <AIParameter Name="opponentWeaponMissile" Value="-0.5" />
+    <AIParameter Name="myDefenseMissile" Value="-0.5" />
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="-0.2" />
+    <AIParameter Name="opponentHealth" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction3">
+    <AIParameter Name="opponentWeaponMissile" Value="0.6" />
+    <AIParameter Name="opponentWeaponLaser" Value="-0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="-0.5" />
+    <AIParameter Name="ShortRange" Value="-0.2" />
+    <AIParameter Name="MediumRange" Value="0.1" />
+    <AIParameter Name="LongRange" Value="0.1" />
+    <AIParameter Name="myHealth" Value="0.2" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction4">
+    <AIParameter Name="myWeaponKinetic" Value="-1" />
+    <AIParameter Name="opponentWeaponMissile" Value="3" />
+    <AIParameter Name="opponentWeaponLaser" Value="-0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="-0.5" />
+    <AIParameter Name="myDefenseMissile" Value="0.5" />
+    <AIParameter Name="ShortRange" Value="-0.2" />
+    <AIParameter Name="MediumRange" Value="0.1" />
+    <AIParameter Name="LongRange" Value="0.1" />
+    <AIParameter Name="myHealth" Value="0.2" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction5">
+    <AIParameter Name="ShortRange" Value="0.2" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction6">
+    <AIParameter Name="myHealth" Value="0.5" />
+    <AIParameter Name="opponentHealth" Value="-5" />
+    <AIParameter Name="HigherMilitaryPower" Value="-3" />
+    <AIParameter Name="LowerMilitaryPower" Value="0.25" />
+    <AIParameter Name="ProtectingMySystem" Value="-7.5" />
+    <AIParameter Name="DeathBeforeDishonor" Value="-3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction8">
+    <AIParameter Name="opponentWeaponMissile" Value="0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="0.5" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="myHealth" Value="-0.2" />
+    <AIParameter Name="opponentHealth" Value="-0.2" />
+    <AIParameter Name="HigherMilitaryPower" Value="1" />
+    <AIParameter Name="BiggerFleet" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction9">
+    <AIParameter Name="myWeaponLaser" Value="-0.75" />
+    <AIParameter Name="opponentWeaponMissile" Value="-0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="-0.5" />
+    <AIParameter Name="opponentWeaponKinetic" Value="1" />
+    <AIParameter Name="myDefenseKinetic" Value="1" />
+    <AIParameter Name="opponentDefenseLaser" Value="0.25" />
+    <AIParameter Name="ShortRange" Value="0.5" />
+    <AIParameter Name="MediumRange" Value="-0.1" />
+    <AIParameter Name="myHealth" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction10">
+    <AIParameter Name="myWeaponMissile" Value="-0.75" />
+    <AIParameter Name="myWeaponLaser" Value="1.25" />
+    <AIParameter Name="myWeaponKinetic" Value="-0.75" />
+    <AIParameter Name="opponentDefenseMissile" Value="0.25" />
+    <AIParameter Name="opponentDefenseLaser" Value="-0.75" />
+    <AIParameter Name="opponentDefenseKinetic" Value="0.25" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="0.5" />
+    <AIParameter Name="BiggerFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction11">
+    <AIParameter Name="myWeaponMissile" Value="0.75" />
+    <AIParameter Name="myWeaponLaser" Value="0.75" />
+    <AIParameter Name="myWeaponKinetic" Value="-0.75" />
+    <AIParameter Name="opponentDefenseMissile" Value="0.75" />
+    <AIParameter Name="opponentDefenseLaser" Value="0.75" />
+    <AIParameter Name="MediumRange" Value="0.2" />
+    <AIParameter Name="LongRange" Value="0.2" />
+    <AIParameter Name="opponentHealth" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction12">
+    <AIParameter Name="opponentWeaponMissile" Value="-0.5" />
+    <AIParameter Name="opponentWeaponLaser" Value="1" />
+    <AIParameter Name="opponentWeaponKinetic" Value="-0.75" />
+    <AIParameter Name="myDefenseLaser" Value="1.5" />
+    <AIParameter Name="myDefenseKinetic" Value="-1" />
+    <AIParameter Name="ShortRange" Value="-0.25" />
+    <AIParameter Name="MediumRange" Value="0.5" />
+    <AIParameter Name="myHealth" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction13">
+    <AIParameter Name="ShortRange" Value="0.1" />
+    <AIParameter Name="MediumRange" Value="0.1" />
+    <AIParameter Name="LongRange" Value="0.1" />
+    <AIParameter Name="myHealth" Value="-1" />
+    <AIParameter Name="opponentHealth" Value="1.5" />
+    <AIParameter Name="HigherMilitaryPower" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="BattleTechAction14">
+    <AIParameter Name="ShortRange" Value="0.1" />
+    <AIParameter Name="MediumRange" Value="0.1" />
+    <AIParameter Name="LongRange" Value="0.1" />
+    <AIParameter Name="myHealth" Value="1" />
+    <AIParameter Name="opponentHealth" Value="-1" />
+    <AIParameter Name="BiggerFleet" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="DefaultFleetSorting">
+    <AIParameter Name="myWeaponLongRange" Value="-0.3" />
+    <AIParameter Name="myWeaponShortRange" Value="0.5" />
+    <AIParameter Name="opponentWeaponLongRange" Value="0.5" />
+    <AIParameter Name="opponentWeaponShortRange" Value="-0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="DefensiveFleetSorting">
+    <AIParameter Name="myDefenseMissile" Value="1" />
+    <AIParameter Name="myDefenseLaser" Value="1" />
+    <AIParameter Name="myDefenseKinetic" Value="1" />
+    <AIParameter Name="opponentHealth" Value="1" />
+    <AIParameter Name="HigherMilitaryPower" Value="0.5" />
+    <AIParameter Name="ProtectingMySystem" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="WeakerFirstFleetSorting">
+    <AIParameter Name="myHealth" Value="1" />
+    <AIParameter Name="opponentHealth" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="MostExperiencedFleetSorting">
+    <AIParameter Name="LowerMilitaryPower" Value="0.5" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+    <AIParameter Name="ProtectingMySystem" Value="0.5" />
+    <AIParameter Name="DeathBeforeDishonor" Value="0.5" />
+    <AIParameter Name="myWeaponMediumRange" Value="0.5" />
+    <AIParameter Name="opponentWeaponShortRange" Value="0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StrongestFleetSorting">
+    <AIParameter Name="opponentHealth" Value="0.5" />
+    <AIParameter Name="LowerMilitaryPower" Value="1" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+    <AIParameter Name="myWeaponLongRange" Value="0.5" />
+    <AIParameter Name="myWeaponShortRange" Value="-0.3" />
+    <AIParameter Name="opponentWeaponLongRange" Value="-0.3" />
+    <AIParameter Name="opponentWeaponShortRange" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ProtectInvadersFleetSorting">
+    <AIParameter Name="LowerMilitaryPower" Value="1" />
+    <AIParameter Name="BiggerFleet" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="DefaultFleetTargeting">
+    <AIParameter Name="opponentDefenseLaser" Value="1" />
+    <AIParameter Name="opponentHealth" Value="-0.5" />
+    <AIParameter Name="HigherMilitaryPower" Value="1" />
+    <AIParameter Name="LowerMilitaryPower" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="FocusFireFleetTargeting">
+    <AIParameter Name="ShortRange" Value="1" />
+    <AIParameter Name="HigherMilitaryPower" Value="-0.2" />
+    <AIParameter Name="LowerMilitaryPower" Value="0.5" />
+    <AIParameter Name="TinierFleet" Value="0.5" />
+    <AIParameter Name="myWeaponLongRange" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StrongFireFleetTargeting">
+    <AIParameter Name="opponentDefenseKinetic" Value="1" />
+    <AIParameter Name="LowerMilitaryPower" Value="-0.2" />
+    <AIParameter Name="TinierFleet" Value="1" />
+    <AIParameter Name="myWeaponMediumRange" Value="0.5" />
+  </AIParametersDatatableElement>
+</Datatable>

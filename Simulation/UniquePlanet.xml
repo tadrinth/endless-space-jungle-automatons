@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <UniquePlanet Name="Auriga" PlanetSize="PlanetSizeLarge" PlanetType="PlanetTypeBarren" RandWeight="1">
+    <Descriptors></Descriptors>
+    <LocalizedName>%UniquePlanetAurigaTitle</LocalizedName>
+    <LocalizedDescription>%UniquePlanetAurigaDescription</LocalizedDescription>
+    <Moon Probability="100">
+      <Temple Probability="100">
+        <AvailableTemples>Temple16</AvailableTemples>
+      </Temple>
+    </Moon>
+    <Anomaly Probability="100">
+      <AvailableAnomalies>PlanetEndlessWonder09</AvailableAnomalies>
+    </Anomaly>
+    <NarrativeEvents>
+      <NarrativeEvent Trigger="OnSystemVisited" EventName="AurigaOnSystemVisited"/>
+      <NarrativeEvent Trigger="OnSystemColonized" EventName="AurigaOnSystemColonized"/>
+      <NarrativeEvent Trigger="OnColonized" EventName="AurigaOnColonized"/>
+      <NarrativeEvent Trigger="OnMoonExplored" EventName="AurigaOnMoonExplored"/>
+      <NarrativeEvent Trigger="OnWonderRestored" EventName="AurigaOnWonderRestored"/>
+      <!-- EXAMPLE: <NarrativeEvent Trigger="OnAnomalyReduced" EventName="TechnoUnlockedFreeMove"/> -->
+      <NarrativeEvent Trigger="OnTerraformed" EventName="AurigaOnTerraformed"/>
+      <NarrativeEvent Trigger="OnSystemConquered" EventName="AurigaOnSystemConquered"/>
+      <NarrativeEvent Trigger="OnSystemRazed" EventName="AurigaOnSystemRazed"/>
+      <NarrativeEvent Trigger="OnDepleted" EventName="AurigaOnDepleted"/>
+      <NarrativeEvent Trigger="OnSystemPurified" EventName="AurigaOnSystemPurified"/>
+    </NarrativeEvents>
+    <!--EXAMPLE: <ExplorationEvent>Reward_BoostApproval_3</ExplorationEvent>-->
+  </UniquePlanet>
+  
+</Datatable>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ########################## FIGHTER DESCRIPTOR ####################### -->
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter1Melee" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.25" OperationType="Addition" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter1Chasing" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.33" OperationType="Addition" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter2OnShip" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Health" Value="20" OperationType="Addition" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter2Assault" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Health" Value="20" OperationType="Addition" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter3Melee" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="-0.15" OperationType="Addition" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter3Chasing" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="0.25" OperationType="Percent" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialFighter3OnShip" Type="ModuleSpecialFighterState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="0.25" OperationType="Percent" Path="SpecialModuleFighter"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <!-- ########################## BOMBER DESCRIPTOR ####################### -->
+
+  <SimulationObjectDescriptor Name="ModuleSpecialBomber1MovingToShip" Type="ModuleSpecialBomberState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Evade" Value="0.2" OperationType="Addition" Path="SpecialModuleBomber"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialBomber1OnShip" Type="ModuleSpecialBomberState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Evade" Value="0.1" OperationType="Addition" Path="SpecialModuleBomber"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialBomber3OnShip" Type="ModuleSpecialBomberState">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Evade" Value="0.99" OperationType="Addition" Path="SpecialModuleBomber"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ########################## POINT DEFENSE DESCRIPTOR ####################### -->
+
+  <SimulationObjectDescriptor Name="ModuleSpecialPointDefense1Generic" Type="ModuleSpecialPointDefense">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamagePerShot" OperationType="Addition" Left="$(DefensivePower)" Right="$(DefenseConversionRatio)" BinaryOperationType="Division" Path="PointDefenseModule" TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="$(ShotsPerRound)" OperationType="Division" Path="PointDefenseModule" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!--
+  <SimulationObjectDescriptor Name="ModuleSpecialPointDefense1Shield" Type="ModuleSpecialPointDefense">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamagePerShot" OperationType="Addition" Left="$(DefensivePower)" Right="$(DefenseConversionRatio)" BinaryOperationType="Division" Path="PointDefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="$(ShotsPerRound)" OperationType="Division" Path="PointDefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialPointDefense1Flak" Type="ModuleSpecialPointDefense">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamagePerShot" OperationType="Addition" Left="$(DefensivePower)" Right="$(DefenseConversionRatio)" BinaryOperationType="Division" Path="PointDefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="$(ShotsPerRound)" OperationType="Division" Path="PointDefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSpecialPointDefense1Deflector" Type="ModuleSpecialPointDefense">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefensivePower" Value="$(MilitaryPower)" OperationType="Addition" Path="./ClassShip/DefenseModule,Deflector"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamagePerShot" OperationType="Addition" Left="$(DefensivePower)" Right="$(DefenseConversionRatio)" BinaryOperationType="Division" Path="PointDefenseModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamagePerShot" Value="$(ShotsPerRound)" OperationType="Division" Path="PointDefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ModuleDefenseModifierDefault" Type="ModuleDefenseModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DefensivePower" Value="$(MilitaryPower)" OperationType="Addition" Path="./ClassShip/PointDefenseModule" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+</Datatable>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- SWARM TEMPLATES -->
+  
+  <!-- BATTLE SHIP DESIGN -->
+  <ShipDesignTemplate Name="ScoutSwarmTemplate" Hull="ShipClassSmall1Swarm" FleetWeight="0">
+    <Repartition Name="SwarmScout">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="0.6"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="ColonizerSwarmTemplate" Hull="ShipClassColonizationSwarm" FleetWeight="0">
+    <Repartition Name="SwarmColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+    <Repartition Name="SwarmColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small1SwarmTemplates" Hull="ShipClassSmall1Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmSmall1Title">
+    <Repartition Name="SwarmDefender">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.35"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.65"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmGuardian">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.7"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmRanger">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.6"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefenseModule" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+  
+  <ShipDesignTemplate Name="Small2SwarmTemplates" Hull="ShipClassSmall2Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmSmall2Title">
+
+    <Repartition Name="SwarmDefender2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.45"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.45"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmGuardian2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmRanger2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium1SwarmTemplates" Hull="ShipClassMedium1Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmMedium1Title">
+    <Repartition Name="SwarmFletcher">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" ModuleSpecialization="ModuleSpecialTroopsSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmNimitz">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" ModuleSpecialization="ModuleSpecialTroopsSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium2SwarmTemplates" Hull="ShipClassMedium2Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmMedium2Title">
+    <Repartition Name="SwarmNimitz2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmFletcher2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- no special slot -->
+  <ShipDesignTemplate Name="Large1SwarmTemplates" Hull="ShipClassLarge1Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmLarge1Title">
+    <Repartition Name="SwarmDominator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmImperator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- Full special slot -->
+  <ShipDesignTemplate Name="Large1BisSwarmTemplates" Hull="ShipClassLarge1Swarm" FleetWeight="0.3" ShipDesignName="%ShipClassSwarmLarge2Title">
+    <Repartition Name="SwarmDominatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1" ModuleSpecialization=""/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" Weight="-1" ModuleSpecialization="ModuleSpecialFighterSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization1"/>
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="SwarmImperatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1" ModuleSpecialization=""/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-3" ModuleSpecialization="ModuleSpecialBomberSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+  
+  <!-- INVASION SHIP -->
+
+  <ShipDesignTemplate Name="InvasionSmall1SwarmTemplates" Hull="ShipClassSmall1Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmSmall1Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionSmall2SwarmTemplates" Hull="ShipClassSmall2Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmSmall2Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium1SwarmTemplates" Hull="ShipClassMedium1Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmMedium1Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium2SwarmTemplates" Hull="ShipClassMedium2Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmMedium2Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1SwarmTemplates" Hull="ShipClassLarge1Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-4" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+
+  <ShipDesignTemplate Name="InvasionLarge1BisSwarmTemplates" Hull="ShipClassLarge1Swarm" FleetWeight="0.3" ShipDesignName="%InvasionShipClassSwarmLarge2Title" Tags="Invasion">
+    <Repartition Name="InvasionSwarmDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-4" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionSwarmGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+</Datatable>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <DefenseModule Name="ModuleDefenseDeflector1" Cost="4" WeightFlat="8" MilitaryPower="10" Level="1">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="5.0" Absorption="0" Defense="200">
+      <WeaponClass>Kinetic</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Deflector_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleDefenseDeflector1Title</Title>
+      <Description>%ModuleDefenseDeflector1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector1Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector1Large"/>
+      <CharCode>1</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseDeflector2" Cost="16" WeightFlat="10" MilitaryPower="20" Level="2">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="12.0" Absorption="0" Defense="300">
+      <WeaponClass>Kinetic</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Deflector_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHexaferrum</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseDeflector2Title</Title>
+      <Description>%ModuleDefenseDeflector2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector7Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector7Large"/>
+      <CharCode>2</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseDeflector3" Cost="70" WeightFlat="12" MilitaryPower="40" Level="3">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="25.0" Absorption="0" Defense="420">
+      <WeaponClass>Kinetic</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Deflector_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHexaferrum</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseDeflector3Title</Title>
+      <Description>%ModuleDefenseDeflector3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector10Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseDeflector10Large"/>
+      <CharCode>3</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseShield1" Cost="4" WeightFlat="6" MilitaryPower="8" Level="1">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="0.0" Absorption="5" Defense="120">
+      <WeaponClass>Laser</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Shield_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleDefenseShield1Title</Title>
+      <Description>%ModuleDefenseShield1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseShield1Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseShield1Large"/>
+      <CharCode>1</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseShield2" Cost="24" WeightFlat="8" MilitaryPower="16" Level="2">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="0.0" Absorption="10" Defense="200">
+      <WeaponClass>Laser</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Shield_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseShield2Title</Title>
+      <Description>%ModuleDefenseShield2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseShield6Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseShield6Large"/>
+      <CharCode>2</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseShield3" Cost="70" WeightFlat="10" MilitaryPower="32" Level="3">
+    <Simulation InterceptionAccuracy="0" DeflectionPerTurn="0.0" Absorption="20" Defense="300">
+      <WeaponClass>Laser</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_Shield_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceAnti-Matter</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseShield3Title</Title>
+      <Description>%ModuleDefenseShield3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseShield8Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseShield8Large"/>
+      <CharCode>3</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseAntimissile1" Cost="8" WeightFlat="4" MilitaryPower="5" Level="1">
+    <Simulation InterceptionAccuracy="10" DeflectionPerTurn="0.0" Absorption="0" Defense="60">
+      <WeaponClass>Missile</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_FlakCannon_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleDefenseAntimissile1Title</Title>
+      <Description>%ModuleDefenseAntimissile1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile1Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile1Large"/>
+      <CharCode>1</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseAntimissile2" Cost="24" WeightFlat="6" MilitaryPower="10" Level="2">
+    <Simulation InterceptionAccuracy="17" DeflectionPerTurn="0.0" Absorption="0" Defense="120" >
+      <WeaponClass>Missile</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_FlakCannon_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseAntimissile2Title</Title>
+      <Description>%ModuleDefenseAntimissile2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile5Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile5Large"/>
+      <CharCode>2</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+  <DefenseModule Name="ModuleDefenseAntimissile3" Cost="70" WeightFlat="8" MilitaryPower="20" Level="3">
+    <Simulation InterceptionAccuracy="34" DeflectionPerTurn="0.0" Absorption="0" Defense="200">
+      <WeaponClass>Missile</WeaponClass>
+    </Simulation>
+    <Descriptors>ModuleDefenseModifierDefault</Descriptors>
+    <Reflection>
+      <Prefab Path="Prefabs/Modules/Defenses/DM_FlakCannon_A"/>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceTitanium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleDefenseAntimissile3Title</Title>
+      <Description>%ModuleDefenseAntimissile3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile8Small" Large="Gui/DynamicBitmaps/Modules/ModuleDefenseAntimissile8Large"/>
+      <CharCode>3</CharCode>
+	  	  <Tooltip>
+        <Description>%ModuleDefenseToPointDefenseTooltipEffect</Description>
+		  </Tooltip>
+    </Gui>
+  </DefenseModule>
+
+</Datatable>

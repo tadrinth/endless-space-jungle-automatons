@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <AnomalyEffect Name="PlanetAnomaly01">
+    <PlanetRimPower>0.5</PlanetRimPower>
+    <PlanetRimColor>0;150;60;255</PlanetRimColor>
+    <AtmosphereColor>7;129;73;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Garden_Of_Eden_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly02">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Ancient_Ruins_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly03">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Ancient_Artefacts_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly04">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Dust_Ruins_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly05">
+    <PlanetRimPower>1</PlanetRimPower>
+    <PlanetRimColor>0;136;238;255</PlanetRimColor>
+    <AtmosphereColor>17;59;84;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Coral_Reefs_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly06">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly07">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>20;110;60;255</PlanetRimColor>
+    <AtmosphereColor>43;95;47;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly08">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Strange_Fossils_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly09">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>0;150;60;255</PlanetRimColor>
+    <AtmosphereColor>43;95;47;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly10">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>55;55;70;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly11">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Dust_Lode_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly12">
+    <PlanetRimPower>1</PlanetRimPower>
+    <PlanetRimColor>0;136;238;255</PlanetRimColor>
+    <AtmosphereColor>17;59;84;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Hadopelagic_Life_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly13">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>0;150;60;255</PlanetRimColor>
+    <AtmosphereColor>43;95;47;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Microfactories_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly14">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Antonov_Rings_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly15">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>130;70;10;255</PlanetRimColor>
+    <AtmosphereColor>160;90;30;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Huygens_Rings_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly16">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly17">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>30;150;60;255</PlanetRimColor>
+    <AtmosphereColor>43;95;47;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly18">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly19">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly20">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Molten_Springs_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly21">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly22">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>200;200;200;255</PlanetRimColor>
+    <AtmosphereColor>90;90;90;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Ice-10</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly23">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly24">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly25">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly26">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Permanent_Monsoon_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly27">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly28">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>0;136;238;255</PlanetRimColor>
+    <AtmosphereColor>17;59;84;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Metallic_Waters_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly29">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly30">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Aurora_Waves_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_Aurora_Waves_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly31">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly32">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly33">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly34">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>70;70;170;255</PlanetRimColor>
+    <AtmosphereColor>75;75;100;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly35">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly36">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly37">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly38">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>0.54;0.47;0.02;0.5</PlanetRimColor>
+    <AtmosphereColor>0.54;0.47;0.02;0.5</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly39" DependingSize="true">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>140;100;100;255</PlanetRimColor>
+    <AtmosphereColor>85;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Meteor_Strike_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly40">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly41">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly42">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;170;170;255</PlanetRimColor>
+    <AtmosphereColor>90;90;90;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Polar_Tempests_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly43">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly44">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>160;50;50;255</PlanetRimColor>
+    <AtmosphereColor>85;65;65;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly45">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>150;70;70;255</PlanetRimColor>
+    <AtmosphereColor>100;75;75;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly46">
+    <PlanetRimPower>1</PlanetRimPower>
+    <PlanetRimColor>200;50;50;255</PlanetRimColor>
+    <AtmosphereColor>90;45;45;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Kesler_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly47">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>160;50;50;255</PlanetRimColor>
+    <AtmosphereColor>85;65;65;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly48">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>160;50;50;255</PlanetRimColor>
+    <AtmosphereColor>85;65;65;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Acid_Rain_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly49">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>100;100;120;255</PlanetRimColor>
+    <AtmosphereColor>70;70;85;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/Effects/Prefabs/Anomalies/Fx_ElectroMagnetic_Radiation_01</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly50">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>160;50;50;255</PlanetRimColor>
+    <AtmosphereColor>85;65;65;255</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly51">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>30;69;55;255</PlanetRimColor>
+    <AtmosphereColor>30;69;55;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Halloween_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly52" DependingSize="true">
+    <PlanetRimPower>2</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>95;75;43;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Hostile_Dust_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly53">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>30;69;55;255</PlanetRimColor>
+    <AtmosphereColor>30;69;55;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Endless_Trouble</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetAnomaly54" DependingSize="true">
+    <PlanetRimPower>1</PlanetRimPower>
+    <PlanetRimColor>200;50;50;255</PlanetRimColor>
+    <AtmosphereColor>90;45;45;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Alterations/Prefabs/Anomalies/ALT_Humeris_Insidentes_01</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <!-- NATURAL_WONDERS -->
+  <AnomalyEffect Name="PlanetNaturalWonder01">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Dust_Nebula</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder02">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_The_Platforms_Of_Ys</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder03">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/CelestialBodies/Wonders/Dummy/Wonder_The_Glittering_Halls</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder04">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/CelestialBodies/Wonders/Dummy/Wonder_The_Tree_of_Worlds</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder05">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/CelestialBodies/Wonders/Dummy/Wonder_Tunneled_Slipgates</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder06">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_The_Rings_of_Urula</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder07">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Perpetual_Flux</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetNaturalWonder08">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>24;84;145;255</PlanetRimColor>
+    <AtmosphereColor>31;65;76;128</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_A_Entropic_Field</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+  
+  <AnomalyEffect Name="PlanetNaturalWonder09">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>170;170;170;255</PlanetRimColor>
+    <AtmosphereColor>90;90;90;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Polaris_Workshop_Small</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+  
+  <!-- ENDLESS_WONDERS RESTORED -->
+  
+  <AnomalyEffect Name="PlanetEndlessWonder01Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Solar_Farm</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder02Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/CelestialBodies/Wonders/Dummy/Wonder_Core_Tap_Installation</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder03Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Sensor_Platform</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder04Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Fulcrum_Siphon</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder05Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Stellar_Borer</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder06Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Wormhole_Pendulum</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder07Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>30;69;55;255</PlanetRimColor>
+    <AtmosphereColor>30;69;55;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Door_to_Infinity</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder08Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Soil_Summoner</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetEndlessWonder09Restoration">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Auriga</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+  
+  <!-- ENDLESS_WONDERS RUINS -->
+  
+  <AnomalyEffect Name="PlanetEndlessWonder01">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Solar_Farm_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder02">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet></AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy>Graph/CelestialBodies/Wonders/Dummy/Wonder_Core_Tap_Installation_Ruins</AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder03">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Sensor_Platform_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder04">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Fulcrum_Siphon_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder05">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Stellar_Borer_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder06">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Wormhole_Pendulum_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder07">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>30;69;55;255</PlanetRimColor>
+    <AtmosphereColor>30;69;55;255</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Door_to_Infinity_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+
+  <AnomalyEffect Name="PlanetEndlessWonder08">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Soil_Summoner_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  <AnomalyEffect Name="PlanetEndlessWonder09">
+    <PlanetRimPower>1.5</PlanetRimPower>
+    <PlanetRimColor>240;140;0;255</PlanetRimColor>
+    <AtmosphereColor>129;92;33;75</AtmosphereColor>
+    <AnomalyPrefabPlanet>Graph/CelestialBodies/Wonders/Planet/Wonder_Auriga_Ruins</AnomalyPrefabPlanet>
+    <AnomalyPrefabDummy></AnomalyPrefabDummy>
+  </AnomalyEffect>
+
+  
+</Datatable>

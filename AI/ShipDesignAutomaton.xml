@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- CLASSIC SHIP DESIGN -->
+
+  <ShipDesignTemplate Name="ScoutAutomatonTemplate" Hull="ShipClassSmall1Automaton" FleetWeight="0">
+    <Repartition Name="AutomatonScout">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="0.6"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="ColonizerAutomatonTemplate" Hull="ShipClassColonizationAutomaton" FleetWeight="0">
+    <Repartition Name="AutomatonColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+    <Repartition Name="AutomatonColonizerBis">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  
+  <ShipDesignTemplate Name="Small1AutomatonTemplates" Hull="ShipClassSmall1Automaton" FleetWeight="0.3" ShipDesignName="%ShipClassAutomatonSmall1Title">
+    <Repartition Name="AutomatonDefender">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.5"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonGuardian">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.6"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonRanger">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+ 
+
+  <ShipDesignTemplate Name="Small2AutomatonTemplates" Hull="ShipClassSmall2Automaton" FleetWeight="0.3"
+                      ShipDesignName="%ShipClassAutomatonSmall2Title">
+
+    <Repartition Name="AutomatonDefender2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonGuardian2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonRanger2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+ 
+
+  <ShipDesignTemplate Name="Medium1AutomatonTemplates" Hull="ShipClassMedium1Automaton" FleetWeight="0.3" ShipDesignName="%ShipClassAutomatonMedium1Title">
+    <Repartition Name="AutomatonFletcher">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonNimitz">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.55"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+ 
+
+  <ShipDesignTemplate Name="Medium2AutomatonTemplates" Hull="ShipClassMedium2Automaton" FleetWeight="0.3" ShipDesignName="%ShipClassAutomatonMedium2Title">
+    <Repartition Name="AutomatonNimitz2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.4"/>
+      
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization3" Weight="-2"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonFletcher2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  
+
+  <!-- no special module-->
+  <ShipDesignTemplate Name="Large1AutomatonTemplates" Hull="ShipClassLarge1Automaton" FleetWeight="0.3" ShipDesignName="%ShipClassAutomatonLarge1Title">
+    <Repartition Name="AutomatonDominator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.5"/>
+
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonImperator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.5"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- full  special module-->
+  <ShipDesignTemplate Name="Large1BisAutomatonTemplates" Hull="ShipClassLarge1Automaton" FleetWeight="0.3" ShipDesignName="%ShipClassAutomatonLarge2Title">
+    <Repartition Name="AutomatonDominatorBis">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-2"/>
+
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.6"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="AutomatonImperatorBis">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+  
+  <!-- INVASION SHIP DESIGN -->
+
+  <ShipDesignTemplate Name="InvasionSmall1AutomatonTemplates" Hull="ShipClassSmall1Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonSmall1Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionSmall2AutomatonTemplates" Hull="ShipClassSmall2Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonSmall2Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium1AutomatonTemplates" Hull="ShipClassMedium1Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonMedium1Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium2AutomatonTemplates" Hull="ShipClassMedium2Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonMedium2Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1AutomatonTemplates" Hull="ShipClassLarge1Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-4" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1BisAutomatonTemplates" Hull="ShipClassLarge1Automaton" FleetWeight="0.3" ShipDesignName="%InvasionShipClassAutomatonLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionAutomatonDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-4" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionAutomatonGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+</Datatable>

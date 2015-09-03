@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BattleSequenceSubShips Name="FighterDefault" InitialState="Fighter.Moving" InterruptionState="Fighter.ReturningToHangar">
+    <BattleState Name="Fighter.Moving" NumberOfRounds="2" NumberOfRoundsRequested="2" TargetType="Fighter" CanAttack="false" AlternativeState="Fighter.MovingWithoutEnnemy" NextStates="Fighter.Melee">
+      <MotionSequence InitialState="GoToMelee">
+        <MotionState Name="GoToMelee" MotionType="GoToPosition" Position="-5500,600,4500" SpeedType="ClampOnDuration" NumberOfRoundsDuration="3"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.MovingWithoutEnnemy" NumberOfRounds="2" NumberOfRoundsRequested="2" NextStates="Fighter.Melee">
+      <MotionSequence InitialState="GoToMelee">
+        <MotionState Name="GoToMelee" MotionType="GoToPosition" Position="-5500,600,4500" SpeedType="ClampOnDuration" NumberOfRoundsDuration="2"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.Melee" NumberOfRounds="4" CanAttack="true" FirstAttackRound="0" AttackRoundFrequency="1" TargetType="Fighter" NextStates="Fighter.Chasing;Fighter.MovingToShip">
+      <MotionSequence InitialState="MeleePrepare" LoopBeginningState="MeleePrepare" LoopNumberOfRoundsRequested="1" NeedsSynchronization="true">
+        <MotionState Name="MeleePrepare" MotionType="GoToFightingZone" SpeedType="ClampOnDuration" NumberOfRoundsDurationMin="0.6" NumberOfRoundsDurationMax="0.85"/>
+        <MotionState Name="MeleeAttack" MotionType="GoToFightingZoneCenter" SpeedType="ClampOnDuration" NumberOfRoundsDuration="0.15" PerformAttack="true" AttackStartingRatioMin="0.05" AttackStartingRatioMax="0.15" AttackEndingRatioMin="0.8" AttackEndingRatioMax="0.9"/>
+        <MotionState Name="MeleeRoaming" MotionType="KeepCurrentDirection" DurationType="FillSequenceRemainingDuration" Speed="150"/>
+      </MotionSequence>
+    </BattleState>
+    <!--<BattleState Name="Fighter.PreparingChase" NumberOfRounds="1" NumberOfRoundsRequested="1" CanAttack="false" TargetType="Bomber" NextStates="Fighter.Chasing" Priority="0">
+      <MotionSequence InitialState="ReachChasingTarget">
+        <MotionState Name="ReachChasingTarget" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.Chasing" NumberOfRounds="-1" CanAttack="true" FirstAttackRound="0" AttackRoundFrequency="1" TargetType="Bomber" NextStates="Fighter.MovingToShip">
+      <MotionSequence InitialState="Chasing" LoopBeginningState="Chasing">
+        <MotionState Name="Chasing" MotionType="FollowTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1" PerformAttack="true" AttackStartingRatioMin="0.7" AttackStartingRatioMax="0.8" AttackEndingRatioMin="0.9" AttackEndingRatioMax="1.0"/>
+      </MotionSequence>
+    </BattleState>-->
+    <BattleState Name="Fighter.Chasing" NumberOfRounds="-1" CanAttack="true" FirstAttackRound="1" AttackRoundFrequency="1" TargetType="Bomber" ResetOnTargetSwitching="true" NextStates="Fighter.MovingToShip">
+      <MotionSequence InitialState="ReachChasingTarget" LoopBeginningState="Chasing">
+        <MotionState Name="ReachChasingTarget" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1"/>
+        <MotionState Name="Chasing" MotionType="FollowTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1" PerformAttack="true" AttackStartingRatioMin="0.4" AttackStartingRatioMax="0.5" AttackEndingRatioMin="0.8" AttackEndingRatioMax="0.9"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.MovingToShip" NumberOfRounds="1" NumberOfRoundsRequested="1" CanAttack="false" TargetType="EnnemyShip" NextStates="Fighter.OnShip" Priority="1">
+      <MotionSequence InitialState="ReachShipTarget">
+        <MotionState Name="ReachShipTarget" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.OnShip" NumberOfRounds="-1" CanAttack="true" FirstAttackRound="1" AttackRoundFrequency="2" TargetType="EnnemyShip" ResetOnTargetSwitching="true" NextStates="Fighter.ReturningToHangar">
+      <MotionSequence InitialState="ReachBoardingPosition" LoopBeginningState="ReachBoardingPosition" LoopNumberOfRoundsRequested="2">
+        <!--<MotionState Name="ReachBoardingPosition" MotionType="GoToShipAssaultPosition" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1.25"/>-->
+        <MotionState Name="ReachBoardingPosition" MotionType="GoToShipAssaultPosition" SpeedType="ClampOnDuration" NumberOfRoundsDurationMin="1" NumberOfRoundsDurationMax="1.25"/>
+        <MotionState Name="RunBoarding" MotionType="ProcessShipAssault" SpeedType="ClampOnDuration" NumberOfRoundsDuration="0.75" PerformAttack="true" AttackStartingRatioMin="0.0" AttackStartingRatioMax="0.05" AttackEndingRatioMin="0.35" AttackEndingRatioMax="0.4"/>
+        <MotionState Name="OnShipRoaming" MotionType="KeepCurrentDirection" DurationType="FillSequenceRemainingDuration" Speed="150"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Fighter.ReturningToHangar" NumberOfRounds="-1" CanAttack="false" TargetType="MyShip">
+      <MotionSequence InitialState="ReachMotherShip" LoopBeginningState="FollowShip">
+        <MotionState Name="ReachMotherShip" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="0.8"/>
+        <MotionState Name="FollowShip" MotionType="FollowTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1"/>
+      </MotionSequence>
+    </BattleState>
+  </BattleSequenceSubShips>
+
+  <BattleSequenceSubShips Name="BomberDefault" InitialState="Bomber.MovingToShip" InterruptionState="Bomber.ReturningToHangar">
+    <BattleState Name="Bomber.MovingToShip" NumberOfRounds="4" NumberOfRoundsRequested="4" CanAttack="false" TargetType="EnnemyShip" NextStates="Bomber.OnShip">
+      <MotionSequence InitialState="ReachShipTarget">
+        <MotionState Name="ReachShipTarget" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="4"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Bomber.OnShip" NumberOfRounds="-1" CanAttack="true" FirstAttackRound="1" AttackRoundFrequency="2" TargetType="EnnemyShip" ResetOnTargetSwitching="true" NextStates="Bomber.ReturningToHangar">
+      <MotionSequence InitialState="ReachBoardingPosition" LoopBeginningState="ReachBoardingPosition" LoopNumberOfRoundsRequested="2">
+        <!--<MotionState Name="ReachBoardingPosition" MotionType="GoToShipAssaultPosition" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1.25"/>-->
+        <MotionState Name="ReachBoardingPosition" MotionType="GoToShipAssaultPosition" SpeedType="ClampOnDuration" NumberOfRoundsDurationMin="1" NumberOfRoundsDurationMax="1.25"/>
+        <MotionState Name="RunBoarding" MotionType="ProcessShipAssault" SpeedType="ClampOnDuration" NumberOfRoundsDuration="0.75" PerformAttack="true" AttackStartingRatioMin="0" AttackStartingRatioMax="0.05" AttackEndingRatioMin="0.3" AttackEndingRatioMax="0.35"/>
+        <MotionState Name="OnShipRoaming" MotionType="KeepCurrentDirection" DurationType="FillSequenceRemainingDuration" Speed="-1"/>
+      </MotionSequence>
+    </BattleState>
+    <BattleState Name="Bomber.ReturningToHangar" NumberOfRounds="-1" CanAttack="false" TargetType="MyShip">
+      <MotionSequence InitialState="ReachMotherShip" LoopBeginningState="FollowShip">
+        <MotionState Name="ReachMotherShip" MotionType="GoToTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="0.8"/>
+        <MotionState Name="FollowShip" MotionType="FollowTarget" SpeedType="ClampOnDuration" NumberOfRoundsDuration="1"/>
+      </MotionSequence>
+    </BattleState>
+  </BattleSequenceSubShips>
+</Datatable>

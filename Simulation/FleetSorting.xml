@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- 
+		Order="Asc|Desc"
+	-->
+
+	<FleetSorting Name="DefaultFleetSorting" TargetProperty="Health" Order="Desc">
+		<Gui>
+			<Title>%DefaultFleetSortingTitle</Title>
+     		<Description>%DefaultFleetSortingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation0Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation0Large"/>
+		</Gui>
+	</FleetSorting>
+
+	<FleetSorting Name="DefensiveFleetSorting" TargetProperty="Defense" Order="Desc">
+		<Gui>
+			<Title>%DefensiveFleetSortingTitle</Title>
+     		<Description>%DefensiveFleetSortingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation1Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation1Large"/>
+		</Gui>
+	</FleetSorting>
+
+	<FleetSorting Name="WeakerFirstFleetSorting" TargetProperty="MilitaryPower" Order="Asc">
+		<Gui>
+			<Title>%WeakerFirstFleetSortingTitle</Title>
+     		<Description>%WeakerFirstFleetSortingDescription</Description>
+     		<Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation2Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation2Large"/>
+		</Gui>
+	</FleetSorting>
+
+  <FleetSorting Name="MostExperiencedFleetSorting" TargetProperty="CurrentXP" Order="Desc">
+    <Gui>
+      <Title>%MostExperiencedFleetSortingTitle</Title>
+      <Description>%MostExperiencedFleetSortingDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation3Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation3Large"/>
+    </Gui>
+  </FleetSorting>
+
+  <FleetSorting Name="StrongestFleetSorting" TargetProperty="MilitaryPower" Order="Desc">
+    <Gui>
+      <Title>%StrongestFleetSortingTitle</Title>
+      <Description>%StrongestFleetSortingDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation4Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation4Large"/>
+    </Gui>
+  </FleetSorting>
+
+  <FleetSorting Name="ProtectInvadersFleetSorting" TargetProperty="MilitaryPowerInvasion" Order="Asc">
+    <Gui>
+      <Title>%ProtectInvadersFleetSortingTitle</Title>
+      <Description>%ProtectInvadersFleetSortingDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Fleets/FleetsFormation4Small" Large="Gui/DynamicBitmaps/Fleets/FleetsFormation5Large"/>
+    </Gui>
+  </FleetSorting>
+
+</Datatable>

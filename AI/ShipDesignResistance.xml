@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- RESISTANCE TEMPLATES -->
+  <ShipDesignTemplate Name="ScoutResistanceTemplate" Hull="ShipClassSmall1Resistance" FleetWeight="0">
+    <Repartition Name="ResistanceScout">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="0.6"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="ColonizerResistanceTemplate" Hull="ShipClassColonizationResistance" FleetWeight="0">
+    <Repartition Name="ResistanceColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+    <Repartition Name="ResistanceColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small1ResistanceTemplates" Hull="ShipClassSmall1Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceSmall1Title">
+    <Repartition Name="ResistanceDefender">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.6"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceGuardian">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceRanger">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small2ResistanceTemplates" Hull="ShipClassSmall2Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceSmall2Title">
+
+    <Repartition Name="ResistanceDefender2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceGuardian2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceRanger2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium1ResistanceTemplates" Hull="ShipClassMedium1Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceMedium1Title">
+    <Repartition Name="ResistanceFletcher">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+  
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceNimitz">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.4"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium2ResistanceTemplates" Hull="ShipClassMedium2Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceMedium2Title">
+    <Repartition Name="ResistanceNimitz2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceFletcher2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-2"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+
+  </ShipDesignTemplate>
+
+  <!-- no special slots -->
+  <ShipDesignTemplate Name="Large1ResistanceTemplates" Hull="ShipClassLarge1Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceLarge1Title">
+    <Repartition Name="ResistanceDominator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceImperator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModulePower" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- full special slots -->
+  <ShipDesignTemplate Name="Large1BisResistanceTemplates" Hull="ShipClassLarge1Resistance" FleetWeight="0.3" ShipDesignName="%ShipClassResistanceLarge2Title">
+    <Repartition Name="ResistanceDominatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization2" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="ResistanceImperatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.3"/>
+
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.1"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization2" Weight="-2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-2"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- INVASION SHIP -->
+
+  <ShipDesignTemplate Name="InvasionSmall1ResistanceTemplates" Hull="ShipClassSmall1Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceSmall1Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionSmall2ResistanceTemplates" Hull="ShipClassSmall2Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceSmall2Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium1ResistanceTemplates" Hull="ShipClassMedium1Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceMedium1Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium2ResistanceTemplates" Hull="ShipClassMedium2Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceMedium2Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1ResistanceTemplates" Hull="ShipClassLarge1Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-4" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+
+  <ShipDesignTemplate Name="InvasionLarge1BisResistanceTemplates" Hull="ShipClassLarge1Resistance" FleetWeight="0.3" ShipDesignName="%InvasionShipClassResistanceLarge2Title" Tags="Invasion">
+    <Repartition Name="InvasionResistanceDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-4" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionResistanceGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+</Datatable>

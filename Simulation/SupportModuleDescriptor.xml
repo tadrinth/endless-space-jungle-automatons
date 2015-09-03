@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- TEST FOR AFFECTING A WHOLE FLEET
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1000"   OperationType="Addition" Path="../ClassFleet/ClassShip"/>
+      -->
+  <!-- TEST FOR AFFECTING SHIP COST
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Cost"      Left="-0.04"   OperationType="Percent" Path="./ClassShip" IsBase="true"/>
+      -->
+  
+  <!-- BOMB MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportBomb1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HasBombKillPopulation" Value="1" OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportBomb2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="HasBombDestroyImprovements" Value="1" OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <!-- ARMOR MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportArmor1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"
+                                                        Left="0.50" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   
+                                                        OperationType="Percent" 
+                                                        Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"
+                                                        Left="0.05" Right="${EffectiveCount}" BinaryOperationType="Multiplication"
+                                                        OperationType="Percent"
+                                                        Path="./ClassShip/DefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="ModuleSupportArmor2" Type="SupportModule"><!-- Strategic Resource Prerequisite -->
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.1" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="0.75"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.15" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor3Terran" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.15" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1.25"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor4" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.2" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1.25"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor5" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.25" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1.5"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor6" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.3" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="1.75"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportArmor6Terran" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense"        Left="0.35" Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent"  Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxHealth"      Left="2"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+
+
+
+
+  <!-- POWER MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportPower1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.30"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.30"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportPower2" Type="SupportModule"><!-- Strategic Resource Prerequisite -->
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.35"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.35"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.15"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="./ClassShip/DefenseModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportPower3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.45"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.45"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.2"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="./ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CriticChance" Left="0.15"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportPower4" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.05"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.05"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.05"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CriticChance" Left="0.05"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+    <SimulationObjectDescriptor Name="ModuleSupportPower5" Type="SupportModule"><!-- Strategic Resource Prerequisite -->
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.1"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.1"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.08"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CriticChance" Left="0.08"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportPower6" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.15"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.15"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.1"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CriticChance" Left="0.1"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportPower6Swarm" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMin" Left="0.2"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DamageMax" Left="0.2"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"     OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Defense" Left="0.15"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/DefenseModule"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="CriticChance" Left="0.15"  Right="${EffectiveCount}" BinaryOperationType="Multiplication"      OperationType="Percent" Path="../ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+
+
+
+
+  <!-- INVASION MODS -->
+  <!--<SimulationObjectDescriptor Name="ModuleSupportInvasion1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="120"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ModuleSupportInvasion2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!--   <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="80"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>-->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="0.10"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+ <!-- <SimulationObjectDescriptor Name="ModuleSupportInvasion3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="360"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor> -->
+
+  <!-- <SimulationObjectDescriptor Name="ModuleSupportInvasion3Hissho" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="500"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ModuleSupportInvasion4" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="0.15"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="../ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <!--     <SimulationObjectDescriptor Name="ModuleSupportInvasion5" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="300"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="0.25"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ModuleSupportInvasion5Terran" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!--    <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="300"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>-->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="0.10"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportInvasion6" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!--    <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="300"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>-->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MilitaryPowerInvasion"      Left="0.25"   Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+
+
+  <!-- ENGINE MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportEngine1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="2"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportEngine2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="3"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="../ClassFleet"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Evade"   Left="0.05"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeakness"   Left="10"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportEngine3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="4"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FreeSpeed" Left="2"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="2"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="../ClassFleet"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Evade"   Left="0.10"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeakness"   Left="20"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportEngine4" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="5"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FreeSpeed" Left="3"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Speed" Left="2"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="../ClassFleet"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FreeSpeed" Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="../ClassFleet"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Evade"   Left="0.15"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HullWeakness"   Left="30"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+  
+
+
+
+
+
+  <!-- SCOUT MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportScout1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DetectionRadius"   Left="4"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Accuracy"   Left="0.03"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportScout2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!-- TODO : +1 Fleet Cloaking bonus -->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DetectionRadius"   Left="6"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Accuracy"   Left="0.05"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportScout3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!-- TODO : +1 Fleet Cloaking bonus -->
+      <!-- TODO : +1 Fleet Detection bonus -->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="DetectionRadius"   Left="8"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="Accuracy"   Left="0.07"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+    
+
+
+
+
+
+  <!-- REPAIR MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportRepair1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <!--<SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetBattleHealing"   Left="150"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip,ShipClassSmall1"/>-->
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetBattleHealing"   Left="15"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetHealingAllied"   Left="60"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="ModuleRepairRateAllied"   Left="0.25"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HasRepairModule"   Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportRepair2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealingPercent"   Left="0.10"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetHealingPercentAllied"   Left="0.02"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="ModuleRepairRate"   Left="0.25"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HasRepairModule"   Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportRepair3" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="BattleHealing"   Left="180"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetHealing"   Left="60"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="ModuleRepairRateAllied"       Left="0.1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="../ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HasRepairModule"   Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportRepair4" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetBattleHealingPercent"   Left="0.02"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="FleetHealingPercent"   Left="0.02"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Percent" Path="./ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="ModuleRepairRate"   Left="0.1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="../ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="HasRepairModule"   Left="1"    Right="${EffectiveCount}" BinaryOperationType="Multiplication"    OperationType="Addition" Path="./ClassShip" TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+    
+
+
+
+
+
+  <!-- TONNAGE MODS -->
+  <SimulationObjectDescriptor Name="ModuleSupportTonnage1" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxWeight"   Left="25"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ModuleSupportTonnage2" Type="SupportModule">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyBinaryModifierDescriptor TargetProperty="MaxWeight"   Left="50"     Right="${EffectiveCount}" BinaryOperationType="Multiplication"   OperationType="Addition" Path="./ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+    <SimulationObjectPropertyDescriptors/>
+  </SimulationObjectDescriptor>
+
+</Datatable>

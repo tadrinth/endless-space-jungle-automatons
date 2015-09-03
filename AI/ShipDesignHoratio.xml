@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- HORATIO TEMPLATES -->
+  <ShipDesignTemplate Name="ScoutHoratioTemplate" Hull="ShipClassSmall1Horatio" FleetWeight="0">
+    <Repartition Name="HoratioScout">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleScout" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <!-- Only 20% of the scout is fullfilled, the rest must be let "clear" -->
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="0.6"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="ColonizerHoratioTemplate" Hull="ShipClassColonizationHoratio" FleetWeight="0">
+    <Repartition Name="HoratioColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+    <Repartition Name="HoratioColonizer">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleCivilian" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="" ModuleCategory="" Weight="1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small1HoratioTemplates" Hull="ShipClassSmall1Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioSmall1Title">
+    <Repartition Name="HoratioDefender">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioGuardian">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioRanger">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Small2HoratioTemplates" Hull="ShipClassSmall2Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioSmall2Title">
+
+    <Repartition Name="HoratioDefender2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioGuardian2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioRanger2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- cannot use their hull specificity as an AI-->
+  <ShipDesignTemplate Name="Medium1HoratioTemplates" Hull="ShipClassMedium1Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioMedium1Title">
+    <Repartition Name="HoratioFletcher">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioNimitz">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" ModuleSpecialization="ModuleSpecialFighterSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="Medium2HoratioTemplates" Hull="ShipClassMedium2Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioMedium2Title">
+    <Repartition Name="HoratioNimitz2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.7"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioFletcher2">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.2"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.4"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization1" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- full troops -->
+  <ShipDesignTemplate Name="Large1HoratioTemplates" Hull="ShipClassLarge1Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioLarge1Title">
+    <Repartition Name="HoratioDominator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioImperator">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.1"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.5"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleArmor" Weight="0.2"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization2"/>
+      
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <!-- different specials -->
+  <ShipDesignTemplate Name="Large1BisHoratioTemplates" Hull="ShipClassLarge1Horatio" FleetWeight="0.3" ShipDesignName="%ShipClassHoratioLarge2Title">
+    <Repartition Name="HoratioDominatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModulePointDefense" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" Weight="-1" ModuleSpecialization="ModuleSpecialFighterSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="HoratioImperatorBis">
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="DefenseModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.25"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+      <ModuleRepartition ModuleFamily="WeaponModule" ModuleCategory="" Weight="0.15"/>
+
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleFighter" Weight="-3" ModuleSpecialization="ModuleSpecialFighterSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization2"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleRepair" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+  
+  <!-- INVASION SHIP -->
+
+  <ShipDesignTemplate Name="InvasionSmall1HoratioTemplates" Hull="ShipClassSmall1Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioSmall1Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionSmall2HoratioTemplates" Hull="ShipClassSmall2Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioSmall2Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioRanger">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" ModuleSpecialization="ModuleSpecialBomberSpecialization3" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium1HoratioTemplates" Hull="ShipClassMedium1Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioMedium1Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-3" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionMedium2HoratioTemplates" Hull="ShipClassMedium2Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioMedium2Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-1" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-1" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+
+    </Repartition>
+  </ShipDesignTemplate>
+
+  <ShipDesignTemplate Name="InvasionLarge1HoratioTemplates" Hull="ShipClassLarge1Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioLarge1Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-4" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombPopulation" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+
+
+  <ShipDesignTemplate Name="InvasionLarge1BisHoratioTemplates" Hull="ShipClassLarge1Horatio" FleetWeight="0.3" ShipDesignName="%InvasionShipClassHoratioLarge2Title" Tags="Invasion">
+    <Repartition Name="InvasionHoratioDefender">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-4" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+    <Repartition Name="InvasionHoratioGuardian">
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleBomber" Weight="-2" ModuleSpecialization="ModuleSpecialBomberSpecialization3"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleBombImprovement" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SpecialModule" ModuleCategory="SpecialModuleTroops" Weight="-2" ModuleSpecialization="ModuleSpecialTroopsSpecialization1"/>
+
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleInvasion" Weight="1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleTonnage" Weight="-1"/>
+      <ModuleRepartition ModuleFamily="SupportModule" ModuleCategory="SupportModuleEngine" Weight="-1"/>
+    </Repartition>
+  </ShipDesignTemplate>
+</Datatable>

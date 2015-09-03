@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <AIWarDefinition Name="Common">
+    <AttackDefinition Name="Normal" InitialRandomWeight="1" WeightLostWhenChoosen="1" WeightGainWhenMissed="0.5" MaximalWeight="10" AttackRequisitionPriorityModifier="30">
+      <AttackScoreModifier>
+        <LuxuryScoreModifier>1</LuxuryScoreModifier>
+        <StrategicScoreModifier>1</StrategicScoreModifier>
+        <AssimilationScoreModifier>1</AssimilationScoreModifier>
+        <PlanetScoreModifier>1</PlanetScoreModifier>
+        <LinkToMyEmpireScoreModifier>1</LinkToMyEmpireScoreModifier>
+        <LinkToMyFriendsScoreModifier>1</LinkToMyFriendsScoreModifier>
+        <LinkToFoesScoreModifier>1</LinkToFoesScoreModifier>
+        <ConnectionTenseScoreModifier>1</ConnectionTenseScoreModifier>
+        <ScoreNeutralZoneFactorModifier>1</ScoreNeutralZoneFactorModifier>
+      </AttackScoreModifier>
+    </AttackDefinition>
+    <AttackDefinition Name="StrategicResources" InitialRandomWeight="1" WeightLostWhenChoosen="5" WeightGainWhenMissed="3" MaximalWeight="10" AttackRequisitionPriorityModifier="70">
+      <AttackScoreModifier>
+        <LuxuryScoreModifier>1</LuxuryScoreModifier>
+        <StrategicScoreModifier>100</StrategicScoreModifier>
+        <AssimilationScoreModifier>1</AssimilationScoreModifier>
+        <PlanetScoreModifier>1</PlanetScoreModifier>
+        <LinkToMyEmpireScoreModifier>-100</LinkToMyEmpireScoreModifier>
+        <LinkToMyFriendsScoreModifier>1</LinkToMyFriendsScoreModifier>
+        <LinkToFoesScoreModifier>1</LinkToFoesScoreModifier>
+        <ConnectionTenseScoreModifier>1</ConnectionTenseScoreModifier>
+        <ScoreNeutralZoneFactorModifier>1</ScoreNeutralZoneFactorModifier>
+      </AttackScoreModifier>
+    </AttackDefinition>
+    <AttackDefinition Name="NeuralgicSystem" InitialRandomWeight="1" WeightLostWhenChoosen="5" WeightGainWhenMissed="3" MaximalWeight="10" AttackRequisitionPriorityModifier="30">
+      <AttackScoreModifier>
+        <LuxuryScoreModifier>1</LuxuryScoreModifier>
+        <StrategicScoreModifier>1</StrategicScoreModifier>
+        <AssimilationScoreModifier>1</AssimilationScoreModifier>
+        <PlanetScoreModifier>1</PlanetScoreModifier>
+        <LinkToMyEmpireScoreModifier>-100</LinkToMyEmpireScoreModifier>
+        <LinkToMyFriendsScoreModifier>100</LinkToMyFriendsScoreModifier>
+        <LinkToFoesScoreModifier>1</LinkToFoesScoreModifier>
+        <ConnectionTenseScoreModifier>1</ConnectionTenseScoreModifier>
+        <ScoreNeutralZoneFactorModifier>1</ScoreNeutralZoneFactorModifier>
+      </AttackScoreModifier>
+    </AttackDefinition>
+    <AttackDefinition Name="Border" InitialRandomWeight="6" WeightLostWhenChoosen="1" WeightGainWhenMissed="0.5" MaximalWeight="10" AttackRequisitionPriorityModifier="100">
+      <AttackScoreModifier>
+        <LuxuryScoreModifier>1</LuxuryScoreModifier>
+        <StrategicScoreModifier>1</StrategicScoreModifier>
+        <AssimilationScoreModifier>1</AssimilationScoreModifier>
+        <PlanetScoreModifier>1</PlanetScoreModifier>
+        <LinkToMyEmpireScoreModifier>100</LinkToMyEmpireScoreModifier>
+        <LinkToMyFriendsScoreModifier>1</LinkToMyFriendsScoreModifier>
+        <LinkToFoesScoreModifier>1</LinkToFoesScoreModifier>
+        <ConnectionTenseScoreModifier>100</ConnectionTenseScoreModifier>
+        <ScoreNeutralZoneFactorModifier>1</ScoreNeutralZoneFactorModifier>
+      </AttackScoreModifier>
+    </AttackDefinition>
+    <AttackDefinition Name="BestSystems" InitialRandomWeight="2" WeightLostWhenChoosen="1" WeightGainWhenMissed="0.5" MaximalWeight="5" AttackRequisitionPriorityModifier="30">
+      <AttackScoreModifier>
+        <LuxuryScoreModifier>1</LuxuryScoreModifier>
+        <StrategicScoreModifier>1</StrategicScoreModifier>
+        <AssimilationScoreModifier>50</AssimilationScoreModifier>
+        <PlanetScoreModifier>50</PlanetScoreModifier>
+        <LinkToMyEmpireScoreModifier>1</LinkToMyEmpireScoreModifier>
+        <LinkToMyFriendsScoreModifier>1</LinkToMyFriendsScoreModifier>
+        <LinkToFoesScoreModifier>1</LinkToFoesScoreModifier>
+        <ConnectionTenseScoreModifier>1</ConnectionTenseScoreModifier>
+        <ScoreNeutralZoneFactorModifier>1</ScoreNeutralZoneFactorModifier>
+      </AttackScoreModifier>
+    </AttackDefinition>
+  </AIWarDefinition>
+
+
+</Datatable>

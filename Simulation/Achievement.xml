@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--  Operators = { Equal, Different, Greater, LessThan, GreaterOrEqual, LessThanOrEqual }  -->
+  <!-- victory are sorted by priority -->
+
+  <Victory Name="SupremacyVictory">
+    <EmpireSimCondition Name="HomeSystemOwnedPercent" Operator="GreaterOrEqual" Value="1" PlayerDisplayTrigger="0.00" DisplayTrigger="0.5" PlayerNotificationTrigger="0.60" NotificationTrigger="0.60"/>
+  </Victory>
+  
+  <Victory Name="ExpansionVictory">
+    <!-- <CustomCondition Name="GalaxyColonizationPercent" Operator="GreaterOrEqual" Value="0.5" PlayerDisplayTrigger="0.10" DisplayTrigger="0.25"/> -->
+    <!-- <EmpireSimCondition Name="PercentageOfSystemsColonized" Operator="GreaterOrEqual" Value="0.75" PlayerDisplayTrigger="0.01" DisplayTrigger="0.5"/> -->
+    <EmpireSimCondition Name="PercentageOfGalaxyColonized" Operator="GreaterOrEqual" Value="0.75" PlayerDisplayTrigger="0.01" DisplayTrigger="0.5" PlayerNotificationTrigger="0.55" NotificationTrigger="0.6"/>
+  </Victory>
+  
+  <Victory Name="ScientificVictory">
+    <EmpireSimCondition Name="ScienceVictoryTechnologyProgress" Operator="GreaterOrEqual" Value="1" PlayerDisplayTrigger="0.01" DisplayTrigger="0.2" PlayerNotificationTrigger="0.5" NotificationTrigger="0.1"/>
+  </Victory>
+  
+  <Victory Name="WonderVictory">
+    <EmpireSimCondition Name="WonderVictoryScore" Operator="GreaterOrEqual" Value="5" PlayerDisplayTrigger="0" DisplayTrigger="0" PlayerNotificationTrigger="0.2" NotificationTrigger="0"/>
+	<CustomCondition Name="WonderVictoryResearch" Operator="GreaterOrEqual" Value="1" PlayerDisplayTrigger="1" DisplayTrigger="1" PlayerNotificationTrigger="1" NotificationTrigger="1" ExcludeFromProgression="true"/>
+  </Victory>
+  
+  <Victory Name="EconomicVictory">
+    <CustomCondition Name="EconomicVictoryProgress" Operator="GreaterOrEqual" Value="1" PlayerDisplayTrigger="0.01" DisplayTrigger="0.5" PlayerNotificationTrigger="0.75" NotificationTrigger="0.50"/>
+  </Victory>
+  
+  <Victory Name="DiplomaticVictory">
+    <CustomCondition Name="DiplomaticVictoryProgress" Operator="GreaterOrEqual" Value="1" PlayerDisplayTrigger="0.01" DisplayTrigger="0.8" PlayerNotificationTrigger="0.90" NotificationTrigger="0.95"/>
+  </Victory>
+
+  <Victory Name="ScoreVictory">
+    <CustomCondition Name="GameTurn" Operator="GreaterOrEqual" Value="300" PlayerDisplayTrigger="1" DisplayTrigger="250" PlayerNotificationTrigger="275" NotificationTrigger="500"/>
+  </Victory>
+
+  <Victory Name="ScoreVictory2">
+    <!-- 999 to disable notifications -->
+    <CustomCondition Name="ColonizedStarSystems" Operator="Equal" Value="0" PlayerDisplayTrigger="999" DisplayTrigger="999" PlayerNotificationTrigger="999" NotificationTrigger="999"/>
+  </Victory>
+  
+  <Elimination Name="Death">
+    <EmpireSimCondition Name="NumberOfSystem" Operator="Equal" Value="0" />
+    <EmpireSimCondition Name="SystemRazedDuringTurn" Operator="Equal" Value="0" />
+  </Elimination>
+  
+</Datatable>

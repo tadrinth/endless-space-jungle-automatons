@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--<SimulationObjectDescriptor Name="Example_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerBattleBonus"        Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerAssignedTurnBonus"  Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerConstructionBonus"  Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerEnnemyInjuredBonus" Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Example_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="40" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.40" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.10" OperationType="Percent" Path="ClassEmpire"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BuyOutBonus" Value="-0.33" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="10" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="0.20" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>-->
+
+  <!-- ********************************** STANDARD COLONIZATION REWARD*********************************** -->
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_04" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="25" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_05" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="10" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!--<SimulationObjectDescriptor Name="ColonizationEventStandard_07_Malus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="1" OperationType="Soustraction" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07_1Malus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="2" OperationType="Soustraction" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07_1" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07_2Malus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval"  Value="10"     OperationType="Soustraction" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07_3Malus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="1" OperationType="Soustraction" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_07_3" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandard_08" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  
+  
+  <!-- ********************************** ADVANCED COLONIZATION REWARD*********************************** -->
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_02" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="4" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_03" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_04" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_05" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="40" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!--<SimulationObjectDescriptor Name="ColonizationEventAdvanced_06" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_06_1" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="20" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_06_2" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_06_3" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_07" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_09" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerAssignedTurnBonus"  Value="0.10" OperationType="Percent" Path="ClassStarSystem/ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerConstructionBonus"  Value="0.10" OperationType="Percent" Path="ClassStarSystem/ClassHero"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_10" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="25" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_11" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_12" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_13" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_14" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!--<SimulationObjectDescriptor Name="ColonizationEventAdvanced_15" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>-->
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_15_1" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_15_2" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_15_3Malus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="1" OperationType="Soustraction" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_15_3" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="3" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+  <SimulationObjectDescriptor Name="ColonizationEventAdvanced_16" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="2" OperationType="Addition" Path="ClassPlanet"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="ColonizationEventStandardDefaultBonus" Type="ColonizationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval" Value="10" OperationType="Addition" Path="ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  
+
+</Datatable>

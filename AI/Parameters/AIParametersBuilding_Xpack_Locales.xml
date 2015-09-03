@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementTrade1Harmony">
+    <AIParameter Name="TradeRoutes" Value="1.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementFood1Harmony">
+    <AIParameter Name="Food" Value="2.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementIndustry5Emperor">
+    <AIParameter Name="Industry" Value="0.7" />
+    <AIParameter Name="Military" Value="2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementMoney1Emperor">
+    <AIParameter Name="Money" Value="2.2000000000000002" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementMoney2">
+    <AIParameter Name="Money" Value="2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense4Harmony">
+    <AIParameter Name="Food" Value="0.5" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Military" Value="1.45" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense4Emperor">
+    <AIParameter Name="Money" Value="0.15" />
+    <AIParameter Name="Military" Value="1.45" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementShelter1">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementShelter2">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementShelter3">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementAntiaircraft1">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementAntiaircraft2">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementAntiaircraft3">
+    <AIParameter Name="Military" Value="1.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementUniqueHarmony">
+    <AIParameter Name="Food" Value="1.5" />
+    <AIParameter Name="Industry" Value="1.5" />
+    <AIParameter Name="Money" Value="0" />
+    <AIParameter Name="Science" Value="1.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementUniqueEmperor">
+    <AIParameter Name="Food" Value="-0.25" />
+    <AIParameter Name="Money" Value="3" />
+    <AIParameter Name="Science" Value="-0.25" />
+    <AIParameter Name="Approval" Value="-0.25" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovingTradeRoutesGainAmoeba">
+    <AIParameter Name="Money" Value="0.15" />
+    <AIParameter Name="Science" Value="0.15" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionIndustryToDustTerran">
+    <AIParameter Name="Money" Value="0.15" />
+    <AIParameter Name="IndustryToDust" Value="2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionIndustryToScienceSophon">
+    <AIParameter Name="Science" Value="0.15" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionIndustryToFoodHarmony">
+    <AIParameter Name="Food" Value="0.1" />
+    <AIParameter Name="HarmonyFood" Value="0.1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionIndustryToFoodSower">
+    <AIParameter Name="Food" Value="0.15" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionDustToScienceSophon">
+    <AIParameter Name="Money" Value="-0.1" />
+    <AIParameter Name="Science" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemConversionScienceToDustEmperor">
+    <AIParameter Name="Money" Value="0.2" />
+    <AIParameter Name="Science" Value="-0.1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemRaze">
+    <AIParameter Name="Approval" Value="0.15" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemRecycle">
+    <AIParameter Name="Money" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemEvacuation" />
+  <AIParametersDatatableElement ConstructibleElement="ColonizeTerran">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="0.5" />
+    <AIParameter Name="Money" Value="1" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.4" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeJungle">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="1" />
+    <AIParameter Name="Money" Value="0.5" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.4" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeOcean">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="0.5" />
+    <AIParameter Name="Money" Value="0.5" />
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Approval" Value="0.4" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeArid">
+    <AIParameter Name="Food" Value="0.5" />
+    <AIParameter Name="Industry" Value="0.5" />
+    <AIParameter Name="Money" Value="1.2" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeTundra">
+    <AIParameter Name="Food" Value="0.5" />
+    <AIParameter Name="Industry" Value="1.2" />
+    <AIParameter Name="Money" Value="0.5" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeDesert">
+    <AIParameter Name="Food" Value="0.25" />
+    <AIParameter Name="Industry" Value="0.25" />
+    <AIParameter Name="Money" Value="1.5" />
+    <AIParameter Name="Science" Value="0" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeArctic">
+    <AIParameter Name="Food" Value="0.25" />
+    <AIParameter Name="Industry" Value="0" />
+    <AIParameter Name="Money" Value="0.25" />
+    <AIParameter Name="Science" Value="1.5" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeLava">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="1.75" />
+    <AIParameter Name="Money" Value="0.25" />
+    <AIParameter Name="Science" Value="0" />
+    <AIParameter Name="Approval" Value="0.1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeBarren">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="0.25" />
+    <AIParameter Name="Money" Value="0" />
+    <AIParameter Name="Science" Value="1.75" />
+    <AIParameter Name="Approval" Value="0.1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeGasGiant" />
+  <AIParametersDatatableElement ConstructibleElement="ColonizeAsteroids">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="0.8" />
+    <AIParameter Name="Money" Value="0.8" />
+    <AIParameter Name="Science" Value="0.8" />
+    <AIParameter Name="Approval" Value="0" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeGasHydrogen">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="0.1" />
+    <AIParameter Name="Money" Value="2.5" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeGasHelium">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="0.3" />
+    <AIParameter Name="Money" Value="0.3" />
+    <AIParameter Name="Science" Value="2.5" />
+    <AIParameter Name="Approval" Value="0" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="ColonizeGasMethane">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="2.5" />
+    <AIParameter Name="Money" Value="0.1" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToLava">
+    <AIParameter Name="Industry" Value="0.75" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToBarren">
+    <AIParameter Name="Money" Value="0.75" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToDesert">
+    <AIParameter Name="Food" Value="0.15" />
+    <AIParameter Name="Industry" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToArctic">
+    <AIParameter Name="Food" Value="0.15" />
+    <AIParameter Name="Science" Value="0.5" />
+    <AIParameter Name="Approval" Value="0.3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToArid">
+    <AIParameter Name="Food" Value="0.3" />
+    <AIParameter Name="Money" Value="0.33" />
+    <AIParameter Name="Approval" Value="0.4" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToTundra">
+    <AIParameter Name="Food" Value="0.3" />
+    <AIParameter Name="Industry" Value="0.33" />
+    <AIParameter Name="Approval" Value="0.4" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToTerran">
+    <AIParameter Name="Food" Value="0.75" />
+    <AIParameter Name="Industry" Value="0.1" />
+    <AIParameter Name="Money" Value="0.1" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToTerranAutomaton">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="0.1" />
+    <AIParameter Name="Money" Value="0.1" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToJungle">
+    <AIParameter Name="Food" Value="0.75" />
+    <AIParameter Name="Industry" Value="0.1" />
+    <AIParameter Name="Money" Value="0.1" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToOcean">
+    <AIParameter Name="Food" Value="0.75" />
+    <AIParameter Name="Industry" Value="0.1" />
+    <AIParameter Name="Money" Value="0.1" />
+    <AIParameter Name="Science" Value="0.1" />
+    <AIParameter Name="Approval" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToLavaFromGas">
+    <AIParameter Name="Money" Value="0.75" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToBarrenFromGas">
+    <AIParameter Name="Science" Value="0.75" />
+    <AIParameter Name="Approval" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasMethane">
+    <AIParameter Name="Industry" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasHelium">
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasHydrogen">
+    <AIParameter Name="Money" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasMethaneFromGas">
+    <AIParameter Name="Industry" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasHeliumFromGas">
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasHydrogenFromGas">
+    <AIParameter Name="Money" Value="1" />
+    <AIParameter Name="Approval" Value="-0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TerraformationToGasGiant">
+    <AIParameter Name="Food" Value="0" />
+    <AIParameter Name="Industry" Value="0" />
+    <AIParameter Name="Money" Value="0" />
+    <AIParameter Name="Science" Value="0" />
+    <AIParameter Name="Military" Value="0" />
+    <AIParameter Name="Diplomacy" Value="0" />
+    <AIParameter Name="Approval" Value="0" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="PlanetaryImprovementStrategicResource1">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="1" />
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Military" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="PlanetEndlessWonder09Restoration">
+    <AIParameter Name="Food" Value="0.2" />
+    <AIParameter Name="Industry" Value="0.2" />
+    <AIParameter Name="Money" Value="0.2" />
+    <AIParameter Name="Science" Value="0.2" />
+    <AIParameter Name="HarmonyFood" Value="0.2" />
+    <AIParameter Name="HarmonyScience" Value="0.2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="PlanetAnomalyReduction">
+    <AIParameter Name="Industry" Value="0" />
+  </AIParametersDatatableElement>
+</Datatable>

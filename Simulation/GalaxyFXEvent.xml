@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- 
+        GalaxyFXEventType = "PermanentEvent" or "TemporaryEvent"
+        Duration = -1 means an infinite event.
+        PermanentEvent starts at the beginning of the game.
+    -->
+    
+    <!-- Permanent event -->
+    <GalaxyFXEvent Name="FX_CradleOfStars_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="4">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_CradleOfStars_01"/>
+    </GalaxyFXEvent>
+    
+    <GalaxyFXEvent Name="FX_Planetary_Nebula_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="4">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Planetary_Nebula_01"/>
+    </GalaxyFXEvent>
+    
+    <GalaxyFXEvent Name="FX_Planetary_Nebula_02" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="4">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Planetary_Nebula_02"/>
+    </GalaxyFXEvent>
+    
+    <GalaxyFXEvent Name="FX_Planetary_Pulsar_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="4">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Planetary_Pulsar_01"/>
+    </GalaxyFXEvent>    
+
+    <GalaxyFXEvent Name="FX_Reflection_Nebula_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="3">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Reflection_Nebula_01"/>
+    </GalaxyFXEvent>
+    
+    <GalaxyFXEvent Name="FX_Reflection_Nebula_02" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="PermanentEvent" RandWeight="3">
+        <AchievementEffect_SpawnGalaxyFX Duration="-1" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Reflection_Nebula_02"/>
+    </GalaxyFXEvent>
+
+	
+    <!-- Temporary Event -->
+    <GalaxyFXEvent Name="Fx_GC_Comet_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="TemporaryEvent" RandWeight="3">
+        <AchievementEffect_SpawnGalaxyFX Duration="10" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/Fx_GC_Comet_01"/>
+    </GalaxyFXEvent>
+	
+    <GalaxyFXEvent Name="Fx_GC_Comet_02" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="TemporaryEvent" RandWeight="3">
+        <AchievementEffect_SpawnGalaxyFX Duration="10" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/Fx_GC_Comet_02"/>
+    </GalaxyFXEvent>
+	
+    <GalaxyFXEvent Name="Fx_GC_Dust_Tempest_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="TemporaryEvent" RandWeight="5">
+        <AchievementEffect_SpawnGalaxyFX Duration="10" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/Fx_GC_Dust_Tempest_01"/>
+    </GalaxyFXEvent>
+    
+	<GalaxyFXEvent Name="FX_GC_Black_Hole_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="TemporaryEvent" RandWeight="5">
+        <AchievementEffect_SpawnGalaxyFX Duration="10" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_GC_Black_Hole_01"/>
+    </GalaxyFXEvent>
+
+	<GalaxyFXEvent Name="FX_Butterfly_Nebula_01" RandomEventType="GalaxyFxEvent" GalaxyFXEventType="TemporaryEvent" RandWeight="5">
+        <AchievementEffect_SpawnGalaxyFX Duration="10" GalaxyFXPrefabPath="Graph/Effects/Prefabs/Galaxy_Cosmetics/FX_Butterfly_Nebula_01"/>
+    </GalaxyFXEvent>
+</Datatable>

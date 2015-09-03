@@ -1,0 +1,2193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  
+  <!-- TROOP MODULE -->
+
+  <!-- Basic Troop -->
+
+  <TroopsSpecialModule Name="ModuleSpecialTroopsFake1" Archetype="ModuleSpecialTroops1" Level="1" Cost="28" WeightFlat="25" SpecialSlotWeight="1">
+    <Simulation TroopsEfficiency="0"
+      CollateralDamageAgainstPopulation="0"
+              CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui> 
+      <Title>%ModuleSpecialTroops1Title</Title>
+      <Description>%ModuleSpecialTroops1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <!-- Troopers: classic troop -->
+  <TroopsSpecialModule Name="ModuleSpecialTroops1Spec1" Archetype="ModuleSpecialTroops1" Specialization="ModuleSpecialTroopsSpecialization1" Priority="1" Level="1" Cost="14" WeightFlat="25" SpecialSlotWeight="1" MilitaryPowerInvasion="50" PopulationCost="1">
+		<Simulation TroopsEfficiency="250"
+					CollateralDamageAgainstPopulation="1"
+                	CollateralDamageAgainstImprovements="0">
+			<SpecialCategory>Troops</SpecialCategory>
+		</Simulation>
+		<Gui>
+			<Title>%ModuleSpecialTroops1Title</Title>
+			<Description>%ModuleSpecialTroops1Description</Description>
+			<Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Large"/>
+			<CharCode>1</CharCode>
+		</Gui>
+  </TroopsSpecialModule>
+
+  <!-- Elite: require more tonnage but are more efficient  -->
+  <TroopsSpecialModule Name="ModuleSpecialTroops1Spec2" Archetype="ModuleSpecialTroops1" Specialization="ModuleSpecialTroopsSpecialization2" Priority="1" Level="1" Cost="28" WeightFlat="30" SpecialSlotWeight="1" MilitaryPowerInvasion="100" PopulationCost="1">
+    <Simulation TroopsEfficiency="420"
+					CollateralDamageAgainstPopulation="2"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialTroops1Title</Title>
+      <Description>%ModuleSpecialTroops1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- Crowded: cost more Population but lands more too -->
+  <TroopsSpecialModule Name="ModuleSpecialTroops1Spec3" Archetype="ModuleSpecialTroops1" Specialization="ModuleSpecialTroopsSpecialization3" Priority="1" Level="1" Cost="14" WeightFlat="25" SpecialSlotWeight="1" MilitaryPowerInvasion="50" PopulationCost="2">
+    <Simulation TroopsEfficiency="250"
+					CollateralDamageAgainstPopulation="1"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialTroops1Title</Title>
+      <Description>%ModuleSpecialTroops1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <!-- Assassin  -->
+
+  <TroopsSpecialModule Name="ModuleSpecialTroopsFake2" Archetype="ModuleSpecialTroops2" Level="2" Cost="70" WeightFlat="30" SpecialSlotWeight="1">
+    <Simulation TroopsEfficiency="0"
+      CollateralDamageAgainstPopulation="0"
+              CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialTroops2Title</Title>
+      <Description>%ModuleSpecialTroops2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops2Spec1" Archetype="ModuleSpecialTroops2" Specialization="ModuleSpecialTroopsSpecialization1" Priority="1" Level="2" Cost="34" WeightFlat="30" SpecialSlotWeight="1" MilitaryPowerInvasion="75" PopulationCost="1">
+		<Simulation TroopsEfficiency="500"
+					CollateralDamageAgainstPopulation="2"
+          CollateralDamageAgainstImprovements="0">
+			<SpecialCategory>Troops</SpecialCategory>
+		</Simulation>
+		<Gui>
+			<Title>%ModuleSpecialTroops2Title</Title>
+			<Description>%ModuleSpecialTroops2Description</Description>
+			<Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Large"/>
+			<CharCode>2</CharCode>
+		</Gui>
+	</TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops2Spec2" Archetype="ModuleSpecialTroops2" Specialization="ModuleSpecialTroopsSpecialization2" Priority="1" Level="2" Cost="70" WeightFlat="40" SpecialSlotWeight="1" MilitaryPowerInvasion="150" PopulationCost="1">
+    <Simulation TroopsEfficiency="875"
+					CollateralDamageAgainstPopulation="3"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialTroops2Title</Title>
+      <Description>%ModuleSpecialTroops2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops2Spec3" Archetype="ModuleSpecialTroops2" Specialization="ModuleSpecialTroopsSpecialization3" Priority="1" Level="2" Cost="34" WeightFlat="30" SpecialSlotWeight="1" MilitaryPowerInvasion="75" PopulationCost="2">
+    <Simulation TroopsEfficiency="500"
+					CollateralDamageAgainstPopulation="2"
+          CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialTroops2Title</Title>
+      <Description>%ModuleSpecialTroops2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <!-- PACIFIC INVADERS -->
+
+  <TroopsSpecialModule Name="ModuleSpecialTroopsFake3" Archetype="ModuleSpecialTroops3" Level="3" Cost="160" WeightFlat="40" SpecialSlotWeight="2">
+    <Simulation TroopsEfficiency="0"
+      CollateralDamageAgainstPopulation="0"
+              CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops3Title</Title>
+      <Description>%ModuleSpecialTroops3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <TroopsSpecialModule Name="ModuleSpecialTroops3Spec1" Archetype="ModuleSpecialTroops3" Specialization="ModuleSpecialTroopsSpecialization1" Priority="1" Level="3" Cost="80" WeightFlat="40" SpecialSlotWeight="2" MilitaryPowerInvasion="300" PopulationCost="1">
+    <Simulation TroopsEfficiency="1500"
+					CollateralDamageAgainstPopulation="0"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops3Title</Title>  
+      <Description>%ModuleSpecialTroops3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops3Spec2" Archetype="ModuleSpecialTroops3" Specialization="ModuleSpecialTroopsSpecialization2" Priority="1" Level="3" Cost="160" WeightFlat="50" SpecialSlotWeight="2" MilitaryPowerInvasion="500" PopulationCost="1">
+    <Simulation TroopsEfficiency="3000"
+					CollateralDamageAgainstPopulation="0"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops3Title</Title>
+      <Description>%ModuleSpecialTroops3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops3Spec3" Archetype="ModuleSpecialTroops3" Specialization="ModuleSpecialTroopsSpecialization3" Priority="1"  Level="3" Cost="80" WeightFlat="40" SpecialSlotWeight="2" MilitaryPowerInvasion="300" PopulationCost="2">
+    <Simulation TroopsEfficiency="1500"
+					CollateralDamageAgainstPopulation="0"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops3Title</Title>
+      <Description>%ModuleSpecialTroops3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- ultra powerful but destroy improvements -->
+  
+  <!-- will become Unique Troop later-->
+
+  <TroopsSpecialModule Name="ModuleSpecialTroopsFake4" Archetype="ModuleSpecialTroops4" Level="4" Cost="540" WeightFlat="50" SpecialSlotWeight="2">
+    <Simulation TroopsEfficiency="0"
+      CollateralDamageAgainstPopulation="0"
+              CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops4Title</Title>
+      <Description>%ModuleSpecialTroops4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops4Spec1" Archetype="ModuleSpecialTroops4" Specialization="ModuleSpecialTroopsSpecialization1" Priority="1"  Level="4" Cost="220" WeightFlat="50" SpecialSlotWeight="2" MilitaryPowerInvasion="1200" PopulationCost="1">
+		<Simulation TroopsEfficiency="3600"
+					CollateralDamageAgainstPopulation="2"
+                	CollateralDamageAgainstImprovements="0">
+			<SpecialCategory>Troops</SpecialCategory>
+		</Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+		<Gui>
+			<Title>%ModuleSpecialTroops4Title</Title>
+			<Description>%ModuleSpecialTroops4Description</Description>
+			<Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Large"/>
+			<CharCode>4</CharCode>
+		</Gui>
+	</TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops4Spec2" Archetype="ModuleSpecialTroops4" Specialization="ModuleSpecialTroopsSpecialization2" Priority="1"  Level="4" Cost="540" WeightFlat="60" SpecialSlotWeight="2" MilitaryPowerInvasion="1200" PopulationCost="1">
+    <Simulation TroopsEfficiency="7200"
+					CollateralDamageAgainstPopulation="3"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops4Title</Title>
+      <Description>%ModuleSpecialTroops4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialTroops4Spec3" Archetype="ModuleSpecialTroops4" Specialization="ModuleSpecialTroopsSpecialization3" Priority="1"  Level="4" Cost="220" WeightFlat="50" SpecialSlotWeight="2" MilitaryPowerInvasion="1200" PopulationCost="2">
+    <Simulation TroopsEfficiency="3600"
+					CollateralDamageAgainstPopulation="2"
+                	CollateralDamageAgainstImprovements="0">
+      <SpecialCategory>Troops</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceSiderite</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialTroops4Title</Title>
+      <Description>%ModuleSpecialTroops4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialTroops4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </TroopsSpecialModule>
+
+  
+  <!-- Fighters & Bombers -->
+
+  <TroopsSpecialModule Name="ModuleSpecialFighterFake1" Archetype="ModuleSpecialFighter1" Level="1" Cost="40" WeightFlat="30" SpecialSlotWeight="1">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Fighter</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialFighter1Title</Title>
+      <Description>%ModuleSpecialFighter1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter1Spec1" Archetype="ModuleSpecialFighter1" Specialization="ModuleSpecialFighterSpecialization1" Priority="1"  Cost="40" WeightFlat="30" MilitaryPowerInvasion="50" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "5"
+                Evade = "0.33"
+                Accuracy = "0.66"
+                Health = "20"
+                ShotsPerRound = "5"
+                DamagePerShot = "1"
+                LandInvasionStrength = "50"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter1Melee</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="30" DelayBetweenShotsMin="0.02" DelayBetweenShotsMax="0.05">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter1Title</Title>
+      <Description>%ModuleSpecialFighter1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter1Spec2" Archetype="ModuleSpecialFighter1" Specialization="ModuleSpecialFighterSpecialization2" Priority="1"  Cost="40" WeightFlat="30"  MilitaryPowerInvasion="0" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "5"
+                Evade = "0.33"
+                Accuracy = "0.66"
+                Health = "45"
+                ShotsPerRound = "7"
+                DamagePerShot = "2"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter1Melee</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Fighter.Chasing">
+        <Descriptors>ModuleSpecialFighter1Chasing</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="30" DelayBetweenShotsMin="0.02" DelayBetweenShotsMax="0.05">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter1Title</Title>
+      <Description>%ModuleSpecialFighter1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter1Spec3" Archetype="ModuleSpecialFighter1" Specialization="ModuleSpecialFighterSpecialization3" Priority="1"  Cost="40" WeightFlat="30" MilitaryPowerInvasion="150" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "5"
+                Evade = "0.33"
+                Accuracy = "0.66"
+                Health = "15"
+                ShotsPerRound = "3"
+                DamagePerShot = "1"
+                LandInvasionStrength = "150"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <!-- no battle bonus -->
+    <BattleSequence Name="FighterDefault">
+
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="30" DelayBetweenShotsMin="0.02" DelayBetweenShotsMax="0.05">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter1Title</Title>
+      <Description>%ModuleSpecialFighter1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter2Spec1" Archetype="ModuleSpecialFighter2" Specialization="ModuleSpecialFighterSpecialization1" Priority="1" Cost="80" WeightFlat="40"  MilitaryPowerInvasion="75" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "5"
+                Evade = "0.2"
+                Accuracy = "0.9"
+                Health = "7"
+                ShotsPerRound = "3"
+                DamagePerShot = "5"
+                LandInvasionStrength = "100"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter2Melee</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="20" DelayBetweenShotsMin="0.05" DelayBetweenShotsMax="0.1">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter2Title</Title>
+      <Description>%ModuleSpecialFighter2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  
+
+  <TroopsSpecialModule Name="ModuleSpecialFighterFake2" Archetype="ModuleSpecialFighter2" Level="2" Cost="80" WeightFlat="40" SpecialSlotWeight="1">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Fighter</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialFighter2Title</Title>
+      <Description>%ModuleSpecialFighter2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter2Spec2" Archetype="ModuleSpecialFighter2" Specialization="ModuleSpecialFighterSpecialization2" Priority="1" Cost="80" WeightFlat="40"  MilitaryPowerInvasion="0" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "3"
+                Evade = "0.2"
+                Accuracy = "1"
+                Health = "5"
+                ShotsPerRound = "3"
+                DamagePerShot = "10"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter2Melee</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Fighter.OnShip">
+        <Descriptors>ModuleSpecialFighter2OnShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="20" DelayBetweenShotsMin="0.05" DelayBetweenShotsMax="0.1">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter2Title</Title>
+      <Description>%ModuleSpecialFighter2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter2Spec3" Archetype="ModuleSpecialFighter2" Specialization="ModuleSpecialFighterSpecialization3" Priority="1" Cost="80" WeightFlat="40" MilitaryPowerInvasion="200" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "5"
+                Evade = "0.2"
+                Accuracy = "0.9"
+                Health = "3"
+                ShotsPerRound = "3"
+                DamagePerShot = "3"
+                LandInvasionStrength = "225"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <!-- no battle bonus-->
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="20" DelayBetweenShotsMin="0.05" DelayBetweenShotsMax="0.1">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter2Title</Title>
+      <Description>%ModuleSpecialFighter2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- H2 'Elephant' from T41 -->
+
+  <TroopsSpecialModule Name="ModuleSpecialFighterFake3" Archetype="ModuleSpecialFighter3" Level="3" Cost="80" WeightFlat="50" SpecialSlotWeight="2">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Fighter</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialFighter3Title</Title>
+      <Description>%ModuleSpecialFighter3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter3Spec1" Archetype="ModuleSpecialFighter3" Specialization="ModuleSpecialFighterSpecialization1" Priority="1" Cost="80" WeightFlat="50" MilitaryPowerInvasion="100" Level="3" SpecialSlotWeight="2">
+    <Simulation Quantity = "4"
+                Evade = "0.2"
+                Accuracy = "0.8"
+                Health = "160"
+                ShotsPerRound = "2"
+                DamagePerShot = "20"
+                LandInvasionStrength = "200"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter3Melee</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Fighter.OnShip">
+        <Descriptors>ModuleSpecialFighter3OnShip</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Fighter.Chasing">
+        <Descriptors>ModuleSpecialFighter3Chasing</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="10" DelayBetweenShotsMin="0.1" DelayBetweenShotsMax="0.15">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="-1.5" Y="0" Z="0"/>
+        <Offset X="1.5" Y="0" Z="0"/>
+        <Offset X="-4" Y="-0.8" Z="-1.5"/>
+        <Offset X="4" Y="-0.8" Z="-1.5"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter3Title</Title>
+      <Description>%ModuleSpecialFighter3G2GDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter3Spec2" Archetype="ModuleSpecialFighter3" Specialization="ModuleSpecialFighterSpecialization2" Priority="1" Cost="80" WeightFlat="50" MilitaryPowerInvasion="0" Level="3" SpecialSlotWeight="2">
+    <Simulation Quantity = "4"
+                Evade = "0.2"
+                Accuracy = "0.8"
+                Health = "160"
+                ShotsPerRound = "3"
+                DamagePerShot = "20"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.OnShip">
+        <Descriptors>ModuleSpecialFighter3OnShip</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Fighter.Chasing">
+        <Descriptors>ModuleSpecialFighter3Chasing</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="10" DelayBetweenShotsMin="0.1" DelayBetweenShotsMax="0.15">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="-1.5" Y="0" Z="0"/>
+        <Offset X="1.5" Y="0" Z="0"/>
+        <Offset X="-4" Y="-0.8" Z="-1.5"/>
+        <Offset X="4" Y="-0.8" Z="-1.5"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter3Title</Title>
+      <Description>%ModuleSpecialFighter3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter3Spec3" Archetype="ModuleSpecialFighter3" Specialization="ModuleSpecialFighterSpecialization3" Priority="1"  Cost="80" WeightFlat="50" MilitaryPowerInvasion="300" Level="3" SpecialSlotWeight="2">
+    <Simulation Quantity = "4"
+                Evade = "0.1"
+                Accuracy = "0.6"
+                Health = "160"
+                ShotsPerRound = "2"
+                DamagePerShot = "15"
+                LandInvasionStrength = "300"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+      <BattleStateData StateName="Fighter.Melee">
+        <Descriptors>ModuleSpecialFighter3Melee</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="1700" NumberOfProjectiles="10" DelayBetweenShotsMin="0.1" DelayBetweenShotsMax="0.15">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="-1.5" Y="0" Z="0"/>
+        <Offset X="1.5" Y="0" Z="0"/>
+        <Offset X="-4" Y="-0.8" Z="-1.5"/>
+        <Offset X="4" Y="-0.8" Z="-1.5"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialFighter3Title</Title>
+      <Description>%ModuleSpecialFighter3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  
+  <!-- TO DO PER RACE -->
+
+  <TroopsSpecialModule Name="ModuleSpecialFighterFake4" Archetype="ModuleSpecialFighter4" Level="4" Cost="200" WeightFlat="60" SpecialSlotWeight="2">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Fighter</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter4CommonSpec1" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization1" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="200" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "300"
+                ShotsPerRound = "6"
+                DamagePerShot = "15"
+                LandInvasionStrength = "400"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "1"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter4CommonSpec2" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization2" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="100" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "450"
+                ShotsPerRound = "7"
+                DamagePerShot = "20"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "1"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter4CommonSpec3" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization3" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="500" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "200"
+                ShotsPerRound = "1"
+                DamagePerShot = "50"
+                LandInvasionStrength = "800"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter4EmperorSpec1" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization1" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="300" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "350"
+                ShotsPerRound = "6"
+                DamagePerShot = "16"
+                LandInvasionStrength = "550"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "1"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter4EmperorSpec2" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization2" Priority="1" Cost="200" WeightFlat="60" MilitaryPowerInvasion="200" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "525"
+                ShotsPerRound = "7"
+                DamagePerShot = "22"
+                LandInvasionStrength = "100"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "1"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter4EmperorSpec3" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization3" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="500" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "250"
+                ShotsPerRound = "1"
+                DamagePerShot = "66"
+                LandInvasionStrength = "900"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "1"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter4HisshoSpec1" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization1" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="200" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "3"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "400"
+                ShotsPerRound = "6"
+                DamagePerShot = "18"
+                LandInvasionStrength = "350"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter4HisshoSpec2" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization2" Priority="1" Cost="200" WeightFlat="60" MilitaryPowerInvasion="100" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "3"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "600"
+                ShotsPerRound = "7"
+                DamagePerShot = "24"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  <SubShipModule Name="ModuleSpecialFighter4HisshoSpec3" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization3" Priority="1" Cost="200" WeightFlat="60" MilitaryPowerInvasion="400" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "3"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "300"
+                ShotsPerRound = "1"
+                DamagePerShot = "75"
+                LandInvasionStrength = "750"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialFighter4ResistanceSpec1" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization1" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="400" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "300"
+                ShotsPerRound = "6"
+                DamagePerShot = "15"
+                LandInvasionStrength = "600"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialFighter4ResistanceSpec2" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization2" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="250" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "450"
+                ShotsPerRound = "7"
+                DamagePerShot = "20"
+                LandInvasionStrength = "200"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialFighter4ResistanceSpec3" Archetype="ModuleSpecialFighter4" Specialization="ModuleSpecialFighterSpecialization3" Priority="1"  Cost="200" WeightFlat="60" MilitaryPowerInvasion="750" Level="4" SpecialSlotWeight="2">
+    <Simulation Quantity = "5"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "200"
+                ShotsPerRound = "1"
+                DamagePerShot = "50"
+                LandInvasionStrength = "1100"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Fighter</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="FighterDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="1700">-->
+    <Reflection Speed="1700"
+                RateOfFire="10"
+                RateOfFireRandomDelayMax="0.1"
+                Accuracy="0.4">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Fighter_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+        <Offset X="-2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="2.5" Y="-0.8" Z="-1.5"/>
+        <Offset X="-5" Y="-1.6" Z="-3"/>
+        <Offset X="5" Y="-1.6" Z="-3"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceHyperium</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialFighter4Title</Title>
+      <Description>%ModuleSpecialFighter4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialFighter4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+
+  
+  
+  
+  <TroopsSpecialModule Name="ModuleSpecialBomberFake1" Archetype="ModuleSpecialBomber1" Level="1" Cost="45" WeightFlat="20" SpecialSlotWeight="1">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Bomber</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialBomber1Title</Title>
+      <Description>%ModuleSpecialBomber1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+ 
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialBomber1Spec1" Archetype="ModuleSpecialBomber1" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="54" WeightFlat="20" MilitaryPowerInvasion="120" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "250"
+                ShotsPerRound = "2"
+                DamagePerShot = "80"
+                LandInvasionStrength = "400"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+      <BattleStateData StateName="Bomber.OnShip">
+        <Descriptors>ModuleSpecialBomber1OnShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber1Title</Title>
+      <Description>%ModuleSpecialBomber1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber1Spec2" Archetype="ModuleSpecialBomber1" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="54" WeightFlat="20" MilitaryPowerInvasion="80" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "300"
+                ShotsPerRound = "3"
+                DamagePerShot = "80"
+                LandInvasionStrength = "100"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+      <BattleStateData StateName="Bomber.OnShip">
+        <Descriptors>ModuleSpecialBomber1OnShip</Descriptors>
+      </BattleStateData>
+      <BattleStateData StateName="Bomber.MovingToShip">
+        <Descriptors>ModuleSpecialBomber1MovingToShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber1Title</Title>
+      <Description>%ModuleSpecialBomber1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialBomber1Spec3" Archetype="ModuleSpecialBomber1" Specialization="ModuleSpecialBomberSpecialization3"  Priority="1" Cost="54" WeightFlat="20" MilitaryPowerInvasion="240" Level="1" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.1"
+                Health = "200"
+                ShotsPerRound = "1"
+                DamagePerShot = "80"
+                Accuracy = "0.7"
+                LandInvasionStrength = "800"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "4"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_01"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_01"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber1Title</Title>
+      <Description>%ModuleSpecialBomber1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <TroopsSpecialModule Name="ModuleSpecialBomberFake2" Archetype="ModuleSpecialBomber2" Level="2" Cost="110" WeightFlat="25" SpecialSlotWeight="1">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Bomber</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialBomber2Title</Title>
+      <Description>%ModuleSpecialBomber2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+  
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialBomber2Spec1" Archetype="ModuleSpecialBomber2" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="110" WeightFlat="25" MilitaryPowerInvasion="160" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.7"
+                Accuracy = "0.7"
+                Health = "500"
+                ShotsPerRound = "5"
+                DamagePerShot = "18"
+                LandInvasionStrength = "600"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <!-- this ship has strong carac but no bonus -->
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber2Title</Title>
+      <Description>%ModuleSpecialBomber2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber2Spec2" Archetype="ModuleSpecialBomber2" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="110" WeightFlat="25" MilitaryPowerInvasion="50" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.7"
+                Accuracy = "0.9"
+                Health = "700"
+                ShotsPerRound = "5"
+                DamagePerShot = "22"
+                LandInvasionStrength = "200"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <!-- this ship has strong carac but no bonus -->
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber2Title</Title>
+      <Description>%ModuleSpecialBomber2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialBomber2Spec3" Archetype="ModuleSpecialBomber2" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="110" WeightFlat="25" MilitaryPowerInvasion="250" Level="2" SpecialSlotWeight="1">
+    <Simulation Quantity = "1"
+                Evade = "0.5"
+                Health = "400"
+                ShotsPerRound = "2"
+                DamagePerShot = "18"
+                Accuracy = "0.7"
+                LandInvasionStrength = "1200"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "5"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_02"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_02"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber2Title</Title>
+      <Description>%ModuleSpecialBomber2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber2Large"/>
+      <CharCode>2</CharCode>
+    </Gui>
+  </SubShipModule>
+  
+  
+
+  <TroopsSpecialModule Name="ModuleSpecialBomberFake3" Archetype="ModuleSpecialBomber3" Level="3" Cost="110" WeightFlat="30" SpecialSlotWeight="2">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Bomber</SpecialCategory>
+    </Simulation>
+    <Gui>
+      <Title>%ModuleSpecialBomber3Title</Title>
+      <Description>%ModuleSpecialBomber3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialBomber3Spec1" Archetype="ModuleSpecialBomber3" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="110" WeightFlat="30" MilitaryPowerInvasion="100" Level="3"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0"
+                Health = "30"
+                ShotsPerRound = "5"
+                DamagePerShot = "160"
+                Accuracy = "1"
+                LandInvasionStrength = "300"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+      <BattleStateData StateName="Bomber.OnShip">
+        <Descriptors>ModuleSpecialBomber3OnShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber3Title</Title>
+      <Description>%ModuleSpecialBomber3G2GDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber3Spec2" Archetype="ModuleSpecialBomber3" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="110" WeightFlat="30" MilitaryPowerInvasion="0" Level="3"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0"
+                Health = "60"
+                ShotsPerRound = "10"
+                DamagePerShot = "160"
+                Accuracy = "1"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+      <BattleStateData StateName="Bomber.OnShip">
+        <Descriptors>ModuleSpecialBomber3OnShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"  
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber3Title</Title>
+      <Description>%ModuleSpecialBomber3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialBomber3Spec3" Archetype="ModuleSpecialBomber3" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="110" WeightFlat="30" MilitaryPowerInvasion="200" Level="3"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0"
+                Health = "30"
+                ShotsPerRound = "5"
+                DamagePerShot = "120"
+                Accuracy = "1"
+                LandInvasionStrength = "600"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "4"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+      <BattleStateData StateName="Bomber.OnShip">
+        <Descriptors>ModuleSpecialBomber3OnShip</Descriptors>
+      </BattleStateData>
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_03"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_03"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialBomber3Title</Title>
+      <Description>%ModuleSpecialBomber3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber3Large"/>
+      <CharCode>3</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  
+  
+  <TroopsSpecialModule Name="ModuleSpecialBomberFake4" Archetype="ModuleSpecialBomber4" Level="4" Cost="270"  WeightFlat="40" SpecialSlotWeight="2">
+    <Simulation Quantity = "0"
+                Evade = "0"
+                Accuracy = "0"
+                Health = "0"
+                ShotsPerRound = "0"
+                DamagePerShot = "0"
+                LandInvasionStrength = "0"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="0">
+      <SpecialCategory>Bomber</SpecialCategory>
+    </Simulation>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+    </Gui>
+  </TroopsSpecialModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialBomber4CommonSpec1" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="600" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Health = "450"
+                ShotsPerRound = "10"
+                DamagePerShot = "320"
+                Accuracy = "0.7"
+                LandInvasionStrength = "1000"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber4CommonSpec2" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="200" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "600"
+                ShotsPerRound = "15"
+                DamagePerShot = "320"
+                LandInvasionStrength = "500"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialBomber4CommonSpec3" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="750" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.6"
+                Health = "350"
+                ShotsPerRound = "5"
+                DamagePerShot = "320"
+                LandInvasionStrength = "1800"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "5"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- balanced + better invasion-->
+  <SubShipModule Name="ModuleSpecialBomber4SowerSpec1" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="700" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "450"
+                ShotsPerRound = "10"
+                DamagePerShot = "320"
+                LandInvasionStrength = "1400"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber4SowerSpec2" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="270" WeightFlat="40" MilitaryPowerInvasion="400" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "600"
+                ShotsPerRound = "15"
+                DamagePerShot = "320"
+                LandInvasionStrength = "800"
+                CollateralDamageAgainstPopulation = "1"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <SubShipModule Name="ModuleSpecialBomber4SowerSpec3" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="900" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "350"
+                ShotsPerRound = "5"
+                DamagePerShot = "320"
+                LandInvasionStrength = "2200"
+                CollateralDamageAgainstPopulation = "3"
+                CollateralDamageAgainstImprovements = "6"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- balanced + spe battle-->
+  <SubShipModule Name="ModuleSpecialBomber4SwarmSpec1" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="400" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.45"
+                Accuracy = "0.8"
+                Health = "550"
+                ShotsPerRound = "10"
+                DamagePerShot = "360"
+                LandInvasionStrength = "800"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <SubShipModule Name="ModuleSpecialBomber4SwarmSpec2" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="100" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.45"
+                Health = "750"
+                ShotsPerRound = "15"
+                DamagePerShot = "360"
+                Accuracy = "0.8"
+                LandInvasionStrength = "300"
+                CollateralDamageAgainstPopulation = "0"
+                CollateralDamageAgainstImprovements = "0"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- invasion -->
+  <SubShipModule Name="ModuleSpecialBomber4SwarmSpec3" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="270" WeightFlat="40" MilitaryPowerInvasion="600" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.45"
+                Health = "450"
+                ShotsPerRound = "5"
+                DamagePerShot = "360"
+                Accuracy = "0.6"
+                LandInvasionStrength = "1300"
+                CollateralDamageAgainstPopulation = "4"
+                CollateralDamageAgainstImprovements = "2"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- balanced -->
+  <SubShipModule Name="ModuleSpecialBomber4TerranSpec1" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization1" Priority="1" Cost="270"  WeightFlat="40" MilitaryPowerInvasion="650" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Accuracy = "0.7"
+                Health = "500"
+                ShotsPerRound = "10"
+                DamagePerShot = "340"
+                LandInvasionStrength = "1200"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <!-- battle -->
+  <SubShipModule Name="ModuleSpecialBomber4TerranSpec2" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization2" Priority="1" Cost="270" WeightFlat="40" MilitaryPowerInvasion="300" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Health = "650"
+                ShotsPerRound = "15"
+                DamagePerShot = "340"
+                Accuracy = "0.7"
+                LandInvasionStrength = "400"
+                CollateralDamageAgainstPopulation = "2"
+                CollateralDamageAgainstImprovements = "3"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  <SubShipModule Name="ModuleSpecialBomber4TerranSpec3" Archetype="ModuleSpecialBomber4" Specialization="ModuleSpecialBomberSpecialization3" Priority="1" Cost="270" WeightFlat="40" MilitaryPowerInvasion="900" Level="4"  SpecialSlotWeight="2">
+    <Simulation Quantity = "1"
+                Evade = "0.3"
+                Health = "400"
+                ShotsPerRound = "5"
+                DamagePerShot = "340"
+                Accuracy = "0.7"
+                LandInvasionStrength = "1800"
+                CollateralDamageAgainstPopulation = "3"
+                CollateralDamageAgainstImprovements = "9"
+                ChasersMaxCount="2">
+      <SubShipClass>Bomber</SubShipClass>
+    </Simulation>
+    <BattleSequence Name="BomberDefault">
+    </BattleSequence>
+    <!--<Reflection Speed="500">-->
+    <Reflection Speed="500"
+                RateOfFire="5"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7">
+      <Projectiles-Prefab Path="Prefabs/Projectiles/PR_Bomber_04"/>
+      <MuzzleFlash-Prefab Path="Graph/Effects/Prefabs/Weapons/FX_Laser_Src_Fighter_04"/>
+      <Formation>
+        <Offset X="0" Y="0" Z="0"/>
+      </Formation>
+    </Reflection>
+    <ResourcesPrerequisites>PlanetStrategicResourceOrichalcedon</ResourcesPrerequisites>
+    <Gui>
+      <Title>%ModuleSpecialBomber4Title</Title>
+      <Description>%ModuleSpecialBomber4Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialBomber4Large"/>
+      <CharCode>4</CharCode>
+    </Gui>
+  </SubShipModule>
+
+  
+  
+  <PointDefenseModule Name="ModuleSpecialPointDefenseFake1" Archetype="ModuleSpecialPointDefense1" Level="1" Cost="96" WeightFlat="10" SpecialSlotWeight="1">
+    <Simulation Accuracy = "0" ShotsPerRound="0" DefenseConversionRatio="0"/>
+    <Gui>
+      <Title>%ModuleSpecialPointDefenseTitle</Title>
+      <Description>%ModuleSpecialPointDefenseDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Large"/>
+    </Gui>
+  </PointDefenseModule>
+  
+  <PointDefenseModule Name="ModuleSpecialPointDefense1Generic"  Archetype="ModuleSpecialPointDefense1" Specialization="ModuleSpecialPointDefenseSpecialization1" Priority="1" Cost="96" WeightFlat="10" MilitaryPowerInvasion="0" Level="1" SpecialSlotWeight="1">
+    <Simulation Accuracy = "0.75" ShotsPerRound="5" DefenseConversionRatio="5"/>
+    <Descriptors>ModuleSpecialPointDefense1Generic</Descriptors>
+    <Reflection RateOfFire="10"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.9"
+                AttackStartingDelayMax="1.5"
+                AttackEndingDelayMax="1.5">
+      <Explosion-Prefab Path="Graph/Effects/Prefabs/Damages/FX_PointDefense_01"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialPointDefense1GenericTitle</Title>
+      <Description>%ModuleSpecialPointDefense1GenericDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Large"/>
+      <CharCode>1</CharCode>
+      <Tooltip>
+        <Description>%ModuleSpecialPointDefense1GenericEffect1</Description>
+      </Tooltip>
+    </Gui>
+  </PointDefenseModule>
+
+
+  <!--
+  <PointDefenseModule Name="ModuleSpecialPointDefense1Shield"  Archetype="ModuleSpecialPointDefense1" Specialization="ModuleSpecialPointDefenseSpecialization2"  Cost="96" WeightFlat="25" MilitaryPowerInvasion="0" Level="1" SpecialSlotWeight="1">
+    <Simulation Accuracy = "0.9" ShotsPerRound="5" DefenseConversionRatio="25"/>
+    <Descriptors>ModuleSpecialPointDefense1Shield</Descriptors>
+    <Reflection RateOfFire="10"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7"
+                AttackStartingDelayMax="1.5"
+                AttackEndingDelayMax="1.5">
+      <Explosion-Prefab Path="Graph/Effects/Prefabs/Defenses/FX_FlakCannon_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialPointDefense1ShieldTitle</Title>
+      <Description>%ModuleSpecialPointDefense1ShieldDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </PointDefenseModule>
+
+  <PointDefenseModule Name="ModuleSpecialPointDefense1Flak"  Archetype="ModuleSpecialPointDefense1" Specialization="ModuleSpecialPointDefenseSpecialization3"  Cost="96" WeightFlat="25" MilitaryPowerInvasion="0" Level="1" SpecialSlotWeight="1">
+    <Simulation Accuracy = "0.75" ShotsPerRound="2" DefenseConversionRatio="10"/>
+    <Descriptors>ModuleSpecialPointDefense1Flak</Descriptors>
+    <Reflection RateOfFire="10"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7"
+                AttackStartingDelayMax="1.5"
+                AttackEndingDelayMax="1.5">
+      <Explosion-Prefab Path="Graph/Effects/Prefabs/Defenses/FX_FlakCannon_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialPointDefense1FlakTitle</Title>
+      <Description>%ModuleSpecialPointDefense1FlakDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </PointDefenseModule>
+
+  <PointDefenseModule Name="ModuleSpecialPointDefense1Deflector"  Archetype="ModuleSpecialPointDefense1" Specialization="ModuleSpecialPointDefenseSpecialization4"  Cost="96" WeightFlat="25" MilitaryPowerInvasion="0" Level="1" SpecialSlotWeight="1">
+    <Simulation Accuracy = "0.6" ShotsPerRound="10" DefenseConversionRatio="50"/>
+    <Descriptors>ModuleSpecialPointDefense1Deflector</Descriptors>
+    <Reflection RateOfFire="10"
+                RateOfFireRandomDelayMax="0.2"
+                Accuracy="0.7"
+                AttackStartingDelayMax="1.5"
+                AttackEndingDelayMax="1.5">
+      <Explosion-Prefab Path="Graph/Effects/Prefabs/Defenses/FX_FlakCannon_A"/>
+    </Reflection>
+    <Gui>
+      <Title>%ModuleSpecialPointDefense1DeflectorTitle</Title>
+      <Description>%ModuleSpecialPointDefense1DeflectorDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialPointDefense1Large"/>
+      <CharCode>1</CharCode>
+    </Gui>
+  </PointDefenseModule>
+
+  <GuiInfo Name="ModuleSpecialWeaponUnique1">
+    <Title>%ModuleSpecialWeaponUnique1Title</Title>
+    <Description>%ModuleSpecialWeaponUnique1Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique1Large"/>
+  </GuiInfo>
+
+  <GuiInfo Name="ModuleSpecialWeaponUnique2">
+    <Title>%ModuleSpecialWeaponUnique2Title</Title>
+    <Description>%ModuleSpecialWeaponUnique2Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique2Large"/>
+  </GuiInfo>
+
+  <GuiInfo Name="ModuleSpecialWeaponUnique3">
+    <Title>%ModuleSpecialWeaponUnique3Title</Title>
+    <Description>%ModuleSpecialWeaponUnique3Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique3Large"/>
+  </GuiInfo>
+
+  <GuiInfo Name="ModuleSpecialWeaponUnique4">
+    <Title>%ModuleSpecialWeaponUnique4Title</Title>
+    <Description>%ModuleSpecialWeaponUnique4Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialWeaponUnique4Large"/>
+  </GuiInfo>
+
+  <GuiInfo Name="ModuleSpecialDefenseUnique1">
+    <Title>%ModuleSpecialDefenseUnique1Title</Title>
+    <Description>%ModuleSpecialDefenseUnique1Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique1Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique1Large"/>
+  </GuiInfo>
+  
+  <GuiInfo Name="ModuleSpecialDefenseUnique2">
+    <Title>%ModuleSpecialDefenseUnique2Title</Title>
+    <Description>%ModuleSpecialDefenseUnique2Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique2Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique2Large"/>
+  </GuiInfo>
+  
+  <GuiInfo Name="ModuleSpecialDefenseUnique3">
+    <Title>%ModuleSpecialDefenseUnique3Title</Title>
+    <Description>%ModuleSpecialDefenseUnique3Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique3Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique3Large"/>
+  </GuiInfo>
+  
+  <GuiInfo Name="ModuleSpecialDefenseUnique4">
+    <Title>%ModuleSpecialDefenseUnique4Title</Title>
+    <Description>%ModuleSpecialDefenseUnique4Description</Description>
+    <Icon Small="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique4Small" Large="Gui/DynamicBitmaps/Modules/ModuleSpecialDefenseUnique4Large"/>
+  </GuiInfo>
+  
+  -->
+</Datatable>

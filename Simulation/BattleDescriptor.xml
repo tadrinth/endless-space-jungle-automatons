@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <SimulationObjectDescriptor Name="BattlePhaseModifierLongRange" Type="BattlePhaseModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.33"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.1"           OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="BattlePhaseModifierMediumRange" Type="BattlePhaseModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.1"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.1"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="BattlePhaseModifierShortRange" Type="BattlePhaseModifier">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.1"          OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,LongRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Accuracy" Value="0.33"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="0.5"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,MediumRange"/>
+      
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="NumberPerSalve" Value="1.0"     OperationType="Multiplication" Path="ClassFleet/ClassShip/WeaponModule,ShortRange"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+</Datatable>

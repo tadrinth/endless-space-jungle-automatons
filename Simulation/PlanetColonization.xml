@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- using the community mod tweaking: force the AI to have a full planet before colonizing -->
+
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <Colonize Name="ColonizeTerran" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeTerran) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeTerranTitle</Title>
+      <Description>%ColonizeTerranDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationTerranSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationTerranLarge"/>
+    </Gui>
+  </Colonize>
+
+  <Colonize Name="ColonizeJungle" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeJungle) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeJungleTitle</Title>
+      <Description>%ColonizeJungleDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationJungleSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationJungleLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeOcean" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeOcean) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeOceanTitle</Title>
+      <Description>%ColonizeOceanDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationOceanSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationOceanLarge"/>
+    </Gui>
+  </Colonize>
+  
+  
+  
+  <Colonize Name="ColonizeArid" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeArid) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeAridTitle</Title>
+      <Description>%ColonizeAridDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationAridSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationAridLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeTundra" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeTundra) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeTundraTitle</Title>
+      <Description>%ColonizeTundraDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationTundraSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationTundraLarge"/>
+    </Gui>
+  </Colonize>
+  
+  
+  
+  <Colonize Name="ColonizeDesert" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeDesert) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeDesertTitle</Title>
+      <Description>%ColonizeDesertDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationDesertSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationDesertLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeArctic" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeArctic) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeArcticTitle</Title>
+      <Description>%ColonizeArcticDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationArcticSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationArcticLarge"/>
+    </Gui>
+  </Colonize>
+  
+  
+  
+  <Colonize Name="ColonizeLava" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeLava) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeLavaTitle</Title>
+      <Description>%ColonizeLavaDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationLavaSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationLavaLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeBarren" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeBarren) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeBarrenTitle</Title>
+      <Description>%ColonizeBarrenDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationBarrenSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationBarrenLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <!--<Colonize Name="ColonizeGasGiant" Cost="75">
+      <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+	  <PathsPrerequisites />
+	  <Gui>
+        <Title>%ColonizeGasGiantTitle</Title>
+        <Description>%ColonizeGasGiantDescription</Description>
+        <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneLarge"/>
+	  </Gui>
+  </Colonize>-->
+  
+  <Colonize Name="ColonizeGasHydrogen" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeGasHydrogen) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeGasHydrogenTitle</Title>
+      <Description>%ColonizeGasHydrogenDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasHydrogenSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasHydrogenLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeGasHelium" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeGasHelium) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeGasHeliumTitle</Title>
+      <Description>%ColonizeGasHeliumDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasHeliumSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasHeliumLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeGasMethane" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeGasMethane) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeGasMethaneTitle</Title>
+      <Description>%ColonizeGasMethaneDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneLarge"/>
+    </Gui>
+  </Colonize>
+  
+  <Colonize Name="ColonizeAsteroids" Cost="75" IsUnique="true">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <PathsPrerequisites>$(PlanetTypeAsteroids) and !$(PlanetStatusColonized)</PathsPrerequisites>
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeAsteroidsTitle</Title>
+      <Description>%ColonizeAsteroidsDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationAsteroidsSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationAsteroidsLarge"/>
+    </Gui>
+  </Colonize>
+  
+  
+  
+  <Colonize Name="ColonizeBase" Cost="75" IsUnique="true">
+    <!--<AIPathsPrerequisites>$(../ClassStarSystem:Population) ge $(../ClassStarSystem:AlmostMaxPop) and $(../ClassStarSystem:Population) gt 1</AIPathsPrerequisites>-->
+    <Gui>
+      <Title>%ColonizeJungleTitle</Title>
+      <Description>%ColonizeJungleDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationBaseSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationBaseLarge"/>
+    </Gui>
+  </Colonize>
+  
+  
+  
+  <MoonSurvey Name="MoonSurvey" Cost="120" IsUnique="true">
+    <PathsPrerequisites>$(ClassPlanet/ClassMoon) and $(PlanetStatusColonized) and !$(ClassPlanet/MoonStatusExplored)</PathsPrerequisites>
+    <Gui>
+      <Title>%MoonSurveyTitle</Title>
+      <Description>%MoonSurveyDescription</Description>
+      <Icon Small="Gui/AtlasedBitmaps/Improvements/Planets/MoonSurveySmall" Large="Gui/DynamicBitmaps/Improvements/Planets/MoonSurveyLarge"/>
+    </Gui>
+  </MoonSurvey>
+</Datatable>

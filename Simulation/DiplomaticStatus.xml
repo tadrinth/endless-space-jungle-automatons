@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <DiplomaticStatus Name="ColdWar" WaitingPeriod="0">
+        <Gui>
+            <Title>%DiplomacyStatusColdWarTitle</Title>
+            <Description>%DiplomacyStatusColdWarDescription</Description>
+            <Icon Small=""/>
+        </Gui>
+    </DiplomaticStatus>
+    
+    <DiplomaticStatus Name="War" WaitingPeriod="10">
+        <Gui>
+            <Title>%DiplomacyStatusWarTitle</Title>
+            <Description>%DiplomacyStatusWarDescription</Description>
+            <Icon Small=""/>
+        </Gui>
+    </DiplomaticStatus>
+    
+    <DiplomaticStatus Name="Peace" WaitingPeriod="10">
+        <Gui>
+            <Title>%DiplomacyStatusPeaceTitle</Title>
+            <Description>%DiplomacyStatusPeaceDescription</Description>
+            <Icon Small=""/>
+        </Gui>
+    </DiplomaticStatus>
+    
+    <DiplomaticStatus Name="Alliance" WaitingPeriod="15">
+        <Gui>
+            <Title>%DiplomacyStatusAllianceTitle</Title>
+            <Description>%DiplomacyStatusAllianceDescription</Description>
+            <Icon Small=""/>
+        </Gui>
+    </DiplomaticStatus>
+
+  <DiplomaticStatus Name="Eliminated" WaitingPeriod="0">
+    <Gui>
+      <Title>%DiplomacyStatusEliminatedTitle</Title>
+      <Description>%DiplomacyStatusEliminatedDescription</Description>
+      <Icon Small=""/>
+    </Gui>
+  </DiplomaticStatus>
+
+  <!-- Pirate only -->
+  <DiplomaticStatus Name="Pirate" WaitingPeriod="0">
+    <Gui>
+      <Title>%DiplomacyStatusPirateTitle</Title>
+      <Description>%DiplomacyStatusPirateDescription</Description>
+      <Icon Small=""/>
+    </Gui>
+  </DiplomaticStatus>
+    
+</Datatable>

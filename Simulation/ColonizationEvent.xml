@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- 
+    > Basic random events :
+      <RandomEvent></RandomEvent>
+        * RandomEventType :
+          - PositiveFactionEvent : Positive event generated for one empire
+          - NegativeFactionEvent : Negative event generated for one empire
+          - GlobalEvent : Event generated for all empires
+        * RandWeight : High values increase the chance to include this event in the generation
+        Basic effects : A random event can have as many effects as you want
+          <AchievementEffect></AchievementEffect> : Used to apply Descriptors on the event's Empire
+            * Duration : The duration of the effect (-1 means the duration will be given by game difficulty)
+            * Scope : Indicate which empire will be subjected to this effect
+              - LocalEmpire : Only the event's owner is concerned by this effect
+              - OtherEmpires : All the empires without the event's owner will be concerned
+              - AllEmpires : Apply the effect on all empires
+              - Allies : Apply the effect on the allies of the event's owner (owner won't be concerned)
+              - Enemies : Apply the effect on the owner's enemies (the empires which are in cold war or at war with the event's owner)
+              - RandomEmpire : Apply the effect on a random empire. The owner is not included in the random selection
+              - RandomAlly : Apply the effect on a random ally of the event's owner
+              - RandomEnnemy : Apply the effect on a random enemy of the event's owner
+            * TurnsBetweenExecutions : Used to apply the effect with a frequency (TurnsBetweenExecutions = 2 means the effect will be applied every 2 turns)
+			<Descriptors></Descriptors> : Descriptors to apply to the empire
+        Specific effects :
+          <AchievementEffect_XXX></AchievementEffect_XXX> : Share the parameters of basic effects + launch a specific command that can't be managed by Descriptors only
+            Available commands :
+              - <AchievementEffect_AddAnomaly></AchievementEffect_AddAnomaly> : Add a random anomaly on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  <Anomalies><Anomalies> : The list of anomalies that can be selected randomly
+              - <AchievementEffect_ModifyPopulation></AchievementEffect_ModifyPopulation> : Add or remove given amount of population on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  * PopulationCount : The amount of population added or removed for each concerned planet
+              - <AchievementEffect_SpawnNewShip></AchievementEffect_SpawnNewShip> : Create a ship and make it orbit a star system
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The ship design that will be used to spawn the ship (The name of the ship design will be dynamically completed with the target's affinity and the word 'Design' to match with default ship design names. e.g. ColonyShip => ColonyShipHoratioDesign)
+              - <AchievementEffect_ScienceDiscovery></AchievementEffect_ScienceDiscovery> : Automatically discover many available technologies
+                  * TechnoToDiscoverCount : How many technologies will be discovered
+                  * DiscoveryType : The category of technologies that will be discovered
+                    - Low : The technologies with lowest science cost
+                    - High : The technologies with highest science cost
+                    - Random : Technologies will be selected randomly among the available ones
+              - <AchievementEffect_ModifyShipSabotage></AchievementEffect_ModifyShipSabotage> : Remove X% of the ships' current HP
+                  * SabotagePercent : The amount of health that will be removed
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyHeroXP></AchievementEffect_ModifyHeroXP> : Increase the experience points of many heroes 
+                  * GainXP : The amount of XP that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyHeroAbilityPoints></AchievementEffect_ModifyHeroAbilityPoints> : Increase the ability points of many heroes 
+                  * AbilityPoints : The amount of ability points that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyShipXP></AchievementEffect_ModifyShipXP> : Increase the experience points of all ships 
+                  * GainXP : The amount of XP that will be added
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyBankAccount></AchievementEffect_ModifyBankAccount> : Modify the current bank account of the effect's target
+                  * Amount : The amount of Dust to add/remove
+              - <AchievementEffect_ModifyHeroExpel></AchievementEffect_ModifyHeroExpel> : Expel many heroes 
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyPeacePoints></AchievementEffect_ModifyPeacePoints> : Add or remove a percentage of the diplomatic victory targetted score
+                  * DiplomaticVictoryPercent : The percentage of the diplomatic victory score to add or remove
+              - <AchievementEffect_SpawnPirateFleet></AchievementEffect_SpawnPirateFleet> : Spawn X pirate fleets orbiting the event owner's home system
+                  * FleetCount : the amount of fleets that xill be created
+                  * PercentShipPerFleet : Ships will be created until the fleet's CP amount reached the given percentage of the pirate's max CP
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The list of ship designs that can be created randomly
+              - <AchievementEffect_ScienceBonus></AchievementEffect_ScienceBonus> : Give science points instantaneously
+                  * Amount : The amount of science to add to the current research (must be positive)
+			  - <AchievementEffect_AddDescriptorsOnSystem></AchievementEffect_AddDescriptorsOnSystem> 
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  <Descriptors></Descriptors> : Descriptors to apply to the star system (That means those descriptors won't be applied to the Empire).
+			  - <AchievementEffect_AddDescriptorsOnPlanet></AchievementEffect_AddDescriptorsOnPlanet>
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  * PlanetSelectionMode : The way the planet will be selected
+				    - Random : Select a planet randomly
+					- Context : The planet involved in the event's activation will be choosen (if not, Random will be used). This option will ignore the SystemSelectionMode
+				  <Descriptors></Descriptors> : Descriptors to apply to the planet (That means those descriptors won't be applied to the Empire).
+    
+                  
+    > Interactive random events :
+      <InteractiveEvent></InteractiveEvent> : Share the parameters of basic random events + list many specific events that will be selected by players
+          <InteractiveEventOption></InteractiveEventOption> : The name of the event that will be used as available choice for players
+    
+    > Interactive event options :
+      <InteractiveEventOption></InteractiveEventOption> : Kind of event that can't be included in random events' generation. They are used with Interactive random events
+        * Type : Used to guide the choice of the AIs according to their alignment and their diplomatic context
+          - Hostile
+          - Helpful
+          - Selfish
+        <AchievementEffect></AchievementEffect> : Same as random events
+    -->
+
+
+  <!-- Standard Events -->
+  <ColonizationEvent Name="ColonizationEventStandard_01" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_01Title</Title>
+      <Description>%ColonizationEventStandard_01Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="20" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandardDefaultBonus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_02" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_02Title</Title>
+      <Description>%ColonizationEventStandard_02Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="20" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandardDefaultBonus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_03" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_03Title</Title>
+      <Description>%ColonizationEventStandard_03Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="20" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandardDefaultBonus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_04" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_04Title</Title>
+      <Description>%ColonizationEventStandard_04Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_04</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_05" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_05Title</Title>
+      <Description>%ColonizationEventStandard_05Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent09"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="10" />
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="10" />
+    <AchievementEffect_AddDescriptorsOnSystem Duration="1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_05</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_06" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_06Title</Title>
+      <Description>%ColonizationEventStandard_06Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+  </ColonizationEvent>
+
+
+
+  <!--<ColonizationEvent Name="ColonizationEventStandard_07" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_07Title</Title>
+      <Description>%ColonizationEventStandard_07Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07_Malus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>-->
+
+
+  <ColonizationEvent Name="ColonizationEventStandard_07" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_07Title</Title>
+      <Description>%ColonizationEventStandard_07Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <InteractiveEventOption>ColonizationEventStandard_07_1</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventStandard_07_2</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventStandard_07_3</InteractiveEventOption>
+  </ColonizationEvent>
+
+  <InteractiveEventOption Name="ColonizationEventStandard_07_1" Type="Evil">
+    <Gui>
+      <Title>%ColonizationEventStandard_07_1Title</Title>
+      <Description>%ColonizationEventStandard_07_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07_1Malus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07_1</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventStandard_07_2" Type="Neutral">
+    <Gui>
+      <Title>%ColonizationEventStandard_07_2Title</Title>
+      <Description>%ColonizationEventStandard_07_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="20" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07_2Malus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventStandard_07_3" Type="Good">
+    <Gui>
+      <Title>%ColonizationEventStandard_07_3Title</Title>
+      <Description>%ColonizationEventStandard_07_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_07_3;ColonizationEventStandard_07_3Malus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+
+  
+
+  <ColonizationEvent Name="ColonizationEventStandard_08" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventStandard_08Title</Title>
+      <Description>%ColonizationEventStandard_08Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventStandard_08</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+  
+
+  <!-- Advanced Events -->
+  <ColonizationEvent Name="ColonizationEventAdvanced_01" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_01Title</Title>
+      <Description>%ColonizationEventAdvanced_01Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent01"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="60" />
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_02" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_02Title</Title>
+      <Description>%ColonizationEventAdvanced_02Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent02"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="10" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_02</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_03" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_03Title</Title>
+      <Description>%ColonizationEventAdvanced_03Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent02"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_03</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_04" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_04Title</Title>
+      <Description>%ColonizationEventAdvanced_04Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent03"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_04</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_05" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_05Title</Title>
+      <Description>%ColonizationEventAdvanced_05Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent03"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_05</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <!--<ColonizationEvent Name="ColonizationEventAdvanced_06" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_06Title</Title>
+      <Description>%ColonizationEventAdvanced_06Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent04"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_06</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>-->
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_06" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_06Title</Title>
+      <Description>%ColonizationEventAdvanced_06Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent04"/>
+    </Gui>
+    <InteractiveEventOption>ColonizationEventAdvanced_06_1</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventAdvanced_06_2</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventAdvanced_06_3</InteractiveEventOption>
+  </ColonizationEvent>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_06_1" Type="Evil">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_06_1Title</Title>
+      <Description>%ColonizationEventAdvanced_06_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnSystem Duration="1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_06_1</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="25" />
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_06_2" Type="Neutral">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_06_2Title</Title>
+      <Description>%ColonizationEventAdvanced_06_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_06_2</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_06_3" Type="Good">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_06_3Title</Title>
+      <Description>%ColonizationEventAdvanced_06_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_06_3</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+  
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_07" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_07Title</Title>
+      <Description>%ColonizationEventAdvanced_07Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent04"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="40" />
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_07</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_08" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_08Title</Title>
+      <Description>%ColonizationEventAdvanced_08Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent05"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="50" />
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_09" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_09Title</Title>
+      <Description>%ColonizationEventAdvanced_09Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent06"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="20" />
+    <AchievementEffect_AddDescriptorsOnSystem Duration="-1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_09</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_10" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_10Title</Title>
+      <Description>%ColonizationEventAdvanced_10Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent07"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="40" />
+    <AchievementEffect_AddDescriptorsOnSystem Duration="1" Scope="LocalEmpire" SystemSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_10</Descriptors>
+    </AchievementEffect_AddDescriptorsOnSystem>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_11" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_11Title</Title>
+      <Description>%ColonizationEventAdvanced_11Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent08"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_11</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_12" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_12Title</Title>
+      <Description>%ColonizationEventAdvanced_12Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent09"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_12</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_13" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_13Title</Title>
+      <Description>%ColonizationEventAdvanced_13Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent09"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_13</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_14" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_14Title</Title>
+      <Description>%ColonizationEventAdvanced_14Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent10"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="25" />
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="10" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_14</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+
+  <!--<ColonizationEvent Name="ColonizationEventAdvanced_15" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_15Title</Title>
+      <Description>%ColonizationEventAdvanced_15Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent11"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_15</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>-->
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_15" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_15Title</Title>
+      <Description>%ColonizationEventAdvanced_15Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent11"/>
+    </Gui>
+    <InteractiveEventOption>ColonizationEventAdvanced_15_1</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventAdvanced_15_2</InteractiveEventOption>
+    <InteractiveEventOption>ColonizationEventAdvanced_15_3</InteractiveEventOption>
+  </ColonizationEvent>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_15_1" Type="Evil">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_15_1Title</Title>
+      <Description>%ColonizationEventAdvanced_15_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="10" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_15_1</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_15_2" Type="Neutral">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_15_2Title</Title>
+      <Description>%ColonizationEventAdvanced_15_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="-1" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_15_2</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="ColonizationEventAdvanced_15_3" Type="Good">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_15_3Title</Title>
+      <Description>%ColonizationEventAdvanced_15_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ColonizationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEventStandard"/>
+    </Gui>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="10" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_15_3Malus</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="20" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_15_3</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </InteractiveEventOption>
+  
+  
+
+  <ColonizationEvent Name="ColonizationEventAdvanced_16" RandWeight="1">
+    <Gui>
+      <Title>%ColonizationEventAdvanced_16Title</Title>
+      <Description>%ColonizationEventAdvanced_16Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ColonizationEvent12"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="25" />
+    <AchievementEffect_AddDescriptorsOnPlanet Duration="10" Scope="LocalEmpire" PlanetSelectionMode="Context">
+      <Descriptors>ColonizationEventAdvanced_16</Descriptors>
+    </AchievementEffect_AddDescriptorsOnPlanet>
+  </ColonizationEvent>
+
+
+</Datatable>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense1Vaulter">
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Military" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense2Vaulter">
+    <AIParameter Name="Science" Value="1.5" />
+    <AIParameter Name="Military" Value="1.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense3Vaulter">
+    <AIParameter Name="Science" Value="1.7" />
+    <AIParameter Name="Military" Value="2" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementScience4Vaulter">
+    <AIParameter Name="Science" Value="2.2000000000000002" />
+    <AIParameter Name="Military" Value="0.5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementUniqueVaulter">
+    <AIParameter Name="Science" Value="3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementVaulterPortal">
+    <AIParameter Name="Food" Value="1" />
+    <AIParameter Name="Industry" Value="1" />
+    <AIParameter Name="Money" Value="1" />
+    <AIParameter Name="Science" Value="1" />
+    <AIParameter Name="Military" Value="1" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="StarSystemImprovementDefense5Vaulter">
+    <AIParameter Name="Military" Value="1.7" />
+  </AIParametersDatatableElement>
+</Datatable>

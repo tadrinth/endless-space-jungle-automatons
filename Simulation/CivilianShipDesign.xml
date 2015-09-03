@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <!-- ### SUMMARY ###
+  LargeFullShow					0x000002a100000001
+  MediumFullShow				0x000002a200000001
+  SmallFullShow					0x000002a300000001
+  
+  LargeFull					    0x0000000100000001
+  Large30Lasers30Missiles		0x0000000200000001
+  MediumFull				    0x0000000300000001
+  
+  LargeTestSD				    0x0000000500000001
+  MediumTestSD				    0x0000000600000001
+  MediumTestSD_B			    0x0000000700000001
+  SmallTestSD				    0x0000000800000001
+  SmallTestSD_B                 0x0000001000000001
+  
+  
+  ColonyShip 				       0x0000000900000001	Shared 
+  Scout						         0x0000000400000001	Shared
+  Defender                 0x0000001200000001  Shared
+  
+  ColonyShipTerran				0x0000021000000001	Shared
+  ScoutTerran					0x0000021100000001	Shared
+  DefenderTerran                0x0000021200000001  Shared
+  SuperDefenderTerran           0x0000021300000001
+  AdvancedDefenderTerran        0x0000021400000001
+
+  ColonyShipSwarm				0x0000022000000001	Shared
+  ScoutSwarm					0x0000022100000001	Shared
+  DefenderSwarm					0x0000022200000001	Shared
+  SuperDefenderSwarm	          0x0000022300000001
+  AdvancedDefenderSwarm	        0x0000022400000001
+
+  ColonyShipSophon				0x0000023000000001	Shared
+  ScoutSophon					0x0000023100000001	Shared
+  DefenderSophon				0x0000023200000001	Shared
+  SuperDefenderSophon          0x0000023300000001
+  AdvancedDefenderSophon	     0x0000023400000001
+
+  ColonyShipHoratio				0x0000024000000001	Shared
+  ScoutHoratio					0x0000024100000001	Shared
+  DefenderHoratio				0x0000024200000001	Shared
+  SuperDefenderHoratio          0x0000024300000001
+  AdvancedDefenderHoratio       0x0000024400000001
+
+  ColonyShipHissho				0x0000025000000001	Shared
+  ScoutHissho					0x0000025100000001	Shared
+  DefenderHissho				0x0000025200000001	Shared
+  SuperDefenderHissho          0x0000025300000001
+  AdvancedDefenderHissho       0x0000025400000001
+
+  ColonyShipSower				0x0000026000000001	Shared
+  ScoutSower					0x0000026100000001	Shared
+  DefenderSower					0x0000026200000001	Shared
+  SuperDefenderSower         0x0000026300000001
+  AdvancedDefenderSower       0x0000026400000001
+
+  ColonyShipAmoeba				0x0000027000000001	Shared
+  ScoutAmoeba					0x0000027100000001	Shared
+  DefenderAmoeba				0x0000027200000001	Shared
+  SuperDefenderAmoeba	         0x0000027300000001
+  AdvancedDefenderAmoeba	       0x0000027400000001
+
+  ColonyShipResistance			0x0000028000000001	Shared
+  ScoutResistance				0x0000028100000001	Shared
+  DefenderResistance			0x0000028200000001	Shared
+  EvacuationResistance			0x0000028300000001
+  SuperDefenderResistance         0x0000028400000001
+  AdvancedDefenderResistance	       0x0000028500000001
+  
+  ColonyShipAutomaton			0x0000030000000001 Shared
+  ScoutShipAutomaton			0x0000030100000001 Shared
+  DefenderShipAutomaton			0x0000030200000001 Shared
+  SuperDefenderAutomaton         0x0000030300000001
+  AdvancedDefenderAutomaton       0x0000030400000001
+  
+   ColonyShipHarmony			0x0000031000000001 Shared
+  ScoutShipHarmony        0x0000031100000001 Shared
+  DefenderShipHarmony			0x0000031200000001 Shared
+  SuperDefenderHarmony         0x0000031300000001
+  AdvancedDefenderHarmony       0x0000031400000001
+  
+  ColonyShipEmperor			0x0000031000000001 Shared
+  ScoutShipEmperor        0x0000031100000001 Shared
+  DefenderShipEmperor			0x0000031200000001 Shared
+  SuperDefenderEmperor         0x0000031300000001
+  AdvancedDefenderEmperor       0x0000031400000001
+  
+  ColonyShipEmperor			        0x0000033000000001 Shared
+  ScoutShipEmperor              0x0000033100000001 Shared
+  DefenderShipEmperor			      0x0000033200000001 Shared
+  SuperDefenderEmperor          0x0000033300000001
+  AdvancedDefenderEmperor       0x0000033400000001
+  
+  ScoutPirates				    0x0000029100000001	Shared
+  DefenderPirates			    0x0000029200000001	Shared
+  BlockaderPirates			    0x0000029300000001	Shared
+  WeakHunterPirates			    0x0000029400000001	Shared
+  NormalHunterPirates			    0x0000029500000001	Shared
+  StrongHunterPirates			    0x0000029600000001	Shared
+  -->
+
+  <ShipDesign Name="EvacuationShipResistanceDesign" Serial="0x0000028300000001" Affinity="Resistance">
+    <Hull>ShipClassEvacuationResistance</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian,ShipClassificationEvacuation</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+  
+  <ShipDesign Name="ColonyShip" Serial="0x0000000900000001">
+    <Hull>ShipClassColonization</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+
+
+  <ShipDesign Name="ColonyShipTerranDesign" Serial="0x0000021000000001" Affinity="Terran" Shared="true">
+    <Hull>ShipClassColonizationTerran</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+  
+  <ShipDesign Name="ColonyShipSwarmDesign" Serial="0x0000022000000001" Affinity="Swarm" Shared="true">
+    <Hull>ShipClassColonizationSwarm</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+   
+  <ShipDesign Name="ColonyShipSophonDesign" Serial="0x0000023000000001" Affinity="Sophon" Shared="true">
+    <Hull>ShipClassColonizationSophon</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+   
+  <ShipDesign Name="ColonyShipHoratioDesign" Serial="0x0000024000000001" Affinity="Horatio" Shared="true">
+    <Hull>ShipClassColonizationHoratio</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+   
+  <ShipDesign Name="ColonyShipHisshoDesign" Serial="0x0000025000000001" Affinity="Hissho" Shared="true">
+    <Hull>ShipClassColonizationHissho</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+     
+  <ShipDesign Name="ColonyShipSowerDesign" Serial="0x0000026000000001" Affinity="Sower" Shared="true">
+    <Hull>ShipClassColonizationSower</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+     
+  <ShipDesign Name="ColonyShipAmoebaDesign" Serial="0x0000027000000001" Affinity="Amoeba" Shared="true">
+    <Hull>ShipClassColonizationAmoeba</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+     
+  <ShipDesign Name="ColonyShipResistanceDesign" Serial="0x0000028000000001" Affinity="Resistance" Shared="true">
+    <Hull>ShipClassColonizationResistance</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+  
+  
+  <ShipDesign Name="ColonyShipAutomatonDesign" Serial="0x0000030000000001" Affinity="Automaton" Shared="true">
+    <Hull>ShipClassColonizationAutomaton</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+
+  <ShipDesign Name="ColonyShipHarmonyDesign" Serial="0x0000031000000001" Affinity="Harmony" Shared="true">
+    <Hull>ShipClassColonizationHarmony</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+
+  <ShipDesign Name="ColonyShipEmperorDesign" Serial="0x0000032000000001" Affinity="Emperor" Shared="true">
+    <Hull>ShipClassColonizationEmperor</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+
+  <ShipDesign Name="ColonyShipVaulterDesign" Serial="0x0000033000000001" Affinity="Vaulter" Shared="true">
+    <Hull>ShipClassColonizationVaulter</Hull>
+    <Modules>
+      <!-- Civilian -->
+      <Module>ModuleColonization</Module>
+    </Modules>
+    <Descriptors>ShipClassificationCivilian</Descriptors>
+    <AIParameters>
+      <AIParameter Name="Military" Value="1" />
+
+      <!-- Ship specific coefficient -->
+      <AIParameter Name="Colonization" Value="1" />
+    </AIParameters>
+  </ShipDesign>
+
+</Datatable>

@@ -1,0 +1,2459 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- RandomEventType = "GlobalEvent or PositiveFactionEvent or NegativeFactionEvent" -->
+  <!-- If the duration is set to -1, this value will depend on Game Speed (10,20,40 cf. Design) -->
+
+  <!-- 
+    > Basic random events :
+      <RandomEvent></RandomEvent>
+        * RandomEventType :
+          - PositiveFactionEvent : Positive event generated for one empire
+          - NegativeFactionEvent : Negative event generated for one empire
+          - GlobalEvent : Event generated for all empires
+        * RandWeight : High values increase the chance to include this event in the generation
+        Basic effects : A random event can have as many effects as you want
+          <AchievementEffect></AchievementEffect> : Used to apply Descriptors on the event's Empire
+            * Duration : The duration of the effect (-1 means the duration will be given by game difficulty)
+            * Scope : Indicate which empire will be subjected to this effect
+              - LocalEmpire : Only the event's owner is concerned by this effect
+              - OtherEmpires : All the empires without the event's owner will be concerned
+              - AllEmpires : Apply the effect on all empires
+              - Allies : Apply the effect on the allies of the event's owner (owner won't be concerned)
+              - Enemies : Apply the effect on the owner's enemies (the empires which are in cold war or at war with the event's owner)
+              - RandomEmpire : Apply the effect on a random empire. The owner is not included in the random selection
+              - RandomAlly : Apply the effect on a random ally of the event's owner
+              - RandomEnnemy : Apply the effect on a random enemy of the event's owner
+            * TurnsBetweenExecutions : Used to apply the effect with a frequency (TurnsBetweenExecutions = 2 means the effect will be applied every 2 turns)
+			<Descriptors></Descriptors> : Descriptors to apply to the empire
+        Specific effects :
+          <AchievementEffect_XXX></AchievementEffect_XXX> : Share the parameters of basic effects + launch a specific command that can't be managed by Descriptors only
+            Available commands :
+              - <AchievementEffect_AddAnomaly></AchievementEffect_AddAnomaly> : Add a random anomaly on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  <Anomalies><Anomalies> : The list of anomalies that can be selected randomly
+              - <AchievementEffect_ModifyPopulation></AchievementEffect_ModifyPopulation> : Add or remove given amount of population on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  * PopulationCount : The amount of population added or removed for each concerned planet
+              - <AchievementEffect_SpawnNewShip></AchievementEffect_SpawnNewShip> : Create a ship and make it orbit a star system
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The ship design that will be used to spawn the ship (The name of the ship design will be dynamically completed with the target's affinity and the word 'Design' to match with default ship design names. e.g. ColonyShip => ColonyShipHoratioDesign)
+              - <AchievementEffect_ScienceDiscovery></AchievementEffect_ScienceDiscovery> : Automatically discover many available technologies
+                  * TechnoToDiscoverCount : How many technologies will be discovered
+                  * DiscoveryType : The category of technologies that will be discovered
+                    - Low : The technologies with lowest science cost
+                    - High : The technologies with highest science cost
+                    - Random : Technologies will be selected randomly among the available ones
+              - <AchievementEffect_ModifyShipSabotage></AchievementEffect_ModifyShipSabotage> : Remove X% of the ships' current HP
+                  * SabotagePercent : The amount of health that will be removed
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyHeroXP></AchievementEffect_ModifyHeroXP> : Increase the experience points of many heroes 
+                  * GainXP : The amount of XP that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyHeroAbilityPoints></AchievementEffect_ModifyHeroAbilityPoints> : Increase the ability points of many heroes 
+                  * AbilityPoints : The amount of ability points that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyShipXP></AchievementEffect_ModifyShipXP> : Increase the experience points of all ships 
+                  * GainXP : The amount of XP that will be added
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyBankAccount></AchievementEffect_ModifyBankAccount> : Modify the current bank account of the effect's target
+                  * Amount : The amount of Dust to add/remove
+              - <AchievementEffect_ModifyHeroExpel></AchievementEffect_ModifyHeroExpel> : Expel many heroes 
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyPeacePoints></AchievementEffect_ModifyPeacePoints> : Add or remove a percentage of the diplomatic victory targetted score
+                  * DiplomaticVictoryPercent : The percentage of the diplomatic victory score to add or remove
+              - <AchievementEffect_SpawnPirateFleet></AchievementEffect_SpawnPirateFleet> : Spawn X pirate fleets orbiting the event owner's home system
+                  * FleetCount : the amount of fleets that xill be created
+                  * PercentShipPerFleet : Ships will be created until the fleet's CP amount reached the given percentage of the pirate's max CP
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The list of ship designs that can be created randomly
+              - <AchievementEffect_ScienceBonus></AchievementEffect_ScienceBonus> : Give science points instantaneously
+                  * Amount : The amount of science to add to the current research (must be positive)
+			  - <AchievementEffect_AddDescriptorsOnSystem></AchievementEffect_AddDescriptorsOnSystem> 
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  <Descriptors></Descriptors> : Descriptors to apply to the star system (That means those descriptors won't be applied to the Empire).
+			  - <AchievementEffect_AddDescriptorsOnPlanet></AchievementEffect_AddDescriptorsOnPlanet>
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  * PlanetSelectionMode : The way the planet will be selected
+				    - Random : Select a planet randomly
+					- Context : The planet involved in the event's activation will be choosen (if not, Random will be used). This option will ignore the SystemSelectionMode
+				  <Descriptors></Descriptors> : Descriptors to apply to the planet (That means those descriptors won't be applied to the Empire).
+    
+                  
+    > Interactive random events :
+      <InteractiveEvent></InteractiveEvent> : Share the parameters of basic random events + list many specific events that will be selected by players
+          <InteractiveEventOption></InteractiveEventOption> : The name of the event that will be used as available choice for players
+    
+    > Interactive event options :
+      <InteractiveEventOption></InteractiveEventOption> : Kind of event that can't be included in random events' generation. They are used with Interactive random events
+        * Type : Used to guide the choice of the AIs according to their alignment and their diplomatic context
+          - Hostile
+          - Helpful
+          - Selfish
+        <AchievementEffect></AchievementEffect> : Same as random events
+    -->
+
+  <!-- ********************************** GLOBAL EVENT *********************************** -->
+  <!-- DUST CODE CRACKED -->
+  <RandomEvent Name="Achievement_ScienceBonus" RandomEventType="GlobalEvent" RandWeight="3">
+    <Gui>
+      <Title>%GlobalRandomEvent01Title</Title>
+      <Description>%GlobalRandomEvent01Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent01"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_ScienceBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- DUST LODE SELF-ACTIVATES -->
+  <RandomEvent Name="Achievement_ScienceMalus" RandomEventType="GlobalEvent" RandWeight="2">
+    <Gui>
+      <Title>%GlobalRandomEvent02Title</Title>
+      <Description>%GlobalRandomEvent02Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_ScienceMalus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- HULK DISCOVERED WITH ENDLESS TECH -->
+  <RandomEvent Name="Achievement_SpeedBonus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent03Title</Title>
+      <Description>%GlobalRandomEvent03Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_SpeedBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- ENDLESS SIGNALS TECH DISCOVERED -->
+  <RandomEvent Name="Achievement_FrontierBonus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent04Title</Title>
+      <Description>%GlobalRandomEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_FrontierBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- DARK MATTER REACTS -->
+  <RandomEvent Name="Achievement_FrontierMalus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent05Title</Title>
+      <Description>%GlobalRandomEvent05Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent05"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_FrontierMalus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- TRADE TREATY GENIUS -->
+  <RandomEvent Name="Achievement_DiplomaticBonus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent06Title</Title>
+      <Description>%GlobalRandomEvent06Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent06"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_DiplomaticBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- EXPLORER DESECRATES ENDLESS TEMPLE -->
+  <RandomEvent Name="Achievement_DiplomaticMalus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent07Title</Title>
+      <Description>%GlobalRandomEvent07Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent07"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_DiplomaticMalus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- SUBTERRANEAN ENDLESS TREASURES DISCOVERED -->
+  <RandomEvent Name="Achievement_EmpireBonus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent12Title</Title>
+      <Description>%GlobalRandomEvent12Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent12"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_EmpireBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- CORRUPTION AND NEPOTISM SCANDAL -->
+  <RandomEvent Name="Achievement_EmpireMalus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%GlobalRandomEvent13Title</Title>
+      <Description>%GlobalRandomEvent13Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent13"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_EmpireMalus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+
+  <!-- ********************************** POSITIVE FACTION RANDOM EVENTS ********************************** -->
+  <!-- ENDLESS MAP ARTIFACT DISCOVERED -->
+  <RandomEvent Name="Achievement_RevealMap" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent01Title</Title>
+      <Description>%FactionRandomPositiveEvent01Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent01"/>
+    </Gui>
+    <AchievementEffect Duration="2" Scope="LocalEmpire">
+      <Descriptors>Achievement_RevealMapBonus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- LEGENDARY WRECK ANALYZED -->
+  <RandomEvent Name="Achievement_XpBonusShip" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent03Title</Title>
+      <Description>%FactionRandomPositiveEvent03Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent03"/>
+      <Tooltip>
+        <Description>%Achievement_XpBonusShipTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_ModifyShipXP Duration="0" Scope="LocalEmpire" GainXP="40"/>
+  </RandomEvent>
+
+  <!-- SUCCESSFUL SKUNKWORKS -->
+  <RandomEvent Name="Achievement_LowScienceDiscovery" RandomEventType="PositiveFactionEvent" RandWeight="3">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent04Title</Title>
+      <Description>%FactionRandomPositiveEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent04"/>
+      <Tooltip>
+        <Description>%Achievement_LowScienceDiscoveryTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="2"/>
+  </RandomEvent>
+
+  <!-- UNEXPECTED EXPERIMENTAL RESULTS -->
+  <RandomEvent Name="Achievement_HighScienceDiscovery" RandomEventType="PositiveFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent05Title</Title>
+      <Description>%FactionRandomPositiveEvent05Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent05"/>
+      <Tooltip>
+        <Description>%Achievement_HighScienceDiscoveryTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="High" TechnoToDiscoverCount="1"/>
+  </RandomEvent>
+
+  <!-- PARTIAL DUST RE-ANIMATION -->
+  <RandomEvent Name="Achievement_XpBonusHero" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent02Title</Title>
+      <Description>%FactionRandomPositiveEvent02Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent02"/>
+      <Tooltip>
+        <Description>%Achievement_XpBonusHeroTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="50"/>
+  </RandomEvent>
+
+  <!-- A RIP IN THE FABRIC… -->
+  <RandomEvent Name="Achievement_PositiveAnomaly" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent08Title</Title>
+      <Description>%FactionRandomPositiveEvent08Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent08"/>
+      <Tooltip>
+        <Description>%Achievement_PositiveAnomalyTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_AddAnomaly Duration="0" Scope="LocalEmpire" PlanetsAffected="4">
+      <Anomalies>PlanetAnomaly07;PlanetAnomaly08;PlanetAnomaly14;PlanetAnomaly18</Anomalies>
+    </AchievementEffect_AddAnomaly>
+  </RandomEvent>
+
+  <!-- TIME-SPACE ANOMALY YIELDS SHIP -->
+  <RandomEvent Name="Achievement_NewColonyShip" RandomEventType="PositiveFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent10Title</Title>
+      <Description>%FactionRandomPositiveEvent10Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent10"/>
+      <Tooltip>
+        <Description>%Achievement_NewColonyShipTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Scope="LocalEmpire" Duration="0" OrbitSelectionMode="LastColonizedSystem" >
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </RandomEvent>
+
+  <!-- ********************************** NEGATIVE FACTION RANDOM EVENTS ********************************** -->
+  <!-- SUPERNOVA DISRUPTS NAVIGATION MAPS -->
+  <RandomEvent Name="Achievement_HideMap" RandomEventType="NegativeFactionEvent" RandWeight="4">
+    <Gui>
+      <Title>%FactionRandomNegativeEvent01Title</Title>
+      <Description>%FactionRandomNegativeEvent01Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent01"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_HideMap</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- FANATIC REBELS SUICIDE BOMB NAVY -->
+  <RandomEvent Name="Achievement_ShipSabotage" RandomEventType="NegativeFactionEvent" RandWeight="3">
+    <Gui>
+      <Title>%FactionRandomNegativeEvent03Title</Title>
+      <Description>%FactionRandomNegativeEvent03Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent03"/>
+    </Gui>
+    <AchievementEffect_ModifyShipSabotage Duration="0" Scope="LocalEmpire" SabotagePercent="-0.25"/>
+  </RandomEvent>
+
+  <!-- ENGINE CONTROL TECH FAULT DISCOVERED -->
+  <RandomEvent Name="Achievement_SpeedMalus" RandomEventType="GlobalEvent" RandWeight="4">
+    <Gui>
+      <Title>%FactionRandomNegativeEvent05Title</Title>
+      <Description>%FactionRandomNegativeEvent05Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent05"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_SpeedMalus</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- QUANTUM-COUPLED DIASASTER -->
+  <RandomEvent Name="Achievement_NegativeAnomaly" RandomEventType="NegativeFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomNegativeEvent08Title</Title>
+      <Description>%FactionRandomNegativeEvent08Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent08"/>
+      <Tooltip>
+        <Description>%Achievement_NegativeAnomalyTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_AddAnomaly Duration="0" Scope="LocalEmpire" PlanetsAffected="3">
+      <Anomalies>PlanetAnomaly38;PlanetAnomaly40;PlanetAnomaly41;PlanetAnomaly42</Anomalies>
+    </AchievementEffect_AddAnomaly>
+  </RandomEvent>
+
+  <!-- SUPERBUG CONTAGION -->
+  <RandomEvent Name="Achievement_Disease" RandomEventType="NegativeFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%FactionRandomNegativeEvent09Title</Title>
+      <Description>%FactionRandomNegativeEvent09Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent09"/>
+      <Tooltip>
+        <Description>%Achievement_DiseaseTooltipEffect</Description>
+      </Tooltip>
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PopulationCount="-1" PlanetsAffected="3"/>
+  </RandomEvent>
+
+  <!-- GALACTIC TEMPEST #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveGalacticTempest" RandomEventType="GlobalEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticTempestTitle</Title>
+      <Description>%Achievement_InteractiveGalacticTempestDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveGalacticTempest"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempest</Descriptors>
+    </AchievementEffect>
+    <InteractiveEventOption>Achievement_InteractiveGalacticTempestOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveGalacticTempestOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveGalacticTempestOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticTempestOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticTempestOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveGalacticTempestOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="OtherEmpires">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempestOptionHostileProduction</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempestOptionHostileLocalCost</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticTempestOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticTempestOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveGalacticTempestOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="Allies">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempestOptionHelpfulScience</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempestOptionHelpfulLocalCost</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticTempestOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticTempestOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveGalacticTempestOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticTempestOptionSelfishScience</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect_ModifyBankAccount Duration="20" TurnsBetweenExecutions="1"  Scope="LocalEmpire" Amount="-100"/>
+  </InteractiveEventOption>
+  
+
+  <!-- ######################################## -->
+
+  <!-- GALACTIC PLAGUE #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveGalacticPlague" RandomEventType="GlobalEvent" RandWeight="3">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticPlagueTitle</Title>
+      <Description>%Achievement_InteractiveGalacticPlagueDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveGalacticPlague"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveGalacticPlagueOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveGalacticPlagueOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveGalacticPlagueOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticPlagueOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticPlagueOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveGalacticPlagueOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0"  Scope="LocalEmpire" PlanetsAffected="-1" PopulationCount="-3"/>
+    <AchievementEffect_ModifyPopulation Duration="20" Scope="LocalEmpire" TurnsBetweenExecutions="6"  PlanetsAffected="-1" PopulationCount="-3"/>
+    <AchievementEffect_ModifyPopulation Duration="20" Scope="OtherEmpires" TurnsBetweenExecutions="8"  PlanetsAffected="-1" PopulationCount="-2"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticPlagueOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticPlagueOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveGalacticPlagueOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="30" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticPlagueOptionHelpfulLocalCost</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect_ModifyPopulation Duration="20" TurnsBetweenExecutions="6"  Scope="LocalEmpire" PlanetsAffected="-1" PopulationCount="-3"/>
+    <AchievementEffect_ModifyPopulation Duration="20" TurnsBetweenExecutions="8"  Scope="AllEmpires" PlanetsAffected="-1" PopulationCount="2"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveGalacticPlagueOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveGalacticPlagueOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveGalacticPlagueOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalGalacticPlagueOptionSelfishLocalCost</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect_ModifyPopulation Duration="20" Scope="LocalEmpire" TurnsBetweenExecutions="10"   PlanetsAffected="-1" PopulationCount="-3"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+
+  <!-- NEW RELIGION #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveNewReligion" RandomEventType="GlobalEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveNewReligionTitle</Title>
+      <Description>%Achievement_InteractiveNewReligionDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveNewReligion"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveNewReligionOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveNewReligionOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveNewReligionOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveNewReligionOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveNewReligionOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveNewReligionOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPeacePoints Duration="0" Scope="LocalEmpire" DiplomaticVictoryPercent="-0.02"/>
+    <AchievementEffect_ModifyHeroExpel Duration="0" Scope="LocalEmpire" HeroSelectionMode="Strongest" HeroesAffected="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveNewReligionOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveNewReligionOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveNewReligionOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPeacePoints Duration="0" Scope="LocalEmpire" DiplomaticVictoryPercent="0.01"/>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-1000"/>
+    <AchievementEffect Duration="20" Scope="LocalEmpire" >
+      <Descriptors>Achievement_InteractiveGlobalNewReligionOptionHelpfulLocalCost</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveNewReligionOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveNewReligionOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveNewReligionOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPeacePoints Duration="0" Scope="LocalEmpire" DiplomaticVictoryPercent="0.03"/>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PlanetsAffected="4" PopulationCount="-3"/>
+    <!-- local cost -->
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+
+  <!-- TO THE ENDLESS #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveToTheEndless" RandomEventType="GlobalEvent" RandWeight="3">
+    <Gui>
+      <Title>%Achievement_InteractiveToTheEndlessTitle</Title>
+      <Description>%Achievement_InteractiveToTheEndlessDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveToTheEndless"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveToTheEndlessOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveToTheEndlessOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveToTheEndlessOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveToTheEndlessOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveToTheEndlessOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveToTheEndlessOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="15" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveGlobalToTheEndlessOptionHostileLocalCost</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PlanetsAffected="-1" PopulationCount="5"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveToTheEndlessOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveToTheEndlessOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveToTheEndlessOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-1000"/>
+    <AchievementEffect Duration="20" Scope="LocalEmpire" >
+      <Descriptors>Achievement_InteractiveGlobalToTheEndlessOptionHelpfulLocalBonus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveToTheEndlessOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveToTheEndlessOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveToTheEndlessOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-1000"/>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- DUST RAIN #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveDustRain" RandomEventType="GlobalEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveDustRainTitle</Title>
+      <Description>%Achievement_InteractiveDustRainDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveDustRain"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveDustRainOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustRainOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustRainOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustRainOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveDustRainOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveDustRainOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="15" Scope="OtherEmpires">
+      <Descriptors>Achievement_InteractiveGlobalDustRainOptionHostileGlobalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustRainOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveDustRainOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveDustRainOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="500"/>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="Allies" Amount="1000"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustRainOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveDustRainOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveDustRainOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+     <Descriptors>Achievement_InteractiveGlobalDustRainOptionSelfishGlobalMalus</Descriptors>
+   </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+
+
+  <!-- WRECK #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveWreck_1" RandomEventType="PositiveFactionEvent" RandWeight="7">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_1Title</Title>
+      <Description>%Achievement_InteractiveWreck_1Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveWreck_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_1_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_1_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveWreck_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_1_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveWreck_1_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnNewShip Scope="LocalEmpire" Duration="0" OrbitSelectionMode="LastColonizedSystem" >
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_1_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveWreck_1_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="150"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- WRECK V2 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveWreck_2" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_2Title</Title>
+      <Description>%Achievement_InteractiveWreck_2Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveWreck_2_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_2_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_2_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_2_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveWreck_2_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveWreck_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnNewShip Scope="LocalEmpire" Duration="0" OrbitSelectionMode="LastColonizedSystem" >
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="50"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_2_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_2_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveWreck_2_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="300"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- WRECK V3 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveWreck_3" RandomEventType="PositiveFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_3Title</Title>
+      <Description>%Achievement_InteractiveWreck_3Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveWreck_3_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_3_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWreck_3_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_3_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_3_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveWreck_3_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="High" TechnoToDiscoverCount="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_3_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_3_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveWreck_3_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnNewShip Scope="LocalEmpire" Duration="0" OrbitSelectionMode="LastColonizedSystem" >
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="1"/>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="100"/>
+
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWreck_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveWreck_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveWreck_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="600"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- DUST FLOW #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveDustFlow_1" RandomEventType="PositiveFactionEvent" RandWeight="7">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_1Title</Title>
+      <Description>%Achievement_InteractiveDustFlow_1Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent02"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_1_OptionHostile</InteractiveEventOption>
+
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_1_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Strongest" HeroesAffected="1" GainXP="50"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_1_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_1_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Weakest" HeroesAffected="1" GainXP="100"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_1_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_1_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="500"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- DUST FLOW  V2 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveDustFlow_2" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_2Title</Title>
+      <Description>%Achievement_InteractiveDustFlow_2Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent02"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_2_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_2_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_2_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_2_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_2_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Strongest" HeroesAffected="1" GainXP="75"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Weakest" HeroesAffected="1" GainXP="150"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_2_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_2_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_2_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="750"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- DUST FLOW  V3 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveDustFlow_3" RandomEventType="PositiveFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_3Title</Title>
+      <Description>%Achievement_InteractiveDustFlow_3Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent02"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_3_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_3_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveDustFlow_3_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_3_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_3_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_3_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Strongest" HeroesAffected="1" GainXP="150"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_3_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_3_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_3_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" HeroSelectionMode="Weakest" HeroesAffected="1" GainXP="300"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveDustFlow_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveDustFlow_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveDustFlow_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="1500"/>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTEUR V1 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSaboteur_1" RandomEventType="NegativeFactionEvent" RandWeight="6">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_1Title</Title>
+      <Description>%Achievement_InteractiveSaboteur_1Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveSaboteur_1"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_1_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_1_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PopulationCount="-1" PlanetsAffected="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_1_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_1_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-150"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_1_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_1_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSaboteur_1_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTEUR V2 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSaboteur_2" RandomEventType="NegativeFactionEvent" RandWeight="4">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_2Title</Title>
+      <Description>%Achievement_InteractiveSaboteur_2Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveSaboteur_2"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_2_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_2_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_2_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_2_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_2_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PopulationCount="-2" PlanetsAffected="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-400"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_2_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_2_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_2_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSaboteur_2_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTEUR V3 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSaboteur_3" RandomEventType="NegativeFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_3Title</Title>
+      <Description>%Achievement_InteractiveSaboteur_3Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveSaboteur_3"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_3_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_3_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSaboteur_3_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_3_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_3_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_3_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PopulationCount="-3" PlanetsAffected="1"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_3_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_3_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_3_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-1000"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSaboteur_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSaboteur_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSaboteur_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSaboteur_3_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTAGE V1 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSabotage_1" RandomEventType="NegativeFactionEvent" RandWeight="6">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_1Title</Title>
+      <Description>%Achievement_InteractiveSabotage_1Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_1_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_1_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyShipSabotage Duration="20" TurnsBetweenExecutions="1" Scope="LocalEmpire" SabotagePercent="-0.05"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_1_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_1_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_1_OptionHelpfulLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_1_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_1_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_1_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTAGE V2 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSabotage_2" RandomEventType="NegativeFactionEvent" RandWeight="4">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_2Title</Title>
+      <Description>%Achievement_InteractiveSabotage_2Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_2_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_2_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_2_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_2_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_2_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyShipSabotage Duration="20" TurnsBetweenExecutions="1" Scope="LocalEmpire" SabotagePercent="-0.10"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_2_OptionHelpfulLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_2_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_2_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_2_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_2_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SABOTAGE V3 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveSabotage_3" RandomEventType="NegativeFactionEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_3Title</Title>
+      <Description>%Achievement_InteractiveSabotage_3Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomNegativeEvent03"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_3_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_3_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveSabotage_3_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_3_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_3_OptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_3_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyShipSabotage Duration="20" TurnsBetweenExecutions="1" Scope="LocalEmpire" SabotagePercent="-0.20"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_3_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_3_OptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_3_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_3_OptionHelpfulLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveSabotage_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveSabotage_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveSabotage_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Achievement_InteractiveSabotage_3_OptionSelfishLocalMalus</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- MEETING PIRATE LEADER V1 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_MeetingPirate_1" RandomEventType="NegativeFactionEvent" RandWeight="6">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Achievement_MeetingPirate_1Title</Title>
+      <Description>%Achievement_MeetingPirate_1Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_MeetingPirate_1"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_MeetingPirate_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_1_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_1_OptionHostileTitle</Title>
+      <Description>%Achievement_MeetingPirate_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-100"/>
+    <AchievementEffect_SpawnPirateFleet Scope="RandomEmpire" Duration="0" FleetCount="2" PercentShipPerFleet="0.5" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_1_OptionHelpfulTitle</Title>
+      <Description>%Achievement_MeetingPirate_1_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-500"/>
+    <AchievementEffect_SpawnPirateFleet Scope="Enemies" Duration="0" FleetCount="1" PercentShipPerFleet="0.5" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_1_OptionSelfishTitle</Title>
+      <Description>%Achievement_MeetingPirate_1_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="3" PercentShipPerFleet="0.5" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- MEETING PIRATE LEADER V2 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_MeetingPirate_2" RandomEventType="NegativeFactionEvent" RandWeight="4">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Achievement_MeetingPirate_2Title</Title>
+      <Description>%Achievement_MeetingPirate_2Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_MeetingPirate_1"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_MeetingPirate_2_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_2_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_2_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_2_OptionHostileTitle</Title>
+      <Description>%Achievement_MeetingPirate_2_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-200"/>
+    <AchievementEffect_SpawnPirateFleet Scope="RandomEmpire" Duration="0" FleetCount="4" PercentShipPerFleet="0.75" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_MeetingPirate_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-1000"/>
+    <AchievementEffect_SpawnPirateFleet Scope="Enemies" Duration="0" FleetCount="2" PercentShipPerFleet="0.75" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_2_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_2_OptionSelfishTitle</Title>
+      <Description>%Achievement_MeetingPirate_2_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="5" PercentShipPerFleet="0.75" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- MEETING PIRATE LEADER V3 #### FACTION INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_MeetingPirate_3" RandomEventType="NegativeFactionEvent" RandWeight="2">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Achievement_MeetingPirate_3Title</Title>
+      <Description>%Achievement_MeetingPirate_3Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_MeetingPirate_1"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_MeetingPirate_3_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_3_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_MeetingPirate_3_OptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_3_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_3_OptionHostileTitle</Title>
+      <Description>%Achievement_MeetingPirate_3_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="20" Scope="LocalEmpire" Amount="-500"/>
+    <AchievementEffect_SpawnPirateFleet Scope="RandomEmpire" Duration="0" FleetCount="4" PercentShipPerFleet="1" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_3_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_3_OptionHelpfulTitle</Title>
+      <Description>%Achievement_MeetingPirate_3_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent03"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="20" Scope="LocalEmpire" Amount="-2500"/>
+    <AchievementEffect_SpawnPirateFleet Scope="Enemies" Duration="0" FleetCount="2" PercentShipPerFleet="1" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_MeetingPirate_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_MeetingPirate_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_MeetingPirate_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent04"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="20" TurnsBetweenExecutions="10" FleetCount="5" PercentShipPerFleet="1" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <!-- #####################          CASCADE: A NEW RELIGION FROM KingJohnVI         ################### -->
+  <InteractiveEvent Name="Achievement_CascadeNewReligion" RandomEventType="NegativeFactionEvent" RandWeight="3">
+    <Gui>
+      <Title>%Achievement_CascadeNewReligionTitle</Title>
+      <Description>%Achievement_CascadeNewReligionDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_CascadeNewReligion_1_OptionHostile</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeNewReligion_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeNewReligion_3_OptionSelfish</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+    <InteractiveEventOption Name="Achievement_CascadeNewReligion_1_OptionHostile" Type="Evil">
+      <Gui>
+        <Title>%Achievement_CascadeNewReligion_1_OptionHostileTitle</Title>
+        <Description>%Achievement_CascadeNewReligion_1_OptionHostileDescription</Description>
+        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+        <!-- Icon is not used -->
+      </Gui>
+      <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-150"/>
+    </InteractiveEventOption>
+
+    <InteractiveEventOption Name="Achievement_CascadeNewReligion_2_OptionHelpful" Type="Good">
+      <Gui>
+        <Title>%Achievement_CascadeNewReligion_2_OptionHelpfulTitle</Title>
+        <Description>%Achievement_CascadeNewReligion_2_OptionHelpfulDescription</Description>
+        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+        <!-- Icon is not used -->
+      </Gui>
+      <AchievementEffect_ActivateEvent>
+        <Event Name="Achievement_CascadeNewReligion_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+      </AchievementEffect_ActivateEvent>
+    </InteractiveEventOption>
+
+                <InteractiveEvent Name="Achievement_CascadeNewReligion_2" RandomEventType="NegativeFactionEvent" RandWeight="2">
+                  <Tags>NotRandom</Tags>
+                  <Gui>
+                    <Title>%Achievement_CascadeNewReligion_2_Title</Title>
+                    <Description>%Achievement_CascadeNewReligion_2_Description</Description>
+                    <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                  </Gui>
+                  <InteractiveEventOption>Achievement_CascadeNewReligion_2A_OptionHostile</InteractiveEventOption>
+                  <InteractiveEventOption>Achievement_CascadeNewReligion_2B_OptionHelpful</InteractiveEventOption>
+                  <InteractiveEventOption>Achievement_CascadeNewReligion_2C_OptionSelfish</InteractiveEventOption>
+                </InteractiveEvent>
+
+                <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A_OptionHostile" Type="Evil">
+                  <Gui>
+                    <Title>%Achievement_CascadeNewReligion_2A_OptionHostileTitle</Title>
+                    <Description>%Achievement_CascadeNewReligion_2A_OptionHostileDescription</Description>
+                    <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                    <!-- Icon is not used -->
+                  </Gui>
+                  <AchievementEffect_ActivateEvent>
+                    <Event Name="Achievement_CascadeNewReligion_2A" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                  </AchievementEffect_ActivateEvent>
+                </InteractiveEventOption>
+
+                              <InteractiveEvent Name="Achievement_CascadeNewReligion_2A" RandomEventType="NegativeFactionEvent" RandWeight="2">
+                                <Tags>NotRandom</Tags>
+                                <Gui>
+                                  <Title>%Achievement_CascadeNewReligion_2A_Title</Title>
+                                  <Description>%Achievement_CascadeNewReligion_2A_Description</Description>
+                                  <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                </Gui>
+                                <InteractiveEventOption>Achievement_CascadeNewReligion_2A1_OptionHostile</InteractiveEventOption>
+                                <InteractiveEventOption>Achievement_CascadeNewReligion_2A2_OptionHelpful</InteractiveEventOption>
+                                <InteractiveEventOption>Achievement_CascadeNewReligion_2A3_OptionSelfish</InteractiveEventOption>
+                              </InteractiveEvent>
+
+                                            <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A1_OptionHostile" Type="Evil">
+                                              <Gui>
+                                                <Title>%Achievement_CascadeNewReligion_2A1_OptionHostileTitle</Title>
+                                                <Description>%Achievement_CascadeNewReligion_2A1_OptionHostileDescription</Description>
+                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                <!-- Icon is not used -->
+                                              </Gui>
+                                              <AchievementEffect_ActivateEvent>
+                                                <Event Name="Achievement_CascadeNewReligion_2A1" Delay="7" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              </AchievementEffect_ActivateEvent>
+                                            </InteractiveEventOption>
+
+                                                            <InteractiveEvent Name="Achievement_CascadeNewReligion_2A1" RandomEventType="NegativeFactionEvent" RandWeight="2">
+                                                              <Tags>NotRandom</Tags>
+                                                              <Gui>
+                                                                <Title>%Achievement_CascadeNewReligion_2A1_Title</Title>
+                                                                <Description>%Achievement_CascadeNewReligion_2A1_Description</Description>
+                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                              </Gui>
+                                                              <InteractiveEventOption>Achievement_CascadeNewReligion_2A1_OptionHostile</InteractiveEventOption>
+                                                              <InteractiveEventOption>Achievement_CascadeNewReligion_2A2_OptionHelpful</InteractiveEventOption>
+                                                            </InteractiveEvent>
+
+                                                                              <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A1_OptionHostile" Type="Evil">
+                                                                                <Gui>
+                                                                                  <Title>%Achievement_CascadeNewReligion_2A1_OptionHostileTitle</Title>
+                                                                                  <Description>%Achievement_CascadeNewReligion_2A1_OptionHostileDescription</Description>
+                                                                                  <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                                                  <!-- Icon is not used -->
+                                                                                </Gui>
+                                                                                <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-150"/> <!-- TO FINISH: REWORK THE CURRENT EFFECT-->
+                                                                              </InteractiveEventOption>
+
+                                                                              <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A2_OptionHelpful" Type="Good">
+                                                                                <Gui>
+                                                                                  <Title>%Achievement_CascadeNewReligion_2A2_OptionHelpfulTitle</Title>
+                                                                                  <Description>%Achievement_CascadeNewReligion_2A2_OptionHelpfulDescription</Description>
+                                                                                  <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                                                  <!-- Icon is not used -->
+                                                                                </Gui>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeNewReligion_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/> <!-- TO FINISH: REWORK THE CURRENT EFFECT-->
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                              </InteractiveEventOption>
+
+                                            <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A2_OptionHelpful" Type="Good">
+                                              <Gui>
+                                                <Title>%Achievement_CascadeNewReligion_2A2_OptionHelpfulTitle</Title>
+                                                <Description>%Achievement_CascadeNewReligion_2A2_OptionHelpfulDescription</Description>
+                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                <!-- Icon is not used -->
+                                              </Gui>
+                                              <AchievementEffect Duration="5">
+                                                <Descriptors>Achievement_CascadeNewReligion_2A2_OptionHelpfulDescriptor</Descriptors>
+                                              </AchievementEffect>
+                                            </InteractiveEventOption>
+
+                                            <InteractiveEventOption Name="Achievement_CascadeNewReligion_2A3_OptionSelfish" Type="Neutral">
+                                              <Gui>
+                                                <Title>%Achievement_CascadeNewReligion_2A3_OptionSelfishTitle</Title>
+                                                <Description>%Achievement_CascadeNewReligion_2A3_OptionSelfishDescription</Description>
+                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                                <!-- Icon is not used -->
+                                              </Gui>
+                                              <AchievementEffect Duration="-1">
+                                                <Descriptors>Achievement_CascadeNewReligion_2A3_OptionSelfishDescriptor</Descriptors>
+                                              </AchievementEffect>
+                                            </InteractiveEventOption>
+  
+
+                <InteractiveEventOption Name="Achievement_CascadeNewReligion_2B_OptionHelpful" Type="Good">
+                  <Gui>
+                    <Title>%Achievement_CascadeNewReligion_2B_OptionHelpfulTitle</Title>
+                    <Description>%Achievement_CascadeNewReligion_2B_OptionHelpfulDescription</Description>
+                    <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                    <!-- Icon is not used -->
+                  </Gui>
+                  <AchievementEffect_ActivateEvent>
+                    <Event Name="Achievement_CascadeNewReligion_2B" Delay="3" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                  </AchievementEffect_ActivateEvent>
+                </InteractiveEventOption>
+
+                        <InteractiveEvent Name="Achievement_CascadeNewReligion_2B" RandomEventType="NegativeFactionEvent" RandWeight="2">
+                          <Tags>NotRandom</Tags>
+                          <Gui>
+                            <Title>%Achievement_CascadeNewReligion_2B_Title</Title>
+                            <Description>%Achievement_CascadeNewReligion_2B_Description</Description>
+                            <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                          </Gui>
+                          <InteractiveEventOption>Achievement_CascadeNewReligion_2B1_OptionHostile</InteractiveEventOption>
+                          <InteractiveEventOption>Achievement_CascadeNewReligion_2B2_OptionHelpful</InteractiveEventOption>
+                          <InteractiveEventOption>Achievement_CascadeNewReligion_2B3_OptionSelfish</InteractiveEventOption>
+                        </InteractiveEvent>
+ 
+                                    <InteractiveEventOption Name="Achievement_CascadeNewReligion_2B1_OptionHostile" Type="Evil">
+                                      <Gui>
+                                        <Title>%Achievement_CascadeNewReligion_2B1_OptionHostileTitle</Title>
+                                        <Description>%Achievement_CascadeNewReligion_2B1_OptionHostileDescription</Description>
+                                        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                        <!-- Icon is not used -->
+                                      </Gui>
+                                    </InteractiveEventOption>
+
+                                    <InteractiveEventOption Name="Achievement_CascadeNewReligion_2B2_OptionHelpful" Type="Good">
+                                      <Gui>
+                                        <Title>%Achievement_CascadeNewReligion_2B2_OptionHelpfulTitle</Title>
+                                        <Description>%Achievement_CascadeNewReligion_2B2_OptionHelpfulDescription</Description>
+                                        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                        <!-- Icon is not used -->
+                                      </Gui>
+                                      <AchievementEffect_ModifyBankAccount Duration="5" Scope="LocalEmpire" Amount="-400">
+                                        <Descriptors>Achievement_CascadeNewReligion_2B2_OptionHelpfulDescriptor</Descriptors>
+                                      </AchievementEffect_ModifyBankAccount>
+                                    </InteractiveEventOption>
+
+                                    <InteractiveEventOption Name="Achievement_CascadeNewReligion_2B3_OptionSelfish" Type="Neutral">
+                                      <Gui>
+                                        <Title>%Achievement_CascadeNewReligion_2B3_OptionSelfishTitle</Title>
+                                        <Description>%Achievement_CascadeNewReligion_2B3_OptionSelfishDescription</Description>
+                                        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                                        <!-- Icon is not used -->
+                                      </Gui>
+                                      <AchievementEffect Duration="10">
+                                        <Descriptors>Achievement_CascadeNewReligion_2B2_OptionSelfishDescriptor</Descriptors>
+                                      </AchievementEffect>
+                                    </InteractiveEventOption>
+
+                <InteractiveEventOption Name="Achievement_CascadeNewReligion_2C_OptionSelfish" Type="Neutral">
+                  <Gui>
+                    <Title>%Achievement_CascadeNewReligion_2C_OptionSelfishTitle</Title>
+                    <Description>%Achievement_CascadeNewReligion_2C_OptionSelfishDescription</Description>
+                    <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+                    <!-- Icon is not used -->
+                  </Gui>
+                    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-300"/>
+                </InteractiveEventOption>
+
+
+    <InteractiveEventOption Name="Achievement_CascadeNewReligion_3_OptionSelfish" Type="Neutral">
+      <Gui>
+        <Title>%Achievement_CascadeNewReligion_3_OptionSelfishTitle</Title>
+        <Description>%Achievement_CascadeNewReligion_3_OptionSelfishDescription</Description>
+        <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeNewReligion"/>
+        <!-- Icon is not used -->
+      </Gui>
+    </InteractiveEventOption>
+
+  <!-- #####################          CASCADE: MAD SCIENTIST    FROM KingJohnVI          ################### -->
+
+  <InteractiveEvent Name="Achievement_CascadeMadScientist" RandomEventType="PositiveFactionEvent" RandWeight="3">
+    <Gui>
+      <Title>%Achievement_CascadeMadScientistTitle</Title>
+      <Description>%Achievement_CascadeMadScientistDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_CascadeMadScientist_1_OptionHostile</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeMadScientist_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeMadScientist_3_OptionSelfish</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_CascadeMadScientist_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_CascadeMadScientist_1_OptionHostileTitle</Title>
+      <Description>%Achievement_CascadeMadScientist_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="5">
+      <Descriptors>Achievement_CascadeMadScientist_1_OptionHostileDescriptor</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_CascadeMadScientist_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_CascadeMadScientist_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_CascadeMadScientist_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Duration="10">
+      <Descriptors>Achievement_CascadeMadScientist_2_OptionHelpfulDescriptor</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_CascadeMadScientist_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_CascadeMadScientist_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_CascadeMadScientist_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ActivateEvent>
+      <Event Name="Achievement_CascadeMadScientist_3" Delay="3" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+    </AchievementEffect_ActivateEvent>
+  </InteractiveEventOption>
+
+
+                            <InteractiveEvent Name="Achievement_CascadeMadScientist_3" RandomEventType="PositiveFactionEvent" RandWeight="2">
+                              <Tags>NotRandom</Tags>
+                              <Gui>
+                                <Title>%Achievement_CascadeMadScientist_3_Title</Title>
+                                <Description>%Achievement_CascadeMadScientist_3_Description</Description>
+                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                              </Gui>
+                              <InteractiveEventOption>Achievement_CascadeMadScientist_3A_OptionHostile</InteractiveEventOption>
+                              <InteractiveEventOption>Achievement_CascadeMadScientist_3B_OptionHelpful</InteractiveEventOption>
+                              <InteractiveEventOption>Achievement_CascadeMadScientist_3C_OptionSelfish</InteractiveEventOption>
+                            </InteractiveEvent>
+
+
+                            <InteractiveEventOption Name="Achievement_CascadeMadScientist_3A_OptionHostile" Type="Evil">
+                              <Gui>
+                                <Title>%Achievement_CascadeMadScientist_3A_OptionHostileTitle</Title>
+                                <Description>%Achievement_CascadeMadScientist_3A_OptionHostileDescription</Description>
+                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                <!-- Icon is not used -->
+                              </Gui>
+                              <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                            </InteractiveEventOption>
+
+                            <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B_OptionHelpful" Type="Good">
+                              <Gui>
+                                <Title>%Achievement_CascadeMadScientist_3B_OptionHelpfulTitle</Title>
+                                <Description>%Achievement_CascadeMadScientist_3B_OptionHelpfulDescription</Description>
+                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                <!-- Icon is not used -->
+                              </Gui>
+                              <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                              <AchievementEffect_ActivateEvent>
+                                <Event Name="Achievement_CascadeMadScientist_3B" Delay="3" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                              </AchievementEffect_ActivateEvent>
+                            </InteractiveEventOption>
+
+
+
+                                                      <InteractiveEvent Name="Achievement_CascadeMadScientist_3B" RandomEventType="PositiveFactionEvent" RandWeight="2">
+                                                        <Tags>NotRandom</Tags>
+                                                        <Gui>
+                                                          <Title>%Achievement_CascadeMadScientist_3B_Title</Title>
+                                                          <Description>%Achievement_CascadeMadScientist_3B_Description</Description>
+                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                        </Gui>
+                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B1_OptionHostile</InteractiveEventOption>
+                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B2_OptionHelpful</InteractiveEventOption>
+                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B3_OptionSelfish</InteractiveEventOption>
+                                                      </InteractiveEvent>
+
+
+                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B1_OptionHostile" Type="Evil">
+                                                        <Gui>
+                                                          <Title>%Achievement_CascadeMadScientist_3B1_OptionHostileTitle</Title>
+                                                          <Description>%Achievement_CascadeMadScientist_3B1_OptionHostileDescription</Description>
+                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                          <!-- Icon is not used -->
+                                                        </Gui>
+                                                        <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                        <AchievementEffect_ActivateEvent>
+                                                          <Event Name="Achievement_CascadeMadScientist_3B1" Delay="2" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                        </AchievementEffect_ActivateEvent>
+                                                      </InteractiveEventOption>
+
+
+
+                                                                                      <InteractiveEvent Name="Achievement_CascadeMadScientist_3B1" RandomEventType="PositiveFactionEvent" RandWeight="2">
+                                                                                        <Tags>NotRandom</Tags>
+                                                                                        <Gui>
+                                                                                          <Title>%Achievement_CascadeMadScientist_3B1_Title</Title>
+                                                                                          <Description>%Achievement_CascadeMadScientist_3B1_Description</Description>
+                                                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                        </Gui>
+                                                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B1_1_OptionHostile</InteractiveEventOption>
+                                                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B1_2_OptionHelpful</InteractiveEventOption>
+                                                                                        <InteractiveEventOption>Achievement_CascadeMadScientist_3B1_3_OptionSelfish</InteractiveEventOption>
+                                                                                      </InteractiveEvent>
+
+
+                                                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B1_1_OptionHostile" Type="Evil">
+                                                                                        <Gui>
+                                                                                          <Title>%Achievement_CascadeMadScientist_3B1_1_OptionHostileTitle</Title>
+                                                                                          <Description>%Achievement_CascadeMadScientist_3B1_1_OptionHostileDescription</Description>
+                                                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                          <!-- Icon is not used -->
+                                                                                          <AchievementEffect_ActivateEvent>
+                                                                                            <Event Name="Achievement_CascadeMadScientist_3B1_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                                                          </AchievementEffect_ActivateEvent>
+                                                                                        </Gui>
+                                                                                        
+                                                                                      </InteractiveEventOption>
+
+
+
+                                                                                                            <RandomEvent Name="Achievement_CascadeMadScientist_3B1_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                              <Tags>NotRandom</Tags>
+                                                                                                              <Gui>
+                                                                                                                <Title>%Achievement_CascadeMadScientist_3B1_1_Title</Title>
+                                                                                                                <Description>%Achievement_CascadeMadScientist_3B1_1_Description</Description>
+                                                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                              </Gui>
+                                                                                                              <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-50"/>
+                                                                                                            </RandomEvent>
+
+                                                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B1_2_OptionHelpful" Type="Good">
+                                                                                        <Gui>
+                                                                                          <Title>%Achievement_CascadeMadScientist_3B1_2_OptionHelpfulTitle</Title>
+                                                                                          <Description>%Achievement_CascadeMadScientist_3B1_2_OptionHelpfulDescription</Description>
+                                                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                          <!-- Icon is not used -->
+                                                                                          <AchievementEffect_ActivateEvent>
+                                                                                            <Event Name="Achievement_CascadeMadScientist_3B1_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                                                          </AchievementEffect_ActivateEvent>
+                                                                                        </Gui>
+                                                                                        
+                                                                                      </InteractiveEventOption>
+
+                                                                                                                <RandomEvent Name="Achievement_CascadeMadScientist_3B1_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                                  <Tags>NotRandom</Tags>
+                                                                                                                  <Gui>
+                                                                                                                    <Title>%Achievement_CascadeMadScientist_3B1_2_Title</Title>
+                                                                                                                    <Description>%Achievement_CascadeMadScientist_3B1_2_Description</Description>
+                                                                                                                    <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                                  </Gui>
+                                                                                                                  <AchievementEffect Duration="10">
+                                                                                                                    <Descriptors>Achievement_CascadeMadScientist_3B1_2Descriptor</Descriptors>
+                                                                                                                  </AchievementEffect>
+                                                                                                                </RandomEvent>
+
+                                                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B1_3_OptionSelfish" Type="Neutral">
+                                                                                        <Gui>
+                                                                                          <Title>%Achievement_CascadeMadScientist_3B1_3_OptionSelfishTitle</Title>
+                                                                                          <Description>%Achievement_CascadeMadScientist_3B1_3_OptionSelfishDescription</Description>
+                                                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                          <!-- Icon is not used -->
+                                                                                        </Gui>
+                                                                                        <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="-100"/>
+                                                                                      </InteractiveEventOption>
+
+
+
+
+                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B2_OptionHelpful" Type="Good">
+                                                        <Gui>
+                                                          <Title>%Achievement_CascadeMadScientist_3B2_OptionHelpfulTitle</Title>
+                                                          <Description>%Achievement_CascadeMadScientist_3B2_OptionHelpfulDescription</Description>
+                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                          <!-- Icon is not used -->
+                                                        </Gui>
+                                                        <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                        <AchievementEffect_ActivateEvent>
+                                                          <Event Name="Achievement_CascadeMadScientist_3B2" Delay="5" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                        </AchievementEffect_ActivateEvent>
+                                                      </InteractiveEventOption>
+
+
+                                                                              <InteractiveEvent Name="Achievement_CascadeMadScientist_3B2" RandomEventType="PositiveFactionEvent" RandWeight="2">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeMadScientist_3B2_Title</Title>
+                                                                                <Description>%Achievement_CascadeMadScientist_3B2_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                              </Gui>
+                                                                              <InteractiveEventOption>Achievement_CascadeMadScientist_3B2_1_OptionHostile</InteractiveEventOption>
+                                                                              <InteractiveEventOption>Achievement_CascadeMadScientist_3B2_2_OptionHelpful</InteractiveEventOption>
+                                                                              </InteractiveEvent>
+
+
+                                                                              <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B2_1_OptionHostile" Type="Evil">
+                                                                                <Gui>
+                                                                                  <Title>%Achievement_CascadeMadScientist_3B2_1_OptionHostileTitle</Title>
+                                                                                  <Description>%Achievement_CascadeMadScientist_3B2_1_OptionHostileDescription</Description>
+                                                                                  <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                  <!-- Icon is not used -->
+                                                                                </Gui>
+                                                                                <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeMadScientist_3B2_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                              </InteractiveEventOption>
+
+
+                                                                                                          <RandomEvent Name="Achievement_CascadeMadScientist_3B2_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                            <Tags>NotRandom</Tags>
+                                                                                                            <Gui>
+                                                                                                              <Title>%Achievement_CascadeMadScientist_3B2_1_Title</Title>
+                                                                                                              <Description>%Achievement_CascadeMadScientist_3B2_1_Description</Description>
+                                                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                            </Gui>
+                                                                                                            <AchievementEffect_ModifyShipSabotage Duration="0" Scope="LocalEmpire" SabotagePercent="-0.50" ShipSelectionMode="All"/>
+                                                                                                          </RandomEvent>
+  
+
+                                                                              <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B2_2_OptionHelpful" Type="Good">
+                                                                                <Gui>
+                                                                                  <Title>%Achievement_CascadeMadScientist_3B2_2_OptionHelpfulTitle</Title>
+                                                                                  <Description>%Achievement_CascadeMadScientist_3B2_2_OptionHelpfulDescription</Description>
+                                                                                  <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                  <!-- Icon is not used -->
+                                                                                </Gui>
+                                                                                <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeMadScientist_3B2_2A" Delay="4" RandWeight="1" />
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeMadScientist_3B2_2B" Delay="7" RandWeight="1" />
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeMadScientist_3B2_2C" Delay="9" RandWeight="1" />
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                                <AchievementEffect_ActivateEvent>
+                                                                                  <Event Name="Achievement_CascadeMadScientist_3B2_2D" Delay="10" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                                                                </AchievementEffect_ActivateEvent>
+                                                                              </InteractiveEventOption>
+
+                                                                                                            <RandomEvent Name="Achievement_CascadeMadScientist_3B2_2A" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                              <Tags>NotRandom</Tags>
+                                                                                                              <Gui>
+                                                                                                                <Title>%Achievement_CascadeMadScientist_3B2_2A_Title</Title>
+                                                                                                                <Description>%Achievement_CascadeMadScientist_3B2_2A_Description</Description>
+                                                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                              </Gui>
+                                                                                                              <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                                                                            </RandomEvent>
+
+                                                                                                            <RandomEvent Name="Achievement_CascadeMadScientist_3B2_2B" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                              <Tags>NotRandom</Tags>
+                                                                                                              <Gui>
+                                                                                                                <Title>%Achievement_CascadeMadScientist_3B2_2B_Title</Title>
+                                                                                                                <Description>%Achievement_CascadeMadScientist_3B2_2B_Description</Description>
+                                                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                              </Gui>
+                                                                                                              <AchievementEffect_ScienceDiscovery TechnoToDiscoverCount="1" DiscoveryType="Low"/>
+                                                                                                            </RandomEvent>
+
+                                                                                                            <RandomEvent Name="Achievement_CascadeMadScientist_3B2_2C" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                              <Tags>NotRandom</Tags>
+                                                                                                              <Gui>
+                                                                                                                <Title>%Achievement_CascadeMadScientist_3B2_2C_Title</Title>
+                                                                                                                <Description>%Achievement_CascadeMadScientist_3B2_2C_Description</Description>
+                                                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                              </Gui>
+                                                                                                            </RandomEvent>
+
+                                                                                                            <RandomEvent Name="Achievement_CascadeMadScientist_3B2_2D" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                                                              <Tags>NotRandom</Tags>
+                                                                                                              <Gui>
+                                                                                                                <Title>%Achievement_CascadeMadScientist_3B2_2D_Title</Title>
+                                                                                                                <Description>%Achievement_CascadeMadScientist_3B2_2D_Description</Description>
+                                                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                                                                              </Gui>
+                                                                                                              <AchievementEffect Duration="5">
+                                                                                                                <Descriptors>Achievement_CascadeMadScientist_3B2_2D_5T_Descriptor</Descriptors>
+                                                                                                              </AchievementEffect>
+                                                                                                              <AchievementEffect Duration="10">
+                                                                                                                <Descriptors>Achievement_CascadeMadScientist_3B2_2D_10T_Descriptor</Descriptors>
+                                                                                                              </AchievementEffect>
+                                                                                                            </RandomEvent>
+  
+  
+
+                                                      <InteractiveEventOption Name="Achievement_CascadeMadScientist_3B3_OptionSelfish" Type="Neutral">
+                                                        <Gui>
+                                                          <Title>%Achievement_CascadeMadScientist_3B3_OptionSelfishTitle</Title>
+                                                          <Description>%Achievement_CascadeMadScientist_3B3_OptionSelfishDescription</Description>
+                                                          <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                                          <!-- Icon is not used -->
+                                                        </Gui>
+                                                      </InteractiveEventOption>
+  
+
+                            <InteractiveEventOption Name="Achievement_CascadeMadScientist_3C_OptionSelfish" Type="Neutral">
+                              <Gui>
+                                <Title>%Achievement_CascadeMadScientist_3C_OptionSelfishTitle</Title>
+                                <Description>%Achievement_CascadeMadScientist_3C_OptionSelfishDescription</Description>
+                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeMadScientist"/>
+                                <!-- Icon is not used -->
+                              </Gui>
+                            </InteractiveEventOption>
+
+  <!-- ######################################## -->
+
+  <!-- SLEEPING WAR MACHINE FROM Codename_Veers #### GLOBAL INTERACTIVE EVENT -->
+  <InteractiveEvent Name="Achievement_InteractiveWarMachines" RandomEventType="GlobalEvent" RandWeight="2">
+    <Gui>
+      <Title>%Achievement_InteractiveWarMachinesTitle</Title>
+      <Description>%Achievement_InteractiveWarMachinesDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveWarMachines"/>
+    </Gui>
+
+    <InteractiveEventOption>Achievement_InteractiveWarMachinesOptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWarMachinesOptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_InteractiveWarMachinesOptionHostile</InteractiveEventOption>
+  </InteractiveEvent>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWarMachinesOptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_InteractiveWarMachinesOptionHostileTitle</Title>
+      <Description>%Achievement_InteractiveWarMachinesOptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveWarMachines"/>
+    </Gui>
+    <AchievementEffect Scope="OtherEmpires" Duration="20">
+      <Descriptors>Achievement_InteractiveWarMachinesOptionHostileDescriptor</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWarMachinesOptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_InteractiveWarMachinesOptionHelpfulTitle</Title>
+      <Description>%Achievement_InteractiveWarMachinesOptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveWarMachines"/>
+    </Gui>
+    <AchievementEffect Scope="AllEmpires" Duration="20">
+      <Descriptors>Achievement_InteractiveWarMachinesOptionHelpfulDescriptor</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect Scope="LocalEmpire" Duration="20">
+      <Descriptors>Achievement_InteractiveWarMachinesOptionHelpfulDescriptorCost</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Achievement_InteractiveWarMachinesOptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_InteractiveWarMachinesOptionSelfishTitle</Title>
+      <Description>%Achievement_InteractiveWarMachinesOptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_InteractiveWarMachines"/>
+    </Gui>
+    <AchievementEffect Scope="LocalEmpire" Duration="20">
+      <Descriptors>Achievement_InteractiveWarMachinesOptionSelfishDescriptor</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+
+  <!-- ####################   ENDLESS FACILITY  #################### -->
+
+
+  <InteractiveEvent Name="Achievement_CascadeEndlessFacility" RandomEventType="NegativeFactionEvent" RandWeight="3">
+    <Gui>
+      <Title>%Achievement_CascadeEndlessFacilityTitle</Title>
+      <Description>%Achievement_CascadeEndlessFacilityDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+    </Gui>
+    <InteractiveEventOption>Achievement_CascadeEndlessFacility_1_OptionHostile</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeEndlessFacility_2_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Achievement_CascadeEndlessFacility_3_OptionSelfish</InteractiveEventOption>
+  </InteractiveEvent>
+
+
+  <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Achievement_CascadeEndlessFacility_1_OptionHostileTitle</Title>
+      <Description>%Achievement_CascadeEndlessFacility_1_OptionHostileDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Scope="LocalEmpire" Duration="5">
+      <Descriptors>Achievement_CascadeEndlessFacility_1_OptionHostileDescriptor</Descriptors>
+    </AchievementEffect>
+	<AchievementEffect_ActivateEvent>
+      <Event Name="Achievement_CascadeEndlessFacility_1" Delay="5" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+    </AchievementEffect_ActivateEvent>
+  </InteractiveEventOption>
+  
+                                           <InteractiveEvent Name="Achievement_CascadeEndlessFacility_1" RandomEventType="NegativeFactionEvent" RandWeight="3">
+                                            <Tags>NotRandom</Tags>
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_1_Title</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_1_Description</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                            </Gui>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_1A_OptionHostile</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_1B_OptionHelpful</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_1C_OptionSelfish</InteractiveEventOption>
+                                          </InteractiveEvent>
+
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_1A_OptionHostile" Type="Evil">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_1A_OptionHostileTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_1A_OptionHostileDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1A_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1B_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1C_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                         
+  
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_1B_OptionHelpful" Type="Good">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_1B_OptionHelpfulTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_1B_OptionHelpfulDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1A_1" Delay="1" RandWeight="1"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1B_1" Delay="1" RandWeight="1"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_1C_OptionSelfish" Type="Neutral">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_1C_OptionSelfishTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_1C_OptionSelfishDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1B_1" Delay="1" RandWeight="1"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_1C_1" Delay="1" RandWeight="1"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+  
+                                                                          <RandomEvent Name="Achievement_CascadeEndlessFacility_1A_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                            <Tags>NotRandom</Tags>
+                                                                            <Gui>
+                                                                              <Title>%Achievement_CascadeEndlessFacility_1A_Title</Title>
+                                                                              <Description>%Achievement_CascadeEndlessFacility_1A_Description</Description>
+                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                            </Gui>
+                                                                            <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="High" TechnoToDiscoverCount="1"/>
+                                                                          </RandomEvent>
+  
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_1B_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_1B_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_1B_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="HomeSystem">
+                                                                                <ShipDesigns>AdvancedDefender</ShipDesigns>
+                                                                              </AchievementEffect_SpawnNewShip>
+                                                                            </RandomEvent>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_1C_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_1C_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_1C_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect Scope="LocalEmpire" Duration="10">
+                                                                                <Descriptors>Achievement_CascadeEndlessFacility_1C_1Descriptor</Descriptors>
+                                                                              </AchievementEffect>
+                                                                            </RandomEvent>
+
+  <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_2_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Achievement_CascadeEndlessFacility_2_OptionHelpfulTitle</Title>
+      <Description>%Achievement_CascadeEndlessFacility_2_OptionHelpfulDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Scope="LocalEmpire" Duration="5">
+      <Descriptors>Achievement_CascadeEndlessFacility_2_OptionHelpfulDescriptor</Descriptors>
+    </AchievementEffect>
+	<AchievementEffect_ActivateEvent>
+      <Event Name="Achievement_CascadeEndlessFacility_2" Delay="5" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+    </AchievementEffect_ActivateEvent>
+  </InteractiveEventOption>
+  
+                                           <InteractiveEvent Name="Achievement_CascadeEndlessFacility_2" RandomEventType="NegativeFactionEvent" RandWeight="3">
+                                            <Tags>NotRandom</Tags>
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_2_Title</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_2_Description</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                            </Gui>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_2A_OptionHostile</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_2B_OptionHelpful</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_2C_OptionSelfish</InteractiveEventOption>
+                                          </InteractiveEvent>
+
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_2A_OptionHostile" Type="Evil">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_2A_OptionHostileTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_2A_OptionHostileDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_2A_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_2A_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                          <RandomEvent Name="Achievement_CascadeEndlessFacility_2A_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                            <Tags>NotRandom</Tags>
+                                                                            <Gui>
+                                                                              <Title>%Achievement_CascadeEndlessFacility_2A_Title</Title>
+                                                                              <Description>%Achievement_CascadeEndlessFacility_2A_Description</Description>
+                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                            </Gui>
+                                                                            <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="1"/>
+                                                                           <!-- <AchievementEffect Scope="LocalEmpire" Duration="0">
+                                                                              <Descriptors>Achievement_CascadeEndlessFacility_2A_1Descriptor</Descriptors>
+                                                                               may create a bug... 
+                                                                            </AchievementEffect>-->
+                                                                          </RandomEvent>
+  
+                                                                          <RandomEvent Name="Achievement_CascadeEndlessFacility_2A_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                            <Tags>NotRandom</Tags>
+                                                                            <Gui>
+                                                                              <Title>%Achievement_CascadeEndlessFacility_2A_Title</Title>
+                                                                              <Description>%Achievement_CascadeEndlessFacility_2A_Description</Description>
+                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                            </Gui>
+                                                                            <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="1"/>
+                                                                            <!--<AchievementEffect Scope="LocalEmpire" Duration="0">
+                                                                              <Descriptors>Achievement_CascadeEndlessFacility_2A_2Descriptor</Descriptors>
+                                                                               may create a bug... 
+                                                                            </AchievementEffect>-->
+                                                                          </RandomEvent>
+  
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_2B_OptionHelpful" Type="Good">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_2B_OptionHelpfulTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_2B_OptionHelpfulDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_2B_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_2B_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_2B_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_2B_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_2B_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect_ModifyShipSabotage Duration="0" Scope="LocalEmpire" SabotagePercent="-0.75" ShipSelectionMode="All"/>
+                                                                            </RandomEvent>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_2B_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_2B_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_2B_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect_ModifyShipSabotage Duration="0" Scope="LocalEmpire" SabotagePercent="-0.75" ShipSelectionMode="All"/>
+                                                                              <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1"/>
+                                                                            </RandomEvent>
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_2C_OptionSelfish" Type="Neutral">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_2C_OptionSelfishTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_2C_OptionSelfishDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_2C_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <!--<Event Name="Achievement_CascadeEndlessFacility_2C_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>-->
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_2C_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_2C_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_2C_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect Scope="LocalEmpire" Duration="-1">
+                                                                                <Descriptors>Achievement_CascadeEndlessFacility_2C_1Descriptor</Descriptors>
+                                                                              </AchievementEffect>
+                                                                            </RandomEvent>
+                                                                            
+                                                                            <!--
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_2C_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_2C_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_2C_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect Scope="LocalEmpire" Duration="0">
+                                                                                <Descriptors>Achievement_CascadeEndlessFacility_2C_2Descriptor</Descriptors>  may create a bug... 
+                                                                              </AchievementEffect>
+                                                                            </RandomEvent>
+                                                                            -->
+  
+  
+
+  <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_3_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Achievement_CascadeEndlessFacility_3_OptionSelfishTitle</Title>
+      <Description>%Achievement_CascadeEndlessFacility_3_OptionSelfishDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect Scope="LocalEmpire" Duration="5">
+      <Descriptors>Achievement_CascadeEndlessFacility_3_OptionSelfishDescriptor</Descriptors>
+    </AchievementEffect>
+    <AchievementEffect_ActivateEvent>
+      <Event Name="Achievement_CascadeEndlessFacility_3" Delay="5" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+    </AchievementEffect_ActivateEvent>
+  </InteractiveEventOption>
+
+                                          <InteractiveEvent Name="Achievement_CascadeEndlessFacility_3" RandomEventType="NegativeFactionEvent" RandWeight="3">
+                                            <Tags>NotRandom</Tags>
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_3_Title</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_3_Description</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                            </Gui>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_3A_OptionHostile</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_3B_OptionHelpful</InteractiveEventOption>
+                                            <InteractiveEventOption>Achievement_CascadeEndlessFacility_3C_OptionSelfish</InteractiveEventOption>
+                                          </InteractiveEvent>
+
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_3A_OptionHostile" Type="Evil">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_3A_OptionHostileTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_3A_OptionHostileDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3A_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3A_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                          <RandomEvent Name="Achievement_CascadeEndlessFacility_3A_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                            <Tags>NotRandom</Tags>
+                                                                            <Gui>
+                                                                              <Title>%Achievement_CascadeEndlessFacility_3A_Title</Title>
+                                                                              <Description>%Achievement_CascadeEndlessFacility_3A_Description</Description>
+                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                            </Gui>
+                                                                            <AchievementEffect Scope="LocalEmpire" Duration="10">
+                                                                              <Descriptors>Achievement_CascadeEndlessFacility_3A_1Descriptor</Descriptors>
+                                                                            </AchievementEffect>
+                                                                          </RandomEvent>
+  
+                                                                          <RandomEvent Name="Achievement_CascadeEndlessFacility_3A_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                            <Tags>NotRandom</Tags>
+                                                                            <Gui>
+                                                                              <Title>%Achievement_CascadeEndlessFacility_3A_Title</Title>
+                                                                              <Description>%Achievement_CascadeEndlessFacility_3A_Description</Description>
+                                                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                            </Gui>
+                                                                            <AchievementEffect Scope="LocalEmpire" Duration="10">
+                                                                              <Descriptors>Achievement_CascadeEndlessFacility_3A_2Descriptor</Descriptors>
+                                                                            </AchievementEffect>
+                                                                          </RandomEvent>
+  
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_3B_OptionHelpful" Type="Good">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_3B_OptionHelpfulTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_3B_OptionHelpfulDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3B_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3B_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_3B_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_3B_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_3B_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1"/>
+                                                                            </RandomEvent>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_3B_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_3B_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_3B_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect_ModifyPopulation PlanetsAffected="3" PopulationCount="1"/>
+                                                                            </RandomEvent>
+
+                                          <InteractiveEventOption Name="Achievement_CascadeEndlessFacility_3C_OptionSelfish" Type="Neutral">
+                                            <Gui>
+                                              <Title>%Achievement_CascadeEndlessFacility_3C_OptionSelfishTitle</Title>
+                                              <Description>%Achievement_CascadeEndlessFacility_3C_OptionSelfishDescription</Description>
+                                              <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                              <!-- Icon is not used -->
+                                            </Gui>
+                                            <AchievementEffect_ActivateEvent>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3C_1" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                              <Event Name="Achievement_CascadeEndlessFacility_3C_2" Delay="1" RandWeight="1" EffectDescription="%AchievementCascadeTeasingDescription"/>
+                                            </AchievementEffect_ActivateEvent>
+                                          </InteractiveEventOption>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_3C_1" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_3C_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_3C_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect Scope="LocalEmpire" Duration="10">
+                                                                                <Descriptors>Achievement_CascadeEndlessFacility_3C_1Descriptor</Descriptors>
+                                                                              </AchievementEffect>
+                                                                            </RandomEvent>
+
+                                                                            <RandomEvent Name="Achievement_CascadeEndlessFacility_3C_2" RandomEventType="PositiveFactionEvent" RandWeight="3">
+                                                                              <Tags>NotRandom</Tags>
+                                                                              <Gui>
+                                                                                <Title>%Achievement_CascadeEndlessFacility_3C_Title</Title>
+                                                                                <Description>%Achievement_CascadeEndlessFacility_3C_Description</Description>
+                                                                                <Icon Large="Gui/DynamicBitmaps/Events/Achievement_CascadeEndlessFacility"/>
+                                                                              </Gui>
+                                                                              <AchievementEffect Scope="LocalEmpire" Duration="10">
+                                                                                <Descriptors>Achievement_CascadeEndlessFacility_3C_2Descriptor</Descriptors>
+                                                                              </AchievementEffect>
+                                                                            </RandomEvent>
+  
+  
+  <!-- ######################################## -->
+  
+  <!-- HARMONY EVENT -->
+  <RandomEvent Name="Achievement_SpeedBonusHarmony" RandomEventType="PositiveFactionEvent" RandWeight="5">
+    <Tags>NotRandom</Tags>
+    <Gui>
+      <Title>%Achievement_SpeedBonusHarmonyTitle</Title>
+      <Description>%Achievement_SpeedBonusHarmonyDescription</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/HarmonyPositiveEvent01"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Achievement_SpeedBonusHarmony</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- ENDLESS DAY -->
+  <RandomEvent Name="Achievement_EndlessDay" RandomEventType="GlobalEvent" RandWeight="1">
+    <Tags>EndlessDay;NotRandom</Tags>
+    <Gui>
+      <Title>%GlobalEvent01Title</Title>
+      <Description>%GlobalEvent01Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/GlobalEvent01"/>
+    </Gui>
+    <AchievementEffect Duration="-1" Scope="LocalEmpire">
+      <Descriptors>Achievement_EndlessDayTemple</Descriptors>
+    </AchievementEffect>
+  </RandomEvent>
+
+  <!-- SAMPLE EXPLORATION REWARDS
+  <ExplorationEvent Name="Achievement_ExplorationEvent_1" RandWeight="2">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent04Title</Title>
+      <Description>%FactionRandomPositiveEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent04"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Scope="LocalEmpire" Duration="0" FleetCount="1" PercentShipPerFleet="0.5" OrbitSelectionMode="Context" >
+      <ShipDesigns>BlockaderPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Achievement_ExplorationEvent_2" RandWeight="2">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent04Title</Title>
+      <Description>%FactionRandomPositiveEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent04"/>
+    </Gui>
+    <AchievementEffect_ModifyShipSabotage Duration="0" Scope="LocalEmpire" SabotagePercent="-0.50" ShipSelectionMode="Context"/>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Achievement_ExplorationEvent_3" RandWeight="2">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent04Title</Title>
+      <Description>%FactionRandomPositiveEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent04"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="50" HeroSelectionMode="Context"/>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Achievement_ExplorationEvent_4" RandWeight="20">
+    <Gui>
+      <Title>%FactionRandomPositiveEvent04Title</Title>
+      <Description>%FactionRandomPositiveEvent04Description</Description>
+      <Icon Large="Gui/DynamicBitmaps/Events/FactionRandomPositiveEvent04"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Scope="AllEmpires" Duration="0" OrbitSelectionMode="HomeSystem" >
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </ExplorationEvent>
+  -->
+  
+</Datatable>

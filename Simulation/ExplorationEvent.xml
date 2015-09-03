@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- 
+    > Basic random events :
+      <RandomEvent></RandomEvent>
+        * RandomEventType :
+          - PositiveFactionEvent : Positive event generated for one empire
+          - NegativeFactionEvent : Negative event generated for one empire
+          - GlobalEvent : Event generated for all empires
+        * RandWeight : High values increase the chance to include this event in the generation
+        Basic effects : A random event can have as many effects as you want
+          <AchievementEffect></AchievementEffect> : Used to apply Descriptors on the event's Empire
+            * Duration : The duration of the effect (-1 means the duration will be given by game difficulty)
+            * Scope : Indicate which empire will be subjected to this effect
+              - LocalEmpire : Only the event's owner is concerned by this effect
+              - OtherEmpires : All the empires without the event's owner will be concerned
+              - AllEmpires : Apply the effect on all empires
+              - Allies : Apply the effect on the allies of the event's owner (owner won't be concerned)
+              - Enemies : Apply the effect on the owner's enemies (the empires which are in cold war or at war with the event's owner)
+              - RandomEmpire : Apply the effect on a random empire. The owner is not included in the random selection
+              - RandomAlly : Apply the effect on a random ally of the event's owner
+              - RandomEnnemy : Apply the effect on a random enemy of the event's owner
+            * TurnsBetweenExecutions : Used to apply the effect with a frequency (TurnsBetweenExecutions = 2 means the effect will be applied every 2 turns)
+			<Descriptors></Descriptors> : Descriptors to apply to the empire
+        Specific effects :
+          <AchievementEffect_XXX></AchievementEffect_XXX> : Share the parameters of basic effects + launch a specific command that can't be managed by Descriptors only
+            Available commands :
+              - <AchievementEffect_AddAnomaly></AchievementEffect_AddAnomaly> : Add a random anomaly on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  <Anomalies><Anomalies> : The list of anomalies that can be selected randomly
+              - <AchievementEffect_ModifyPopulation></AchievementEffect_ModifyPopulation> : Add or remove given amount of population on many random planets
+                  * PlanetsAffected : How many planets will be affected
+                  * PopulationCount : The amount of population added or removed for each concerned planet
+              - <AchievementEffect_SpawnNewShip></AchievementEffect_SpawnNewShip> : Create a ship and make it orbit a star system
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The ship design that will be used to spawn the ship (The name of the ship design will be dynamically completed with the target's affinity and the word 'Design' to match with default ship design names. e.g. ColonyShip => ColonyShipHoratioDesign)
+              - <AchievementEffect_ScienceDiscovery></AchievementEffect_ScienceDiscovery> : Automatically discover many available technologies
+                  * TechnoToDiscoverCount : How many technologies will be discovered
+                  * DiscoveryType : The category of technologies that will be discovered
+                    - Low : The technologies with lowest science cost
+                    - High : The technologies with highest science cost
+                    - Random : Technologies will be selected randomly among the available ones
+              - <AchievementEffect_ModifyShipSabotage></AchievementEffect_ModifyShipSabotage> : Remove X% of the ships' current HP
+                  * SabotagePercent : The amount of health that will be removed
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyHeroXP></AchievementEffect_ModifyHeroXP> : Increase the experience points of many heroes 
+                  * GainXP : The amount of XP that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyHeroAbilityPoints></AchievementEffect_ModifyHeroAbilityPoints> : Increase the ability points of many heroes 
+                  * AbilityPoints : The amount of ability points that will be added
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : Heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyShipXP></AchievementEffect_ModifyShipXP> : Increase the experience points of all ships 
+                  * GainXP : The amount of XP that will be added
+                  * ShipSelectionMode : The way ships are selected
+                    - All : All the target's ships will be concerned
+                    - Context : The ships of the fleet involved in the event activation will be affected
+              - <AchievementEffect_ModifyBankAccount></AchievementEffect_ModifyBankAccount> : Modify the current bank account of the effect's target
+                  * Amount : The amount of Dust to add/remove
+              - <AchievementEffect_ModifyHeroExpel></AchievementEffect_ModifyHeroExpel> : Expel many heroes 
+                  * HeroSelectionMode : The way heroes are selected
+                    - All : All the heroes are affected
+                    - Weakest : The weakest heroes are affected
+                    - Strongest : The strongest heroes
+                    - Random : heroes are selected randomly
+                    - Context : The hero involved in the event's activation will be affected
+                  * HeroesAffected : The amount of affected Heroes (ignored if the selection mode is "All")
+              - <AchievementEffect_ModifyPeacePoints></AchievementEffect_ModifyPeacePoints> : Add or remove a percentage of the diplomatic victory targetted score
+                  * DiplomaticVictoryPercent : The percentage of the diplomatic victory score to add or remove
+              - <AchievementEffect_SpawnPirateFleet></AchievementEffect_SpawnPirateFleet> : Spawn X pirate fleets orbiting the event owner's home system
+                  * FleetCount : the amount of fleets that xill be created
+                  * PercentShipPerFleet : Ships will be created until the fleet's CP amount reached the given percentage of the pirate's max CP
+                  * OrbitSelectionMode : The way the orbit is selected
+                    - HomeSystem : The orbit will be the event target's home system
+                    - LastColonizedSystem : The orbit will be the target's last colonized system
+                    - Context : The orbit will be the star system involved in the event activation
+                  <ShipDesigns></ShipDesigns> : The list of ship designs that can be created randomly
+              - <AchievementEffect_ScienceBonus></AchievementEffect_ScienceBonus> : Give science points instantaneously
+                  * Amount : The amount of science to add to the current research (must be positive)
+			  - <AchievementEffect_AddDescriptorsOnSystem></AchievementEffect_AddDescriptorsOnSystem> 
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  <Descriptors></Descriptors> : Descriptors to apply to the star system (That means those descriptors won't be applied to the Empire).
+			  - <AchievementEffect_AddDescriptorsOnPlanet></AchievementEffect_AddDescriptorsOnPlanet>
+				  * SystemSelectionMode : The way the system is selected
+                    - HomeSystem : The system will be the event target's home system
+                    - LastColonizedSystem : The system will be the target's last colonized system
+                    - Context : The system will be the star system involved in the event's activation
+				  * PlanetSelectionMode : The way the planet will be selected
+				    - Random : Select a planet randomly
+					- Context : The planet involved in the event's activation will be choosen (if not, Random will be used). This option will ignore the SystemSelectionMode
+				  <Descriptors></Descriptors> : Descriptors to apply to the planet (That means those descriptors won't be applied to the Empire).
+    
+                  
+    > Interactive random events :
+      <InteractiveEvent></InteractiveEvent> : Share the parameters of basic random events + list many specific events that will be selected by players
+          <InteractiveEventOption></InteractiveEventOption> : The name of the event that will be used as available choice for players
+    
+    > Interactive event options :
+      <InteractiveEventOption></InteractiveEventOption> : Kind of event that can't be included in random events' generation. They are used with Interactive random events
+        * Type : Used to guide the choice of the AIs according to their alignment and their diplomatic context
+          - Hostile
+          - Helpful
+          - Selfish
+        <AchievementEffect></AchievementEffect> : Same as random events
+    -->
+
+
+  <ExplorationEvent Name="Reward_ShipExperience_1" RandWeight="51">
+    <Gui>
+      <Title>%Reward_ShipExperience_1Title</Title>
+      <Description>%Reward_ShipExperience_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyShipXP Duration="0" Scope="LocalEmpire" GainXP="1" ShipSelectionMode="Context"/>
+  </ExplorationEvent>
+  
+
+  <ExplorationEvent Name="Reward_ShipExperience_2" RandWeight="80">
+    <Gui>
+      <Title>%Reward_ShipExperience_2Title</Title>
+      <Description>%Reward_ShipExperience_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyShipXP Duration="0" Scope="LocalEmpire" GainXP="3" ShipSelectionMode="Context" />
+  </ExplorationEvent>
+
+
+  <ExplorationEvent Name="Reward_ShipExperience_3" RandWeight="32">
+    <Gui>
+      <Title>%Reward_ShipExperience_3Title</Title>
+      <Description>%Reward_ShipExperience_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyShipXP Duration="0" Scope="LocalEmpire" GainXP="5" ShipSelectionMode="Context" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_DustGain_1" RandWeight="52">
+    <Gui>
+      <Title>%Reward_DustGain_1Title</Title>
+      <Description>%Reward_DustGain_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="5" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_DustGain_2" RandWeight="80">
+    <Gui>
+      <Title>%Reward_DustGain_2Title</Title>
+      <Description>%Reward_DustGain_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="10" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_DustGain_3" RandWeight="28">
+    <Gui>
+      <Title>%Reward_DustGain_3Title</Title>
+      <Description>%Reward_DustGain_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="20" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_ScienceGain_1" RandWeight="57">
+    <Gui>
+      <Title>%Reward_ScienceGain_1Title</Title>
+      <Description>%Reward_ScienceGain_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus Duration="0" Scope="LocalEmpire" Amount="5" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_ScienceGain_2" RandWeight="80">
+    <Gui>
+      <Title>%Reward_ScienceGain_2Title</Title>
+      <Description>%Reward_ScienceGain_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus Duration="0" Scope="LocalEmpire" Amount="10" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_ScienceGain_3" RandWeight="25">
+    <Gui>
+      <Title>%Reward_ScienceGain_3Title</Title>
+      <Description>%Reward_ScienceGain_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus Duration="0" Scope="LocalEmpire" Amount="20" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Population_1" RandWeight="11">
+    <Gui>
+      <Title>%Reward_Population_1Title</Title>
+      <Description>%Reward_Population_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyPopulation Duration="0" Scope="LocalEmpire" PlanetsAffected="1" PopulationCount="1" />
+  </ExplorationEvent>
+
+
+  <ExplorationEvent Name="Reward_HeroExperience_1" RandWeight="28">
+    <Gui>
+      <Title>%Reward_HeroExperience_1Title</Title>
+      <Description>%Reward_HeroExperience_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="3" HeroSelectionMode="Context" />
+  </ExplorationEvent>
+
+
+  <ExplorationEvent Name="Reward_HeroExperience_2" RandWeight="47">
+    <Gui>
+      <Title>%Reward_HeroExperience_2Title</Title>
+      <Description>%Reward_HeroExperience_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="5" HeroSelectionMode="Context" />
+  </ExplorationEvent>
+
+
+  <ExplorationEvent Name="Reward_HeroExperience_3" RandWeight="11">
+    <Gui>
+      <Title>%Reward_HeroExperience_3Title</Title>
+      <Description>%Reward_HeroExperience_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="10" HeroSelectionMode="Context" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_RandomTechnology_1" RandWeight="3">
+    <Gui>
+      <Title>%Reward_RandomTechnology_1Title</Title>
+      <Description>%Reward_RandomTechnology_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_LowTechnology_1" RandWeight="17">
+    <Gui>
+      <Title>%Reward_LowTechnology_1Title</Title>
+      <Description>%Reward_LowTechnology_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Low" TechnoToDiscoverCount="1" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HighTechnology_1" RandWeight="2">
+    <Gui>
+      <Title>%Reward_HighTechnology_1Title</Title>
+      <Description>%Reward_HighTechnology_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="High" TechnoToDiscoverCount="1" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostApproval_1" RandWeight="15">
+    <Gui>
+      <Title>%Reward_BoostApproval_1Title</Title>
+      <Description>%Reward_BoostApproval_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Reward_Approval_1</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostApproval_2" RandWeight="11">
+    <Gui>
+      <Title>%Reward_BoostApproval_2Title</Title>
+      <Description>%Reward_BoostApproval_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Approval_2</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostApproval_3" RandWeight="5">
+    <Gui>
+      <Title>%Reward_BoostApproval_3Title</Title>
+      <Description>%Reward_BoostApproval_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Reward_Approval_3</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostScience_1" RandWeight="15">
+    <Gui>
+      <Title>%Reward_BoostScience_1Title</Title>
+      <Description>%Reward_BoostScience_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Reward_Science_1</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostScience_2" RandWeight="11">
+    <Gui>
+      <Title>%Reward_BoostScience_2Title</Title>
+      <Description>%Reward_BoostScience_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Science_2</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostScience_3" RandWeight="5">
+    <Gui>
+      <Title>%Reward_BoostScience_3Title</Title>
+      <Description>%Reward_BoostScience_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Reward_Science_3</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostFood_1" RandWeight="15">
+    <Gui>
+      <Title>%Reward_BoostFood_1Title</Title>
+      <Description>%Reward_BoostFood_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Reward_Food_1</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostFood_2" RandWeight="11">
+    <Gui>
+      <Title>%Reward_BoostFood_2Title</Title>
+      <Description>%Reward_BoostFood_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Food_2</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostFood_3" RandWeight="5">
+    <Gui>
+      <Title>%Reward_BoostFood_3Title</Title>
+      <Description>%Reward_BoostFood_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Reward_Food_3</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_CreateSuperDefender_1" RandWeight="7">
+    <Gui>
+      <Title>%Reward_CreateSuperDefender_1Title</Title>
+      <Description>%Reward_CreateSuperDefender_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>SuperDefender</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_CreateAdvancedDefender_1" RandWeight="4">
+    <Gui>
+      <Title>%Reward_CreateAdvancedDefender_1Title</Title>
+      <Description>%Reward_CreateAdvancedDefender_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>AdvancedDefender</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_CreateScout_1" RandWeight="62">
+    <Gui>
+      <Title>%Reward_CreateScout_1Title</Title>
+      <Description>%Reward_CreateScout_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>Scout</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_CreateColonyShip_1" RandWeight="5">
+    <Gui>
+      <Title>%Reward_CreateColonyShip_1Title</Title>
+      <Description>%Reward_CreateColonyShip_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </ExplorationEvent>
+  
+
+
+  <ExplorationEvent Name="Reward_HeroBoostExperience_1" RandWeight="53">
+    <Gui>
+      <Title>%Reward_HeroBoostExperience_1Title</Title>
+      <Description>%Reward_HeroBoostExperience_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="50" Scope="LocalEmpire">
+      <Descriptors>Reward_HeroBoostExperience_1</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HeroBoostExperience_2" RandWeight="28">
+    <Gui>
+      <Title>%Reward_HeroBoostExperience_2Title</Title>
+      <Description>%Reward_HeroBoostExperience_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="25" Scope="LocalEmpire">
+      <Descriptors>Reward_HeroBoostExperience_2</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HeroBoostExperience_3" RandWeight="7">
+    <Gui>
+      <Title>%Reward_HeroBoostExperience_3Title</Title>
+      <Description>%Reward_HeroBoostExperience_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_HeroBoostExperience_3</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HeroAbilityPoint_1" RandWeight="5">
+    <Gui>
+      <Title>%Reward_HeroAbilityPoint_1Title</Title>
+      <Description>%Reward_HeroAbilityPoint_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroAbilityPoints Duration="0" Scope="LocalEmpire" AbilityPoints="1" HeroSelectionMode="Context" />
+  </ExplorationEvent>
+  
+  <ExplorationEvent Name="Reward_HunterPirates_1" RandWeight="3">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Reward_HunterPirates_1Title</Title>
+      <Description>%Reward_HunterPirates_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="1" PercentShipPerFleet="0.3" OrbitSelectionMode="Context">
+      <ShipDesigns>WeakHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HunterPirates_2" RandWeight="2">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Reward_HunterPirates_2Title</Title>
+      <Description>%Reward_HunterPirates_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="1" PercentShipPerFleet="0.5" OrbitSelectionMode="Context">
+      <ShipDesigns>NormalHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_HunterPirates_3" RandWeight="1">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Reward_HunterPirates_3Title</Title>
+      <Description>%Reward_HunterPirates_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="1" PercentShipPerFleet="0.75"  OrbitSelectionMode="Context">
+      <ShipDesigns>StrongHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </ExplorationEvent>
+  
+
+  
+  <!--  !!INTERACTIVE EXPLORATION EVENT BELOW!! -->
+  
+  <ExplorationEvent Name="Reward_LegendaryArtifact_1" RandWeight="5">
+    <Gui>
+      <Title>%Reward_LegendaryArtifact_1Title</Title>
+      <Description>%Reward_LegendaryArtifact_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <InteractiveEventOption>Reward_LegendaryArtifact_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Reward_LegendaryArtifact_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Reward_LegendaryArtifact_1_OptionHostile</InteractiveEventOption>
+  </ExplorationEvent>
+
+
+  <InteractiveEventOption Name="Reward_LegendaryArtifact_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Reward_LegendaryArtifact_1_OptionHostileTitle</Title>
+      <Description>%Reward_LegendaryArtifact_1_OptionHostileDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+      <!-- Icon is not used -->
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="30"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_LegendaryArtifact_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Reward_LegendaryArtifact_1_OptionSelfishTitle</Title>
+      <Description>%Reward_LegendaryArtifact_1_OptionSelfishDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroAbilityPoints Duration="0" Scope="LocalEmpire" AbilityPoints="1" HeroSelectionMode="Context" />
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_LegendaryArtifact_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Reward_LegendaryArtifact_1_OptionHelpfulTitle</Title>
+      <Description>%Reward_LegendaryArtifact_1_OptionHelpfulDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus Duration="0" Scope="LocalEmpire" Amount="15" />
+  </InteractiveEventOption>
+
+
+  <!--############################################################################## -->
+  
+  <ExplorationEvent Name="Reward_DamagedShip_1" RandWeight="3">
+    <Gui>
+      <Title>%Reward_DamagedShip_1Title</Title>
+      <Description>%Reward_DamagedShip_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <InteractiveEventOption>Reward_DamagedShip_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DamagedShip_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DamagedShip_1_OptionHostile</InteractiveEventOption>
+  </ExplorationEvent>
+
+
+  <InteractiveEventOption Name="Reward_DamagedShip_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Reward_DamagedShip_1_OptionHostileTitle</Title>
+      <Description>%Reward_DamagedShip_1_OptionHostileDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>SuperDefender</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DamagedShip_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Reward_DamagedShip_1_OptionSelfishTitle</Title>
+      <Description>%Reward_DamagedShip_1_OptionSelfishDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="75"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DamagedShip_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Reward_DamagedShip_1_OptionHelpfulTitle</Title>
+      <Description>%Reward_DamagedShip_1_OptionHelpfulDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>ColonyShip</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </InteractiveEventOption>
+
+ <!--############################################################################## -->
+
+  <ExplorationEvent Name="Reward_DisturbPiratesMeeting_1" RandWeight="1">
+    <Tags>Pirates</Tags>
+    <Gui>
+      <Title>%Reward_DisturbPiratesMeeting_1Title</Title>
+      <Description>%Reward_DisturbPiratesMeeting_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <InteractiveEventOption>Reward_DisturbPiratesMeeting_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DisturbPiratesMeeting_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DisturbPiratesMeeting_1_OptionHostile</InteractiveEventOption>
+  </ExplorationEvent>
+
+
+  <InteractiveEventOption Name="Reward_DisturbPiratesMeeting_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Reward_DisturbPiratesMeeting_1_OptionHostileTitle</Title>
+      <Description>%Reward_DisturbPiratesMeeting_1_OptionHostileDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="1" PercentShipPerFleet="0.5"  OrbitSelectionMode="HomeSystem">
+      <ShipDesigns>StrongHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DisturbPiratesMeeting_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Reward_DisturbPiratesMeeting_1_OptionSelfishTitle</Title>
+      <Description>%Reward_DisturbPiratesMeeting_1_OptionSelfishDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="2" PercentShipPerFleet="0.5"  OrbitSelectionMode="Context">
+      <ShipDesigns>NormalHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DisturbPiratesMeeting_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Reward_DisturbPiratesMeeting_1_OptionHelpfulTitle</Title>
+      <Description>%Reward_DisturbPiratesMeeting_1_OptionHelpfulDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnPirateFleet Duration="0" FleetCount="3" PercentShipPerFleet="0.5"  OrbitSelectionMode="LastColonizedSystem">
+      <ShipDesigns>WeakHunterPiratesDesign</ShipDesigns>
+    </AchievementEffect_SpawnPirateFleet>
+  </InteractiveEventOption>
+
+  <!--############################################################################## -->
+  
+  <ExplorationEvent Name="Reward_ScienceDiscovery_1" RandWeight="10">
+    <Gui>
+      <Title>%Reward_ScienceDiscovery_1Title</Title>
+      <Description>%Reward_ScienceDiscovery_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <InteractiveEventOption>Reward_ScienceDiscovery_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Reward_ScienceDiscovery_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Reward_ScienceDiscovery_1_OptionHostile</InteractiveEventOption>
+  </ExplorationEvent>
+
+
+  <InteractiveEventOption Name="Reward_ScienceDiscovery_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Reward_ScienceDiscovery_1_OptionHostileTitle</Title>
+      <Description>%Reward_ScienceDiscovery_1_OptionHostileDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_ScienceDiscovery_1_Evil</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_ScienceDiscovery_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Reward_ScienceDiscovery_1_OptionSelfishTitle</Title>
+      <Description>%Reward_ScienceDiscovery_1_OptionSelfishDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ScienceDiscovery Duration="0" Scope="LocalEmpire" DiscoveryType="Random" TechnoToDiscoverCount="1" />
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_ScienceDiscovery_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Reward_ScienceDiscovery_1_OptionHelpfulTitle</Title>
+      <Description>%Reward_ScienceDiscovery_1_OptionHelpfulDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="50" Scope="LocalEmpire">
+      <Descriptors>Reward_ScienceDiscovery_1_Good</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <!--############################################################################## -->
+
+  <ExplorationEvent Name="Reward_DustDiscovery_1" RandWeight="10">
+    <Gui>
+      <Title>%Reward_DustDiscovery_1Title</Title>
+      <Description>%Reward_DustDiscovery_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <InteractiveEventOption>Reward_DustDiscovery_1_OptionSelfish</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DustDiscovery_1_OptionHelpful</InteractiveEventOption>
+    <InteractiveEventOption>Reward_DustDiscovery_1_OptionHostile</InteractiveEventOption>
+  </ExplorationEvent>
+
+
+  <InteractiveEventOption Name="Reward_DustDiscovery_1_OptionHostile" Type="Evil">
+    <Gui>
+      <Title>%Reward_DustDiscovery_1_OptionHostileTitle</Title>
+      <Description>%Reward_DustDiscovery_1_OptionHostileDescription</Description>
+      <Icon  Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="25" Scope="LocalEmpire">
+      <Descriptors>Reward_DustDiscovery_1_Evil</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DustDiscovery_1_OptionSelfish" Type="Neutral">
+    <Gui>
+      <Title>%Reward_DustDiscovery_1_OptionSelfishTitle</Title>
+      <Description>%Reward_DustDiscovery_1_OptionSelfishDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="20" TurnsBetweenExecutions="5" Scope="LocalEmpire" Amount="75" />
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_DustDiscovery_1_OptionHelpful" Type="Good">
+    <Gui>
+      <Title>%Reward_DustDiscovery_1_OptionHelpfulTitle</Title>
+      <Description>%Reward_DustDiscovery_1_OptionHelpfulDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect Duration="40" Scope="LocalEmpire">
+      <Descriptors>Reward_DustDiscovery_1_Good</Descriptors>
+    </AchievementEffect>
+  </InteractiveEventOption>
+  
+  
+  <!--- EVENT ADD ON 4-->
+
+  <ExplorationEvent Name="Reward_UnveilNeighbours_1" RandWeight="5">
+    <Tags></Tags>
+    <Gui>
+      <Title>%Reward_UnveilNeighbours_1Title</Title>
+      <Description>%Reward_UnveilNeighbours_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_UnveilSystems Duration="0" StartingSystemSelectionMode="Context">
+    </AchievementEffect_UnveilSystems>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_RefreshAcademy_1" RandWeight="5">
+    <Tags></Tags>
+    <Gui>
+      <Title>%Reward_RefreshAcademy_1Title</Title>
+      <Description>%Reward_RefreshAcademy_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_RefreshAcademy Duration="0">
+    </AchievementEffect_RefreshAcademy>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_RefreshAcademy_2" RandWeight="2">
+    <Tags></Tags>
+    <Gui>
+      <Title>%Reward_RefreshAcademy_2Title</Title>
+      <Description>%Reward_RefreshAcademy_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect_RefreshAcademy Duration="0" SwitchOnly="true">
+    </AchievementEffect_RefreshAcademy>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostIndustry_1" RandWeight="15">
+    <Gui>
+      <Title>%Reward_BoostIndustry_1Title</Title>
+      <Description>%Reward_BoostIndustry_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Industry_1</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostIndustry_2" RandWeight="11">
+    <Gui>
+      <Title>%Reward_BoostIndustry_2Title</Title>
+      <Description>%Reward_BoostIndustry_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="5" Scope="LocalEmpire">
+      <Descriptors>Reward_Industry_2</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_BoostIndustry_3" RandWeight="5">
+    <Gui>
+      <Title>%Reward_BoostIndustry_3Title</Title>
+      <Description>%Reward_BoostIndustry_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric"/>
+    </Gui>
+    <AchievementEffect Duration="1" Scope="LocalEmpire">
+      <Descriptors>Reward_Industry_3</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+<!--
+  - <AchievementEffect_RefreshAcademy></AchievementEffect_RefreshAcademy> : Refresh the list of heroes available for a recruitement
+  * SwitchOnly : Set it to "false" (or remove this attribute) if you want the list to be reseted completly (all the slots will be re-filled). Else, only the remaining heroes will be replaced.
+  - <AchievementEffect_UnveilSystems></AchievementEffect_UnveilSystems> : Unveils the neighbours of a system
+  * StartingSystemSelectionMode : The way the starting system is selected
+  - HomeSystem : The starting system will be the event target's home system
+  - LastColonizedSystem : The starting system will be the target's last colonized system
+  -->
+
+
+  <!--- EVENT ADD ON 7 -->
+
+  <ExplorationEvent Name="Reward_Exploration_01" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_01Title</Title>
+      <Description>%Reward_Exploration_01Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect Duration="20" Scope="LocalEmpire">
+      <Descriptors>Reward_Exploration_01</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Exploration_02" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_02Title</Title>
+      <Description>%Reward_Exploration_02Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect_UnveilSystems Duration="0" StartingSystemSelectionMode="Context" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Exploration_03" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_03Title</Title>
+      <Description>%Reward_Exploration_03Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Exploration_03</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Exploration_04" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_04Title</Title>
+      <Description>%Reward_Exploration_04Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Exploration_04</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Exploration_05" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_05Title</Title>
+      <Description>%Reward_Exploration_05Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="25" />
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="40" />
+  </ExplorationEvent>
+
+  <ExplorationEvent Name="Reward_Exploration_06" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_06Title</Title>
+      <Description>%Reward_Exploration_06Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <InteractiveEventOption>Reward_Exploration_06_1</InteractiveEventOption>
+    <InteractiveEventOption>Reward_Exploration_06_2</InteractiveEventOption>
+    <InteractiveEventOption>Reward_Exploration_06_3</InteractiveEventOption>
+  </ExplorationEvent>
+
+  <InteractiveEventOption Name="Reward_Exploration_06_1" Type="Evil">
+    <Gui>
+      <Title>%Reward_Exploration_06_1Title</Title>
+      <Description>%Reward_Exploration_06_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>Defender</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_Exploration_06_2" Type="Neutral">
+    <Gui>
+      <Title>%Reward_Exploration_06_2Title</Title>
+      <Description>%Reward_Exploration_06_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_SpawnNewShip Duration="0" Scope="LocalEmpire" OrbitSelectionMode="Context">
+      <ShipDesigns>Scout</ShipDesigns>
+    </AchievementEffect_SpawnNewShip>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_Exploration_06_3" Type="Good">
+    <Gui>
+      <Title>%Reward_Exploration_06_3Title</Title>
+      <Description>%Reward_Exploration_06_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ScienceBonus      Duration="0" Scope="LocalEmpire" Amount="40" />
+  </InteractiveEventOption>
+
+  <ExplorationEvent Name="Reward_Exploration_07" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_07Title</Title>
+      <Description>%Reward_Exploration_07Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <InteractiveEventOption>Reward_Exploration_07_1</InteractiveEventOption>
+    <InteractiveEventOption>Reward_Exploration_07_2</InteractiveEventOption>
+    <InteractiveEventOption>Reward_Exploration_07_3</InteractiveEventOption>
+  </ExplorationEvent>
+
+  <InteractiveEventOption Name="Reward_Exploration_07_1" Type="Evil">
+    <Gui>
+      <Title>%Reward_Exploration_07_1Title</Title>
+      <Description>%Reward_Exploration_07_1Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption3" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyShipXP Duration="0" Scope="LocalEmpire" GainXP="5" ShipSelectionMode="Context" />
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_Exploration_07_2" Type="Neutral">
+    <Gui>
+      <Title>%Reward_Exploration_07_2Title</Title>
+      <Description>%Reward_Exploration_07_2Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption1" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyBankAccount Duration="0" Scope="LocalEmpire" Amount="20"/>
+  </InteractiveEventOption>
+
+  <InteractiveEventOption Name="Reward_Exploration_07_3" Type="Good">
+    <Gui>
+      <Title>%Reward_Exploration_07_3Title</Title>
+      <Description>%Reward_Exploration_07_3Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/explorationEventOption2" Large="Gui/DynamicBitmaps/Events/GlobalRandomEvent02"/>
+    </Gui>
+    <AchievementEffect_ModifyHeroXP Duration="0" Scope="LocalEmpire" GainXP="15" ShipSelectionMode="Context" />
+  </InteractiveEventOption>
+
+  <ExplorationEvent Name="Reward_Exploration_08" RandWeight="16">
+    <Gui>
+      <Title>%Reward_Exploration_08Title</Title>
+      <Description>%Reward_Exploration_08Description</Description>
+      <Icon Small="Gui/DynamicBitmaps/Events/ExplorationEventGenericSmall" Large="Gui/DynamicBitmaps/Events/ExplorationEventGeneric02"/>
+    </Gui>
+    <AchievementEffect Duration="10" Scope="LocalEmpire">
+      <Descriptors>Reward_Exploration_08</Descriptors>
+    </AchievementEffect>
+  </ExplorationEvent>
+
+</Datatable>

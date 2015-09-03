@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AIParametersDatatableElement ConstructibleElement="TechPlayerStartVaulter" />
+  <AIParametersDatatableElement ConstructibleElement="TechT12Vaulter">
+    <AIParameter Name="Expand" Value="9" />
+    <AIParameter Name="Military" Value="15" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE37Vaulter">
+    <AIParameter Name="Food" Value="6" />
+    <AIParameter Name="Industry" Value="6" />
+    <AIParameter Name="Money" Value="6" />
+    <AIParameter Name="Science" Value="6" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE04Vaulter">
+    <AIParameter Name="Military" Value="12" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE08Vaulter">
+    <AIParameter Name="Industry" Value="5" />
+    <AIParameter Name="Military" Value="6" />
+    <AIParameter Name="PlanetTypeLava" Value="5" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE08VaulterWithColonizeTraitScience03">
+    <AIParameter Name="Industry" Value="4" />
+    <AIParameter Name="Military" Value="6" />
+    <AIParameter Name="PlanetTypeLava" Value="3" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE14Vaulter">
+    <AIParameter Name="Approval" Value="10" />
+    <AIParameter Name="Military" Value="10" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechE16Vaulter">
+    <AIParameter Name="Expand" Value="11" />
+    <AIParameter Name="Military" Value="11" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechA19Vaulter">
+    <AIParameter Name="Science" Value="26" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechA28Vaulter">
+    <AIParameter Name="Science" Value="11" />
+    <AIParameter Name="Military" Value="20" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechG03Vaulter">
+    <AIParameter Name="Science" Value="2" />
+    <AIParameter Name="Military" Value="5" />
+    <AIParameter Name="Invasion" Value="8" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechG11Vaulter">
+    <AIParameter Name="Science" Value="4" />
+    <AIParameter Name="Military" Value="7" />
+    <AIParameter Name="Invasion" Value="7" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechG19Vaulter">
+    <AIParameter Name="Science" Value="4" />
+    <AIParameter Name="Military" Value="12" />
+    <AIParameter Name="Invasion" Value="6" />
+  </AIParametersDatatableElement>
+  <AIParametersDatatableElement ConstructibleElement="TechG65Vaulter">
+    <AIParameter Name="Military" Value="6" />
+    <AIParameter Name="Invasion" Value="8" />
+  </AIParametersDatatableElement>
+</Datatable>

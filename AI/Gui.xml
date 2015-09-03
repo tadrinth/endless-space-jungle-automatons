@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GuiInfo Name="AIStarSystemAssignationFood">
+    <Title>%AISystemSettingsFoodTitle</Title>
+    <Description>%AISystemSettingsFoodDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIFood"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationIndustry">
+    <Title>%AISystemSettingsIndustryTitle</Title>
+    <Description>%AISystemSettingsIndustryDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIIndustry"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationMoney">
+    <Title>%AISystemSettingsMoneyTitle</Title>
+    <Description>%AISystemSettingsMoneyDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIMoney"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationScience">
+    <Title>%AISystemSettingsScienceTitle</Title>
+    <Description>%AISystemSettingsScienceDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIScience"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationMilitary">
+    <Title>%AISystemSettingsMilitaryTitle</Title>
+    <Description>%AISystemSettingsMilitaryDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIMilitary"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationDiplomacy">
+    <Title>%AISystemSettingsDiplomacyTitle</Title>
+    <Description>%AISystemSettingsDiplomacyDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIDiplomacy"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationApproval">
+    <Title>%AISystemSettingsApprovalTitle</Title>
+    <Description>%AISystemSettingsApprovalDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIApproval"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationBalanced">
+    <Title>%AISystemSettingsBalancedTitle</Title>
+    <Description>%AISystemSettingsBalancedDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AIBalanced"/>
+  </GuiInfo>
+
+  <GuiInfo Name="AIStarSystemAssignationNone">
+    <Title>%AISystemSettingsNoneTitle</Title>
+    <Description>%AISystemSettingsNoneDescription</Description>
+    <Icon Small="Gui/AtlasedBitmaps/AIIcons/AINone"/>
+  </GuiInfo>
+</Datatable>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ********************************** EXPLORATION REWARD*********************************** -->
+  <SimulationObjectDescriptor Name="Reward_Approval_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="10" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Approval_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="20" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Approval_3" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="40" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Science_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.10" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="Reward_Science_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.20" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Science_3" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.40" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="Reward_Food_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.10" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Food_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.20" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Food_3" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.40" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_HeroBoostExperience_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerBattleBonus"        Value="0.10" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerAssignedTurnBonus"  Value="0.10" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerConstructionBonus"  Value="0.10" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerEnnemyInjuredBonus" Value="0.10" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="Reward_HeroBoostExperience_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerBattleBonus"        Value="0.25" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerAssignedTurnBonus"  Value="0.25" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerConstructionBonus"  Value="0.25" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerEnnemyInjuredBonus" Value="0.25" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_HeroBoostExperience_3" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerBattleBonus"        Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerAssignedTurnBonus"  Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerConstructionBonus"  Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="XPPerEnnemyInjuredBonus" Value="0.5" OperationType="Percent" Path="ClassEmpire//ClassHero"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_ScienceDiscovery_1_Evil" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.50" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_ScienceDiscovery_1_Good" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.10" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_DustDiscovery_1_Evil" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BuyOutBonus" Value="-0.33" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_DustDiscovery_1_Good" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="0.20" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  
+  
+  <!-- ADD ON 4 EXPLORATION EVENT DESCRIPTORS -->
+  <SimulationObjectDescriptor Name="Reward_Industry_1" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="10" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Industry_2" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="20" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Industry_3" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="40" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  
+  <!--- ADD ON 7 EXPLORATION EVENT DESCRIPTORS -->
+  <SimulationObjectDescriptor Name="Reward_Exploration_01" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="5" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Exploration_03" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="15" OperationType="Addition" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Exploration_04" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="0.20" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Reward_Exploration_08" Type="ExplorationEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.20" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+
+</Datatable>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <SupportModule Name="ModuleColonization" Cost="170" WeightFlat="110" MilitaryPower="0" PopulationCost="1"
+                 SupportCategory="Civilian" Level="1">
+    <ConstructionDescriptors>StarSystemConstructionFreezeGrowth</ConstructionDescriptors>
+    <Gui>
+      <Title>%ModuleColonizationTitle</Title>
+      <Description>%ModuleColonizationDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleCivilianColonizationSmall" Large="Gui/DynamicBitmaps/Modules/ModuleCivilianColonizationLarge"/>
+    </Gui>
+  </SupportModule>
+  
+  <!-- colonization module for harmony: they already have a freeze from their hull -->
+  <SupportModule Name="ModuleColonizationHarmony" Cost="170" WeightFlat="80" MilitaryPower="0" PopulationCost="1"
+                 SupportCategory="Civilian">
+    <Gui>
+      <Title>%ModuleColonizationTitle</Title>
+      <Description>%ModuleColonizationDescription</Description>
+      <Icon Small="Gui/DynamicBitmaps/Modules/ModuleCivilianColonizationSmall" Large="Gui/DynamicBitmaps/Modules/ModuleCivilianColonizationLarge"/>
+    </Gui>
+  </SupportModule>
+  
+</Datatable>

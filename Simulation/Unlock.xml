@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <GuiInfo Name="ColonizeGasGiant">
+    <Title>%ColonizeGasGiantTitle</Title>
+    <Description>%ColonizeGasGiantDescription</Description>
+    <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneLarge"/>
+  </GuiInfo>
+
+  <GuiInfo Name="ColonizeGasGiantWithColonizeTraitScience03">
+    <Title>%ColonizeGasGiantTitle</Title>
+    <Description>%ColonizeGasGiantDescription</Description>
+    <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneSowerSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/ColonizationGasMethaneSowerLarge"/>
+  </GuiInfo>
+
+  <!--<GuiInfo Name="TerraformationToGasGiant">
+    <Title>%TerraformationToGasGiantTitle</Title>
+    <Description>%TerraformationToGasGiantDescription</Description>
+    <Icon Small="Gui/DynamicBitmaps/Improvements/Planets/TerraformationToGasGiantSmall" Large="Gui/DynamicBitmaps/Improvements/Planets/TerraformationToGasGiantLarge"/>
+  </GuiInfo>-->
+  
+</Datatable>

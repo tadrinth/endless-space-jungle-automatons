@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ********************************** GLOBAL EVENT *********************************** -->
+  <SimulationObjectDescriptor Name="Achievement_ScienceBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_ScienceMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_SpeedBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="0.5" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="0.5" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_FrontierBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Influence" Value="0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DetectionRadius" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_FrontierMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Influence" Value="-0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_EmpireBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval" Value="0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_EmpireMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval" Value="-0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_DiplomaticBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="TradeRoutesBonuses" Value="0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_DiplomaticMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="TradeRoutesBonuses" Value="-0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ********************************** POSITIVE EVENT *********************************** -->
+  <SimulationObjectDescriptor Name="Achievement_RevealMapBonus" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DetectionRadius" Value="1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DetectionRadius" Value="1" OperationType="Percent" Path="ClassEmpire//ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ********************************** NEGATIVE EVENT *********************************** -->
+  <SimulationObjectDescriptor Name="Achievement_HideMap" Type="NegativeEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DetectionRadius" Value="-0.3" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DetectionRadius" Value="-0.3" OperationType="Percent" Path="ClassEmpire//ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_SpeedMalus" Type="NegativeEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="-0.5" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="-0.5" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_ShipSabotage" Type="NegativeEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Health" Value="-0.25" OperationType="Percent" Path="ClassEmpire//ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ********************************** DUMMIES *********************************** -->
+  <SimulationObjectDescriptor Name="Achievement_NewColonyShip" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_XpBonusShip" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_LowScienceDiscovery" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_HighScienceDiscovery" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_XpBonusHero" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_PositiveAnomaly" Type="PositiveEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_NegativeAnomaly" Type="NegativeEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_Disease" Type="NegativeEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveTestGlobal" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval" Value="0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveTestOption1" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveTestOption2" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveTestOption3" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="-0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- GALACTIC TEMPEST GLOBAL INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempest" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ImprovementCostBonus" Value="0.30"  OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="0.30"  OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>      
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempestOptionHelpfulScience" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.15" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempestOptionHelpfulLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.75" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempestOptionHostileProduction" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ImprovementCostBonus" Value="0.20"  OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="ShipCostBonus" Value="0.20"  OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempestOptionHostileLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.5" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticTempestOptionSelfishScience" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.5" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ######################################### -->
+
+
+  <!-- GALACTIC PLAGUE GLOBAL INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticPlagueOptionHelpfulLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-30" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalGalacticPlagueOptionSelfishLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.75" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ######################################### -->
+
+  <!-- NEW RELIGION GLOBAL INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalNewReligionOptionHelpfulLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-45" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ######################################### -->
+
+  <!-- TO THE ENDLESS GLOBAL INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalToTheEndlessOptionHelpfulLocalBonus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="50" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalToTheEndlessOptionHostileLocalCost" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-25" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ######################################### -->
+
+  <!-- DUST RAIN GLOBAL INTERACTIVE EVENT -->
+
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalDustRainOptionHostileGlobalMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="-0.1" OperationType="Percent" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveGlobalDustRainOptionSelfishGlobalMalus" Type="GlobalEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="100" OperationType="Addition" Priority="4" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ######################################### -->
+
+
+  <!-- SABOTEUR V1 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSaboteur_1_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-10" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ######################################### -->
+
+  <!-- SABOTEUR V2 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSaboteur_2_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-20" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ######################################### -->
+
+  <!-- SABOTEUR V3 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSaboteur_3_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-50" OperationType="Addition" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ######################################### -->
+
+  <!-- SABOTAGE V1 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_1_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="-0.10" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="-0.10" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_1_OptionHelpfulLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="-0.03" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="-0.03" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ######################################### -->
+
+  <!-- SABOTAGE V2 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_2_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="-0.25" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="-0.25" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_2_OptionHelpfulLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="-0.07" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="-0.07" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ######################################### -->
+
+  <!-- SABOTAGE V3 FACTION INTERACTIVE EVENT -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_3_OptionSelfishLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="-0.50" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="-0.50" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveSabotage_3_OptionHelpfulLocalMalus" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMin" Value="-0.15" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="DamageMax" Value="-0.15" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip/WeaponModule"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <!-- ################## New Religion From KingJohnVI ####################### -->
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeNewReligion_2B2_OptionHelpfulDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="0.10" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeNewReligion_2B2_OptionSelfishDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeNewReligion_2A2_OptionHelpfulDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeNewReligion_2A3_OptionSelfishDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ################# War Machine From Codename_Veers######################## -->
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveWarMachinesOptionHostileDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveWarMachinesOptionHelpfulDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.3" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveWarMachinesOptionHelpfulDescriptorCost" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="-0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_InteractiveWarMachinesOptionSelfishDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.2" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MilitaryPowerInvasion" Value="1" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ################## Mad Scientist From KingJohnVI ####################### -->
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeMadScientist_1_OptionHostileDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="0.10" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeMadScientist_2_OptionHelpfulDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeMadScientist_3B1_2Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-0.15" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <SimulationObjectDescriptor Name="Achievement_CascadeMadScientist_3B2_2D_5T_Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeMadScientist_3B2_2D_10T_Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="BaseApproval" Value="-0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Production" Value="-0.05" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+
+  <!-- ################# ENDLESS FACILITY ######################## -->
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_3_OptionSelfishDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_1_OptionHostileDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_2_OptionHelpfulDescriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="-0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_3C_1Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_3C_2Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.25" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_3A_1Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.1" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_3A_2Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science" Value="0.25" OperationType="Percent" Path="ClassEmpire/ClassStarSystem"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_1C_1Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+	  
+	  <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHydrogen"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasHelium"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="0.75" OperationType="Multiplication" Path="ClassEmpire/ClassStarSystem/PlanetStatusColonized,PlanetTypeGasMethane"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_2C_1Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="MaxHeroes" Value="1" OperationType="Addition" Path="ClassEmpire" IsBase="true"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <SimulationObjectDescriptor Name="Achievement_CascadeEndlessFacility_2C_2Descriptor" Type="NegativeFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="TurnsBeforeNewHero" Value="0" OperationType="Multiplication" Path="ClassEmpire"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+  
+  <!-- HARMONY EVENT -->
+  <SimulationObjectDescriptor Name="Achievement_SpeedBonusHarmony" Type="PositiveFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Speed" Value="1" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="FreeSpeed" Value="1" OperationType="Percent" Path="ClassEmpire/ClassFleet/ClassShip"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+
+  <!-- ENDLESS DAY -->
+  
+  <SimulationObjectDescriptor Name="Achievement_EndlessDayTemple" Type="PositiveFactionEvent" Serializable="false">
+    <SimulationObjectPropertyModifierDescriptors>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Approval" Value="20"  OperationType="Addition" Path="ClassEmpire/ClassStarSystem/ClassPlanet/MoonStatusExploredWithTemple"  TooltipVisibility="true"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Food"     Value="3"   OperationType="Addition" Path="ClassEmpire/ClassStarSystem/ClassPlanet/MoonStatusExploredWithTemple"  TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Industry" Value="3"   OperationType="Addition" Path="ClassEmpire/ClassStarSystem/ClassPlanet/MoonStatusExploredWithTemple"  TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Money"    Value="3"   OperationType="Addition" Path="ClassEmpire/ClassStarSystem/ClassPlanet/MoonStatusExploredWithTemple"  TooltipVisibility="false"/>
+      <SimulationObjectPropertyModifierDescriptor TargetProperty="Science"  Value="3"   OperationType="Addition" Path="ClassEmpire/ClassStarSystem/ClassPlanet/MoonStatusExploredWithTemple"  TooltipVisibility="false"/>
+    </SimulationObjectPropertyModifierDescriptors>
+  </SimulationObjectDescriptor>
+</Datatable>

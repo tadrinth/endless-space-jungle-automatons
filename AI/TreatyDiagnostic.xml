@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Don't forget to add loc key foreach new modifier -->
+  <!-- DiplomaticAttitudeModifierMilitaryBalance CAN'T BE USED with this version -->
+  
+  <TreatyDiagnostic Name="DeclareWarTerm">
+    <Modifier Sentence="%DeclareWarTermMilitaryPowerTense">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerTense" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermMilitaryPowerWeaknessStress">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerWeaknessStress" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermScoreTense">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierScoreTense" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermLivingSpaceTense">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierLivingSpaceTense" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermOwningLegitimateTerritory">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierOwningLegitimateTerritory" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermBrokenExchange">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierBrokenExchange" />
+    </Modifier>
+    <Modifier Sentence="%DeclareWarTermAnotherAlliance">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierAnotherAlliance" />
+    </Modifier>
+  </TreatyDiagnostic>
+
+  <TreatyDiagnostic Name="PeaceTerm">
+    <Modifier Sentence="%PeaceTermConnectionSpaceTense">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierConnectionSpaceTense" />
+    </Modifier>
+    <Modifier Sentence="%PeaceTermPeaceful">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierPeaceful" />
+    </Modifier>
+    <Modifier Sentence="%PeaceTermCommonEnemyOrFriends">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonEnemy" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonFriends" />
+    </Modifier>
+    <Modifier Sentence="%PeaceTermMilitaryPowerRespect">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerRespect" />
+    </Modifier>
+    <Modifier Sentence="%PeaceTermMilitaryPowerPity">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerPity" />
+    </Modifier>
+    <Modifier Sentence="%PeaceTermSecuringNeighbourhood">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierSecuringNeighbourhood" />
+    </Modifier>
+  </TreatyDiagnostic>
+
+  <TreatyDiagnostic Name="OpenBordersTerm">
+    <Modifier Sentence="%OpenBordersTermSecuringNeighbourhood">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierSecuringNeighbourhood" />
+    </Modifier>
+    <Modifier Sentence="%OpenBordersTermMilitaryPowerPity">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerPity" />
+    </Modifier>
+    <Modifier Sentence="%OpenBordersTermMilitaryPowerRespect">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerRespect" />
+    </Modifier>
+    <Modifier Sentence="%OpenBordersTermConnectionSpaceTense">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierConnectionSpaceTense" />
+    </Modifier>
+    <Modifier Sentence="%OpenBordersTermCurrentExchangesOrPastExchange">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCurrentExchanges" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierPastExchanges" />
+    </Modifier>
+    <Modifier Sentence="%OpenBordersTermDonations">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierDonations" />
+    </Modifier>
+  </TreatyDiagnostic>
+  
+  <TreatyDiagnostic Name="CooperationAgreementTerm">
+    <Modifier Sentence="%CooperationAgreementTermAlliance">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierAlliance" />
+    </Modifier>
+    <Modifier Sentence="%CooperationAgreementTermCurrentExchangesOrPastExchange">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCurrentExchanges" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierPastExchanges" />
+    </Modifier>
+    <Modifier Sentence="%CooperationAgreementTermCommonEnemy">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonEnemy" />
+    </Modifier>    
+    <Modifier Sentence="%CooperationAgreementTermDonations">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierDonations" />
+    </Modifier>
+    <Modifier Sentence="%CooperationAgreementTermMilitaryPowerPity">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerPity" />
+    </Modifier>
+  </TreatyDiagnostic>
+
+  <TreatyDiagnostic Name="CreateAllianceTerm">
+    <Modifier Sentence="%CreateAllianceTermCommonEnemyOrFriends">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonEnemy" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonFriends" />
+    </Modifier>
+    <Modifier Sentence="%CreateAllianceTermMilitaryPowerPity">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerPity" />
+    </Modifier>
+    <Modifier Sentence="%CreateAllianceTermMilitaryPowerRespect">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerRespect" />
+    </Modifier>
+    <Modifier Sentence="%CreateAllianceTermSecuringNeighbourhood">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierSecuringNeighbourhood" />
+    </Modifier>
+    <Modifier Sentence="%CreateAllianceTermOpenBorderOrCooperationAgreement">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierOpenBordersTreaty" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCooperationAgreementTreaty" />
+    </Modifier>
+    <Modifier Sentence="%CreateAllianceTermCurrentExchangesOrPastExchange">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCurrentExchanges" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierPastExchanges" />
+    </Modifier>
+  </TreatyDiagnostic>
+
+  <TreatyDiagnostic Name="InviteToAllianceTerm">
+    <Modifier Sentence="%InviteToAllianceTermCommonEnemyOrFriends">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonEnemy" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCommonFriends" />
+    </Modifier>
+    <Modifier Sentence="%InviteToAllianceTermMilitaryPowerPity">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerPity" />
+    </Modifier>
+    <Modifier Sentence="%InviteToAllianceTermMilitaryPowerRespect">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierMilitaryPowerRespect" />
+    </Modifier>
+    <Modifier Sentence="%InviteToAllianceTermSecuringNeighbourhood">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierSecuringNeighbourhood" />
+    </Modifier>
+    <Modifier Sentence="%InviteToAllianceTermOpenBorderOrCooperationAgreement">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierOpenBordersTreaty" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCooperationAgreementTreaty" />
+    </Modifier>
+    <Modifier Sentence="%InviteToAllianceTermCurrentExchangesOrPastExchange">
+      <AttitudeModifier Name="DiplomaticAttitudeModifierCurrentExchanges" />
+      <AttitudeModifier Name="DiplomaticAttitudeModifierPastExchanges" />
+    </Modifier>
+  </TreatyDiagnostic>
+
+</Datatable>
