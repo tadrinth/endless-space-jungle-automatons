@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Mod Name="Jungle Automatons" Guid="03efc01d-776e-44ea-a944-1f44189789f4" Standalone="false">
 
-  <Version Major="1" Minor="1" Revision="0" Serial="0" />
+  <Version Major="1" Minor="1" Revision="1" Serial="0" />
   <MinimumRequiredGameVersion Major="1" Minor="0" Revision="0" Serial="0" />
   <RequestedDLCName>JungleAutomatons</RequestedDLCName>
   <Authors>Tadrinth</Authors>
@@ -9,11 +9,18 @@
   <ReleaseDate>2015-03-03</ReleaseDate>
 
   <ReleaseNotes>
-    Replaces the Automatons various affinities for Terran planets with affinities for Jungle planets.
+V1.1.1.0:
+  * Removed files that are unchanged from base game
+
+V1.1.0.0:
+  * Automaton special tech that grants early access to Terran terraformation now grants Jungle terraforming instead
+  * Automatons now have a unique version of the tech for Ocean/Jungle terraforming which grants Ocean/Terran isntead
+  * AI valuation for special Automaton terraforms adjusted
+  * Automaton Hydrosequencing variant now grants bonuses per pop on Jungle instead of Terran
   </ReleaseNotes>
 
   <Description>
-    Replaces the Automatons various affinities for Terran planets with affinities for Jungle planets.
+Replaces the Automatons various affinities for Terran planets with affinities for Jungle planets.
   </Description>
 
   <Tag>General</Tag>
